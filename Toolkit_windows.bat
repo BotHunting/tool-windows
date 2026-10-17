@@ -16,114 +16,205 @@ echo ===================================================
 echo            WINDOWS TOOLKIT GABUNGAN
 echo ===================================================
 echo.
-echo  [1] Pengaturan DNS (IPv4, IPv6, DoH)
-echo  [2] Matikan Windows Update ^& Bersihkan Cache Update
-echo  [3] Aktifkan Kembali Windows Update
-echo  [4] Bersihkan File Sampah Umum (Temp, Prefetch, dll.)
+echo  --- WINDOWS UPDATE ^& SYSTEM ---
+echo  [1]  Matikan Windows Update ^& Bersihkan Cache Update
+echo  [2]  Aktifkan Kembali Windows Update
+echo  [3]  Empty Recycle Bin Force
+echo  [4]  Cek Windows Activation
+echo  [5]  Clean Thumbnails ^& Icon Cache
+echo  [6]  Reset Font Cache
+echo  [7]  Repair Microsoft Office
 echo.
-echo  --- Utilitas Sistem ---
-echo  [5] Restart Windows Explorer
-echo  [6] Tutup Paksa Aplikasi "Not Responding"
-echo  [7] Bangun Ulang Cache Ikon ^& Thumbnail
-echo  [8] Bersihkan Riwayat Clipboard
+echo  --- DNS ^& NETWORK ---
+echo  [8]  Pengaturan DNS (IPv4, IPv6, DoH)
+echo  [9]  Refresh IP ^& Routing Jaringan
+echo  [10] Format Flashdisk via Diskpart
+echo  [11] Reset Network Full
+echo  [12] Kunci / Buka USB Storage
+echo  [13] Lihat Password Wi-Fi Tersimpan
+echo  [14] Bebaskan Port Macet (Kill PID)
 echo.
-echo  --- Pahlawan IT ---
-echo  [9] Reset Print Spooler (Perbaiki Printer Macet)
-echo  [10] Unhide File Flashdisk (Pawang Virus Shortcut)
-echo  [11] Force Sync Jam Windows (Fix Error SSL)
-echo  [12] Bersihkan Cache Microsoft Office (Atasi Lag)
-echo  [13] Bersihkan Cache Google Chrome (Tanpa Logout)
-echo  [14] Refresh IP ^& Routing Jaringan
-echo  [15] Restart Layanan Database PostgreSQL
-echo  [16] Hapus Paksa File / Folder Membandel
+echo  --- CLEANUP ^& MAINTENANCE ---
+echo  [15] Bersihkan File Sampah Umum (Temp, Prefetch, dll.)
+echo  [16] Bersihkan Riwayat Clipboard
+echo  [17] Bersihkan Cache Microsoft Office
+echo  [18] Bersihkan Cache Google Chrome
+echo  [19] Bersihkan Cache Microsoft Edge
+echo  [20] Hapus Cache Delivery Optimization (Hemat Disk)
+echo  [21] Bersihkan Semua Event Log
+echo  [22] Scheduled Auto Cleanup
+echo  [23] Optimize SSD
+echo  [24] Defrag HDD
 echo.
-echo  --- Pemeliharaan ^& Diagnosis ---
-echo  [17] Perbaiki File Sistem Corrupt (SFC ^& DISM)
-echo  [18] Buka Folder Startup Windows
-echo  [19] Reset Windows Search ^& Indexing
-echo  [20] Cek Spesifikasi Hardware ^& Sistem
-echo  [21] Speedtest Internet (Server Google)
-echo  [22] Toggle File Tersembunyi ^& Ekstensi
-echo  [23] Kunci / Buka USB Storage
-echo  [24] Lihat Password Wi-Fi Tersimpan
-echo  [25] Bebaskan Port Macet (Kill PID)
-echo  [26] Buat Folder GodMode di Desktop
+echo  --- UTILITAS SISTEM ---
+echo  [25] Restart Windows Explorer
+echo  [26] Tutup Paksa Aplikasi "Not Responding"
+echo  [27] Bangun Ulang Cache Ikon ^& Thumbnail
+echo  [28] Toggle File Tersembunyi ^& Ekstensi
+echo  [29] Buat Folder GodMode di Desktop
+echo  [30] Restart Semua Adaptor Jaringan
 echo.
-echo  --- Pahlawan IT Lapangan ---
-echo  [27] Restart Semua Adaptor Jaringan
-echo  [28] Backup Semua Driver Sistem
-echo  [29] Cek Status Lisensi Windows
-echo  [30] Menu Pintas Admin
-echo  [31] Set Power Scheme Never Sleep
+echo  --- MANAJEMEN APLIKASI ---
+echo  [31] Lihat Program Terinstall
+echo  [32] Uninstall Program Paksa
+echo  [33] Disable Startup Apps
+echo  [34] Hapus Bloatware Windows
+echo  [35] Reset Microsoft Store ^& Apps Bawaan
 echo.
-echo  --- Spesialis Servis PC ---
-echo  [32] Cek Kesehatan SSD / HDD (S.M.A.R.T)
-echo  [33] Matikan Sementara Windows Defender
-echo  [34] Bersihkan Semua Event Log
-echo  [35] Aktifkan Akun Administrator Bawaan
-echo  [36] Buat System Restore Point
-echo  [37] Core Isolation - Memory Integrity
-echo  [38] Toggle Fast Startup (Perbaiki Bug Shutdown)
-echo  [39] Ekstrak Product Key Windows dari BIOS
-echo  [40] Laporan Kesehatan Baterai (Khusus Laptop)
-echo  [41] Bersihkan Cache Microsoft Edge
-echo  [42] Hapus Cache Delivery Optimization (Hemat Disk)
-echo  [43] Cek Uptime Sistem ^& Umur Windows
-echo  [44] Ubah Jaringan ke Private (Fix Share Folder)
-echo  [45] Reset Microsoft Store ^& Apps Bawaan
-echo  [46] Cek Driver Bermasalah (Error Code)
+echo  --- HARDWARE ^& DIAGNOSA ---
+echo  [36] Cek Suhu CPU ^& Motherboard
+echo  [37] Test Audio Output
+echo  [38] Test Webcam
+echo  [39] Cek Kapasitas Disk
+echo  [40] Test Keyboard ^& Mouse
+echo  [41] Cek Spesifikasi Hardware ^& Sistem
+echo  [42] Speedtest Internet (Server Google)
+echo  [43] Cek Kesehatan SSD / HDD (S.M.A.R.T)
+echo  [44] Cek Driver Bermasalah (Error Code)
+echo.
+echo  --- PRINTER ^& PERIPHERAL ---
+echo  [45] Reset Print Spooler (Perbaiki Printer Macet)
+echo  [46] Restart Layanan Database PostgreSQL
+echo.
+echo  --- USER ^& AKUN ---
+echo  [47] Buat User Baru
+echo  [48] Hapus User Profile
+echo  [49] Aktifkan Akun Administrator Bawaan
+echo.
+echo  --- FITUR KHUSUS LAPTOP ---
+echo  [50] Cek Kesehatan Baterai Detail
+echo  [51] Calibrate Battery
+echo  [52] Laporan Kesehatan Baterai (Khusus Laptop)
+echo.
+echo  --- PEMELIHARAAN LANJUT ---
+echo  [53] Perbaiki File Sistem Corrupt (SFC ^& DISM)
+echo  [54] Buka Folder Startup Windows
+echo  [55] Reset Windows Search ^& Indexing
+echo  [56] Buat System Restore Point
+echo  [57] Core Isolation - Memory Integrity
+echo  [58] Toggle Fast Startup (Perbaiki Bug Shutdown)
+echo  [59] Ubah Jaringan ke Private (Fix Share Folder)
+echo.
+echo  --- SPESIALIS SERVIS PC ---
+echo  [60] Backup Semua Driver Sistem
+echo  [61] Cek Status Lisensi Windows
+echo  [62] Menu Pintas Admin
+echo  [63] Set Power Scheme Never Sleep
+echo  [64] Matikan Sementara Windows Defender
+echo  [65] Ekstrak Product Key Windows dari BIOS
+echo  [66] Cek Uptime Sistem ^& Umur Windows
+echo.
+echo  --- EMERGENCY TROUBLESHOOTING ---
+echo  [67] Unhide File Flashdisk (Pawang Virus Shortcut)
+echo  [68] Force Sync Jam Windows (Fix Error SSL)
+echo  [69] Hapus Paksa File / Folder Membandel
+echo.
+echo  --- PRIVACY ^& HISTORY ---
+echo  [70] Clear Recent Files
+echo  [71] Clear Run History
+echo  [72] Disable / Enable Cortana
+echo  [73] Disable / Enable Telemetry
+echo  [74] Disable / Enable Notifications
+echo.
+echo  --- SYSTEM TWEAKS ---
+echo  [75] Rename Computer
+echo  [76] Check Computer Name
+echo  [77] Enable / Disable Hibernation
+echo  [78] Check Windows Version
+echo  [79] Check Installed Updates
+echo.
+echo  --- HARDWARE TEST ---
+echo  [80] Test Mikrofon
+echo  [81] Take Screenshot
+echo  [82] Check Webcam Resolution
 echo.
 echo  [0] Keluar
 echo ===================================================
 set "main_opt="
 set /p main_opt="Pilih opsi lalu tekan Enter: "
 
-if "%main_opt%"=="1" goto DNS_MENU
-if "%main_opt%"=="2" goto RUN_DISABLE_UPDATE
-if "%main_opt%"=="3" goto RUN_ENABLE_UPDATE
-if "%main_opt%"=="4" goto RUN_CLEAN_WINDOWS
-if "%main_opt%"=="5" goto RUN_RESTART_EXPLORER
-if "%main_opt%"=="6" goto RUN_KILL_NOT_RESPONDING
-if "%main_opt%"=="7" goto RUN_REBUILD_CACHE
-if "%main_opt%"=="8" goto RUN_CLEAR_CLIPBOARD
-if "%main_opt%"=="9" goto RUN_RESET_SPOOLER
-if "%main_opt%"=="10" goto RUN_UNHIDE_FLASHDISK
-if "%main_opt%"=="11" goto RUN_SYNC_TIME
-if "%main_opt%"=="12" goto RUN_CLEAN_OFFICE_CACHE
-if "%main_opt%"=="13" goto RUN_CLEAN_CHROME
-if "%main_opt%"=="14" goto RUN_REFRESH_NETWORK
-if "%main_opt%"=="15" goto RUN_RESTART_DB
-if "%main_opt%"=="16" goto RUN_FORCE_DELETE
-if "%main_opt%"=="17" goto RUN_REPAIR_SYSTEM
-if "%main_opt%"=="18" goto RUN_OPEN_STARTUP
-if "%main_opt%"=="19" goto RUN_RESET_SEARCH
-if "%main_opt%"=="20" goto RUN_PC_INFO
-if "%main_opt%"=="21" goto RUN_SPEEDTEST_ADAPTERS
-if "%main_opt%"=="22" goto RUN_TOGGLE_EXPLORER_VIEW
-if "%main_opt%"=="23" goto RUN_TOGGLE_USB_STORAGE
-if "%main_opt%"=="24" goto RUN_WIFI_PASSWORDS
-if "%main_opt%"=="25" goto RUN_KILL_PORT
-if "%main_opt%"=="26" goto RUN_CREATE_GODMODE
-if "%main_opt%"=="27" goto RUN_RESTART_ALL_ADAPTERS
-if "%main_opt%"=="28" goto RUN_BACKUP_DRIVERS
-if "%main_opt%"=="29" goto RUN_WINDOWS_LICENSE
-if "%main_opt%"=="30" goto RUN_ADMIN_SHORTCUTS
-if "%main_opt%"=="31" goto RUN_NEVER_SLEEP
-if "%main_opt%"=="32" goto RUN_CHECK_DISK_HEALTH
-if "%main_opt%"=="33" goto RUN_DISABLE_DEFENDER_TEMP
-if "%main_opt%"=="34" goto RUN_CLEAR_EVENT_LOGS
-if "%main_opt%"=="35" goto RUN_ENABLE_ADMIN_ACCOUNT
-if "%main_opt%"=="36" goto RUN_CREATE_RESTORE_POINT
-if "%main_opt%"=="37" goto CORE_ISOLATION_MENU
-if "%main_opt%"=="38" goto RUN_TOGGLE_FAST_STARTUP
-if "%main_opt%"=="39" goto RUN_GET_PRODUCT_KEY
-if "%main_opt%"=="40" goto RUN_BATTERY_REPORT
-if "%main_opt%"=="41" goto RUN_CLEAN_EDGE
-if "%main_opt%"=="42" goto RUN_CLEAN_DO_CACHE
-if "%main_opt%"=="43" goto RUN_CHECK_UPTIME
-if "%main_opt%"=="44" goto RUN_SET_NETWORK_PRIVATE
-if "%main_opt%"=="45" goto RUN_RESET_STORE
-if "%main_opt%"=="46" goto RUN_CHECK_BAD_DRIVERS
+if "%main_opt%"=="1" goto RUN_DISABLE_UPDATE
+if "%main_opt%"=="2" goto RUN_ENABLE_UPDATE
+if "%main_opt%"=="3" goto RUN_EMPTY_RECYCLE_BIN_FORCE
+if "%main_opt%"=="4" goto RUN_CHECK_WINDOWS_ACTIVATION
+if "%main_opt%"=="5" goto RUN_CLEAN_THUMBNAILS_ICONS
+if "%main_opt%"=="6" goto RUN_RESET_FONT_CACHE
+if "%main_opt%"=="7" goto RUN_REPAIR_OFFICE
+if "%main_opt%"=="8" goto DNS_MENU
+if "%main_opt%"=="9" goto RUN_REFRESH_NETWORK
+if "%main_opt%"=="10" goto RUN_FORMAT_USB_DISKPART
+if "%main_opt%"=="11" goto RUN_RESET_NETWORK_FULL
+if "%main_opt%"=="12" goto RUN_TOGGLE_USB_STORAGE
+if "%main_opt%"=="13" goto RUN_WIFI_PASSWORDS
+if "%main_opt%"=="14" goto RUN_KILL_PORT
+if "%main_opt%"=="15" goto RUN_CLEAN_WINDOWS
+if "%main_opt%"=="16" goto RUN_CLEAR_CLIPBOARD
+if "%main_opt%"=="17" goto RUN_CLEAN_OFFICE_CACHE
+if "%main_opt%"=="18" goto RUN_CLEAN_CHROME
+if "%main_opt%"=="19" goto RUN_CLEAN_EDGE
+if "%main_opt%"=="20" goto RUN_CLEAN_DO_CACHE
+if "%main_opt%"=="21" goto RUN_CLEAR_EVENT_LOGS
+if "%main_opt%"=="22" goto RUN_SCHEDULED_CLEANUP
+if "%main_opt%"=="23" goto RUN_OPTIMIZE_SSD
+if "%main_opt%"=="24" goto RUN_DEFRAG_HDD
+if "%main_opt%"=="25" goto RUN_RESTART_EXPLORER
+if "%main_opt%"=="26" goto RUN_KILL_NOT_RESPONDING
+if "%main_opt%"=="27" goto RUN_REBUILD_CACHE
+if "%main_opt%"=="28" goto RUN_TOGGLE_EXPLORER_VIEW
+if "%main_opt%"=="29" goto RUN_CREATE_GODMODE
+if "%main_opt%"=="30" goto RUN_RESTART_ALL_ADAPTERS
+if "%main_opt%"=="31" goto RUN_LIST_INSTALLED_APPS
+if "%main_opt%"=="32" goto RUN_UNINSTALL_APP_FORCE
+if "%main_opt%"=="33" goto RUN_DISABLE_STARTUP_APPS
+if "%main_opt%"=="34" goto RUN_REMOVE_BLOATWARE
+if "%main_opt%"=="35" goto RUN_RESET_STORE
+if "%main_opt%"=="36" goto RUN_CHECK_CPU_TEMP
+if "%main_opt%"=="37" goto RUN_TEST_AUDIO
+if "%main_opt%"=="38" goto RUN_TEST_WEBCAM
+if "%main_opt%"=="39" goto RUN_CHECK_DISK_SPACE
+if "%main_opt%"=="40" goto RUN_TEST_KEYBOARD_MOUSE
+if "%main_opt%"=="41" goto RUN_PC_INFO
+if "%main_opt%"=="42" goto RUN_SPEEDTEST_ADAPTERS
+if "%main_opt%"=="43" goto RUN_CHECK_DISK_HEALTH
+if "%main_opt%"=="44" goto RUN_CHECK_BAD_DRIVERS
+if "%main_opt%"=="45" goto RUN_RESET_SPOOLER
+if "%main_opt%"=="46" goto RUN_RESTART_DB
+if "%main_opt%"=="47" goto RUN_CREATE_NEW_USER
+if "%main_opt%"=="48" goto RUN_DELETE_USER_PROFILE
+if "%main_opt%"=="49" goto RUN_ENABLE_ADMIN_ACCOUNT
+if "%main_opt%"=="50" goto RUN_BATTERY_DETAIL
+if "%main_opt%"=="51" goto RUN_CALIBRATE_BATTERY
+if "%main_opt%"=="52" goto RUN_BATTERY_REPORT
+if "%main_opt%"=="53" goto RUN_REPAIR_SYSTEM
+if "%main_opt%"=="54" goto RUN_OPEN_STARTUP
+if "%main_opt%"=="55" goto RUN_RESET_SEARCH
+if "%main_opt%"=="56" goto RUN_CREATE_RESTORE_POINT
+if "%main_opt%"=="57" goto CORE_ISOLATION_MENU
+if "%main_opt%"=="58" goto RUN_TOGGLE_FAST_STARTUP
+if "%main_opt%"=="59" goto RUN_SET_NETWORK_PRIVATE
+if "%main_opt%"=="60" goto RUN_BACKUP_DRIVERS
+if "%main_opt%"=="61" goto RUN_WINDOWS_LICENSE
+if "%main_opt%"=="62" goto RUN_ADMIN_SHORTCUTS
+if "%main_opt%"=="63" goto RUN_NEVER_SLEEP
+if "%main_opt%"=="64" goto RUN_DISABLE_DEFENDER_TEMP
+if "%main_opt%"=="65" goto RUN_GET_PRODUCT_KEY
+if "%main_opt%"=="66" goto RUN_CHECK_UPTIME
+if "%main_opt%"=="67" goto RUN_UNHIDE_FLASHDISK
+if "%main_opt%"=="68" goto RUN_SYNC_TIME
+if "%main_opt%"=="69" goto RUN_FORCE_DELETE
+if "%main_opt%"=="70" goto RUN_CLEAR_RECENT_FILES
+if "%main_opt%"=="71" goto RUN_CLEAR_RUN_HISTORY
+if "%main_opt%"=="72" goto RUN_TOGGLE_CORTANA
+if "%main_opt%"=="73" goto RUN_TOGGLE_TELEMETRY
+if "%main_opt%"=="74" goto RUN_TOGGLE_NOTIFICATIONS
+if "%main_opt%"=="75" goto RUN_RENAME_COMPUTER
+if "%main_opt%"=="76" goto RUN_CHECK_COMPUTER_NAME
+if "%main_opt%"=="77" goto RUN_TOGGLE_HIBERNATION
+if "%main_opt%"=="78" goto RUN_CHECK_WINDOWS_VERSION
+if "%main_opt%"=="79" goto RUN_CHECK_INSTALLED_UPDATES
+if "%main_opt%"=="80" goto RUN_TEST_MICROPHONE
+if "%main_opt%"=="81" goto RUN_TAKE_SCREENSHOT
+if "%main_opt%"=="82" goto RUN_CHECK_WEBCAM_RESOLUTION
 if "%main_opt%"=="0" exit
 goto MAIN_MENU
 
@@ -574,15 +665,7 @@ powershell -NoProfile -Command "try { (Invoke-RestMethod -Uri 'https://ipinfo.io
 pause
 goto DNS_MENU
 
-:: Benchmark DNS lama dihapus; gunakan opsi utama [21] Speedtest.
-powershell -NoProfile -Command "if (-not (Get-Command Resolve-DnsName -ErrorAction SilentlyContinue)) { Write-Host 'Resolve-DnsName tidak tersedia pada PowerShell ini.' } else { $list = @(@{N='AdGuard';IP='94.140.14.14';T='DNS'},@{N='Cloudflare';IP='1.1.1.1';T='DNS'},@{N='Quad9';IP='9.9.9.9';T='DNS'},@{N='Google';IP='8.8.8.8';T='DNS'},@{N='Control D';IP='76.76.2.0';T='DNS'},@{N='Mullvad';IP='194.242.2.3';T='DNS'},@{N='OpenDNS';IP='208.67.222.222';T='DNS'},@{N='CleanBrowsing';IP='185.228.168.9';T='DNS'},@{N='DNS0.eu';IP='193.110.81.0';T='DNS'},@{N='NextDNS';IP='45.90.28.234';T='DNS'},@{N='AhaDNS';IP='5.2.78.36';T='DNS'},@{N='OpenDNS Family';IP='208.67.222.123';T='DNS'},@{N='Comodo';IP='8.26.56.26';T='DNS'},@{N='AdGuard Personal';IP='94.140.14.49';T='DoH'},@{N='AdGuard Rumah';IP='94.140.14.49';T='DoH'},@{N='AdGuard Hunting';IP='94.140.14.49';T='DoH'},@{N='AdGuard Poco';IP='94.140.14.49';T='DoH'},@{N='Cloudflare DoH';IP='1.1.1.1';T='DoH'},@{N='Quad9 DoH';IP='9.9.9.9';T='DoH'},@{N='Google DoH';IP='8.8.8.8';T='DoH'},@{N='NextDNS DoH';IP='45.90.28.234';T='DoH'},@{N='Mullvad AdBlock';IP='194.242.2.3';T='DoH'},@{N='Mullvad Standard';IP='194.242.2.3';T='DoH'},@{N='Control D DoH';IP='76.76.2.0';T='DoH'},@{N='Control D Family';IP='76.76.2.0';T='DoH'},@{N='OpenDNS DoH';IP='208.67.222.222';T='DoH'},@{N='OpenDNS Family DoH';IP='208.67.222.123';T='DoH'},@{N='CleanBrowsing Security';IP='185.228.168.9';T='DoH'},@{N='CleanBrowsing Adult';IP='185.228.168.10';T='DoH'},@{N='RethinkDNS';IP='116.202.176.26';T='DoH'},@{N='DNS0.eu Zero';IP='193.110.81.0';T='DoH'},@{N='DNS0.eu Kids';IP='193.110.81.1';T='DoH'},@{N='Nawala';IP='180.131.144.144';T='DNS'},@{N='AdGuard Indonesia';IP='94.140.14.14';T='DNS'},@{N='DNSku CleanDNS';IP='103.87.68.10';T='DNS'},@{N='NextDNS Jakarta';IP='45.90.28.0';T='DNS'},@{N='Control D Jakarta';IP='76.76.2.2';T='DNS'},@{N='Alternate DNS';IP='76.76.19.19';T='DNS'},@{N='RethinkDNS ID';IP='108.137.89.8';T='DNS'},@{N='BlahDNS Asia';IP='139.99.117.202';T='DNS'},@{N='AhaDNS Blitz';IP='5.2.75.148';T='DNS'},@{N='Cloudflare Malware';IP='1.1.1.2';T='DNS'},@{N='Cloudflare Protection';IP='1.1.1.3';T='DNS'},@{N='DNS.SB';IP='185.222.222.222';T='DNS'},@{N='DNSForge.de';IP='176.9.93.198';T='DNS'},@{N='AdGuard DoH';IP='94.140.14.14';T='DoH'},@{N='Control D DoH 2';IP='76.76.2.2';T='DoH'},@{N='RethinkDNS DoH';IP='108.137.89.8';T='DoH'},@{N='BlahDNS DoH';IP='139.99.117.202';T='DoH'},@{N='Cloudflare Security DoH';IP='1.1.1.2';T='DoH'},@{N='DNS.SB DoH';IP='185.222.222.222';T='DoH'},@{N='DNSForge DoH';IP='176.9.93.198';T='DoH'}); $domains = @('google.com','microsoft.com','kemenhub.go.id'); $bestName = ''; $bestMs = [double]::PositiveInfinity; $successCount = 0; foreach ($item in $list) { $times = @(); foreach ($domain in $domains) { try { $sw = [Diagnostics.Stopwatch]::StartNew(); $null = Resolve-DnsName $domain -Server $item.IP -Type A -DnsOnly -NoHostsFile -QuickTimeout -ErrorAction Stop; $sw.Stop(); $times += $sw.Elapsed.TotalMilliseconds } catch {} }; if ($times.Count -eq 0) { Write-Host ('{0,-25} {1,-16} {2,-4} timeout' -f $item.N,$item.IP,$item.T) } else { $successCount++; $total = 0; foreach ($time in $times) { $total += $time }; $average = [math]::Round($total / $times.Count); if ($average -lt 20) { $speed = 'Sangat cepat' } elseif ($average -lt 50) { $speed = 'Cepat' } elseif ($average -lt 100) { $speed = 'Normal' } elseif ($average -lt 200) { $speed = 'Lambat' } else { $speed = 'Sangat lambat' }; if ($average -lt $bestMs) { $bestMs = $average; $bestName = $item.N }; Write-Host ('{0,-25} {1,-16} {2,4} ms - {3} ({4})' -f $item.N,$item.IP,$average,$speed,$item.T) } }; Write-Host ''; Write-Host ('Berhasil diuji: {0}/{1} profil' -f $successCount,$list.Count); if ($bestName) { Write-Host ('Tercepat: ' + $bestName + ' (' + $bestMs + ' ms)') }; Write-Host 'Catatan: profil DoH diukur melalui resolver IP-nya, bukan jalur HTTPS terenkripsi.' }"
-pause
-goto DNS_MENU
-
-echo Menguji profil DNS aktif (3 domain per profil)...
-powershell -NoProfile -Command "if (-not (Get-Command Resolve-DnsName -ErrorAction SilentlyContinue)) { Write-Host 'Resolve-DnsName tidak tersedia pada PowerShell ini.' } else { $list = @(@{N='AdGuard';IP='94.140.14.14';T='DNS'},@{N='Cloudflare';IP='1.1.1.1';T='DNS'},@{N='Quad9';IP='9.9.9.9';T='DNS'},@{N='Google';IP='8.8.8.8';T='DNS'},@{N='Control D';IP='76.76.2.2';T='DNS'},@{N='Mullvad';IP='194.242.2.3';T='DNS'},@{N='OpenDNS';IP='208.67.222.222';T='DNS'},@{N='CleanBrowsing';IP='185.228.168.9';T='DNS'},@{N='DNS0.eu';IP='193.110.81.10';T='DNS'},@{N='NextDNS';IP='45.90.28.234';T='DNS'},@{N='AhaDNS';IP='5.2.78.36';T='DNS'},@{N='OpenDNS Family';IP='208.67.222.123';T='DNS'},@{N='Comodo';IP='8.26.56.26';T='DNS'},@{N='AdGuard Personal';U='https://8faa9ffc.d.adguard-dns.com/dns-query';T='DoH'},@{N='AdGuard Rumah';U='https://64c71a5e.d.adguard-dns.com/dns-query';T='DoH'},@{N='AdGuard Hunting';U='https://bae7b182.d.adguard-dns.com/dns-query';T='DoH'},@{N='AdGuard Poco';U='https://791115cd.d.adguard-dns.com/dns-query';T='DoH'},@{N='Cloudflare DoH';U='https://cloudflare-dns.com/dns-query';T='DoH'},@{N='Quad9 DoH';U='https://dns.quad9.net/dns-query';T='DoH'},@{N='Google DoH';U='https://dns.google/dns-query';T='DoH'},@{N='NextDNS DoH';U='https://dns.nextdns.io';T='DoH'},@{N='Mullvad AdBlock';U='https://adblock.dns.mullvad.net/dns-query';T='DoH'},@{N='Mullvad Standard';U='https://dns.mullvad.net/dns-query';T='DoH'},@{N='Control D DoH';U='https://freedns.controld.com/p2';T='DoH'},@{N='Control D Family';U='https://freedns.controld.com/family';T='DoH'},@{N='OpenDNS DoH';U='https://doh.opendns.com/dns-query';T='DoH'},@{N='OpenDNS Family DoH';U='https://doh.familyshield.opendns.com/dns-query';T='DoH'},@{N='CleanBrowsing Security';U='https://doh.cleanbrowsing.org/doh/security-filter/';T='DoH'},@{N='CleanBrowsing Adult';U='https://doh.cleanbrowsing.org/doh/adult-filter/';T='DoH'},@{N='RethinkDNS';U='https://max.rethinkdns.com/1:IAAgACAA';T='DoH'},@{N='DNS0.eu Zero';U='https://zero.dns0.eu';T='DoH'},@{N='DNS0.eu Kids';U='https://kids.dns0.eu';T='DoH'},@{N='AdGuard Indonesia';IP='94.140.14.14';T='DNS'},@{N='NextDNS Jakarta';IP='45.90.28.0';T='DNS'},@{N='Control D Jakarta';IP='76.76.2.2';T='DNS'},@{N='Alternate DNS';IP='76.76.19.19';T='DNS'},@{N='RethinkDNS ID';IP='108.137.89.8';T='DNS'},@{N='BlahDNS Asia';IP='139.99.117.202';T='DNS'},@{N='AhaDNS Blitz';IP='5.2.75.148';T='DNS'},@{N='Cloudflare Malware';IP='1.1.1.2';T='DNS'},@{N='Cloudflare Protection';IP='1.1.1.3';T='DNS'},@{N='DNS.SB';IP='185.222.222.222';T='DNS'},@{N='DNSForge.de';IP='176.9.93.198';T='DNS'},@{N='AdGuard DoH';U='https://dns.adguard-dns.com/dns-query';T='DoH'},@{N='Control D DoH Asia';U='https://freedns.controld.com/p2';T='DoH'},@{N='RethinkDNS DoH';U='https://max.rethinkdns.com/1:IAAgACAA';T='DoH'},@{N='BlahDNS DoH';U='https://doh-sg.blahdns.com/dns-query';T='DoH'},@{N='Cloudflare Security DoH';U='https://security.cloudflare-dns.com/dns-query';T='DoH'},@{N='DNS.SB DoH';U='https://doh.dns.sb/dns-query';T='DoH'},@{N='DNSForge DoH';U='https://dnsforge.de/dns-query';T='DoH'}); $domains = @('google.com','microsoft.com','kemenhub.go.id'); $bestName = ''; $bestMs = [double]::PositiveInfinity; $successCount = 0; foreach ($item in $list) { $times = @(); foreach ($domain in $domains) { try { $sw = [Diagnostics.Stopwatch]::StartNew(); if ($item.T -eq 'DNS') { $null = Resolve-DnsName $domain -Server $item.IP -Type A -DnsOnly -NoHostsFile -QuickTimeout -ErrorAction Stop } else { $response = Invoke-WebRequest -UseBasicParsing -Uri ($item.U + '?name=' + $domain + '&type=A') -Headers @{Accept='application/dns-json'} -TimeoutSec 5 -ErrorAction Stop; if ($response.StatusCode -ne 200) { throw 'HTTP error' } }; $sw.Stop(); $times += $sw.Elapsed.TotalMilliseconds } catch {} }; if ($times.Count -eq 0) { Write-Host ('{0,-25} {1,-4} timeout' -f $item.N,$item.T) } else { $successCount++; $total = 0; foreach ($time in $times) { $total += $time }; $average = [math]::Round($total / $times.Count); if ($average -lt 20) { $speed = 'Sangat cepat' } elseif ($average -lt 50) { $speed = 'Cepat' } elseif ($average -lt 100) { $speed = 'Normal' } elseif ($average -lt 200) { $speed = 'Lambat' } else { $speed = 'Sangat lambat' }; if ($average -lt $bestMs) { $bestMs = $average; $bestName = $item.N }; Write-Host ('{0,-25} {1,4} ms - {2} [{3}]' -f $item.N,$average,$speed,$item.T) } }; Write-Host ''; Write-Host ('Berhasil diuji: {0}/{1} profil' -f $successCount,$list.Count); if ($bestName) { Write-Host ('Tercepat: ' + $bestName + ' (' + $bestMs + ' ms)') }; Write-Host 'DoH diuji melalui URL HTTPS endpoint lengkap.' }"
-pause
-goto DNS_MENU
+:: Benchmark DNS: Gunakan opsi utama [21] Speedtest untuk tes koneksi.
 
 :PING_HOST
 echo %~2
@@ -848,7 +931,6 @@ goto MAIN_MENU
 
 
 :: ==================================================================
-:: == BAGIAN 9: RESTART WINDOWS EXPLORER
 :: == BAGIAN 5: RESTART WINDOWS EXPLORER
 :: ==================================================================
 
@@ -876,7 +958,6 @@ goto MAIN_MENU
 
 
 :: ==================================================================
-:: == BAGIAN 10: TUTUP PAKSA APLIKASI "NOT RESPONDING"
 :: == BAGIAN 6: TUTUP PAKSA APLIKASI "NOT RESPONDING"
 :: ==================================================================
 
@@ -900,7 +981,6 @@ goto MAIN_MENU
 
 
 :: ==================================================================
-:: == BAGIAN 11: BANGUN ULANG CACHE IKON & THUMBNAIL
 :: == BAGIAN 7: BANGUN ULANG CACHE IKON & THUMBNAIL
 :: ==================================================================
 
@@ -938,7 +1018,6 @@ goto MAIN_MENU
 
 
 :: ==================================================================
-:: == BAGIAN 12: BERSIHKAN RIWAYAT CLIPBOARD
 :: == BAGIAN 8: BERSIHKAN RIWAYAT CLIPBOARD
 :: ==================================================================
 
@@ -1252,6 +1331,786 @@ goto MAIN_MENU
 
 
 :: ==================================================================
+:: == MANAJEMEN APLIKASI: LIHAT PROGRAM TERINSTALL
+:: ==================================================================
+
+:RUN_LIST_INSTALLED_APPS
+cls
+echo ===================================================
+echo           LIHAT PROGRAM TERINSTALL
+echo ===================================================
+echo.
+echo Daftar program yang terinstall di sistem:
+echo.
+powershell -NoProfile -Command "Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | Select-Object DisplayName, DisplayVersion, Publisher, InstallDate | Format-Table -AutoSize"
+echo.
+echo.
+echo Daftar program user (Current User):
+echo.
+powershell -NoProfile -Command "Get-ItemProperty HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | Select-Object DisplayName, DisplayVersion, Publisher, InstallDate | Format-Table -AutoSize"
+echo.
+echo Tekan tombol untuk melanjutkan...
+pause >nul
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == MANAJEMEN APLIKASI: UNINSTALL PROGRAM PAKSA
+:: ==================================================================
+
+:RUN_UNINSTALL_APP_FORCE
+cls
+echo ===================================================
+echo         UNINSTALL PROGRAM PAKSA
+echo ===================================================
+echo.
+echo Masukkan nama program yang ingin di-uninstall.
+echo Gunakan nama persis seperti yang muncul di list program.
+echo.
+set "app_name="
+set /p "app_name=Nama program: "
+if not defined app_name (
+    echo Nama program tidak boleh kosong.
+    pause
+    goto MAIN_MENU
+)
+echo.
+echo Mencari program: %app_name%...
+set "found=0"
+for /f "tokens=*" %%a in ('reg query "HKLM\Software\Microsoft\Windows\CurrentVersion\Uninstall" /s /f "%app_name%" 2^>nul ^| findstr /i "UninstallString"') do (
+    set "found=1"
+    echo Ditemukan di registry sistem.
+)
+for /f "tokens=*" %%a in ('reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall" /s /f "%app_name%" 2^>nul ^| findstr /i "UninstallString"') do (
+    set "found=1"
+    echo Ditemukan di registry user.
+)
+if "!found!"=="0" (
+    echo Program tidak ditemukan.
+    pause
+    goto MAIN_MENU
+)
+echo.
+echo Mencoba uninstall menggunakan wmic...
+wmic product where "name like '%%app_name%%'" call uninstall /nointeractive
+if errorlevel 1 (
+    echo WMIC gagal. Mencoba metode alternatif...
+    powershell -NoProfile -Command "Get-WmiObject -Class Win32_Product | Where-Object { $_.Name -like '*%app_name%*' } | ForEach-Object { Write-Host ('Menguninstall: ' + $_.Name); $_.Uninstall() }"
+)
+echo.
+echo Selesai. Jika gagal, gunakan Control Panel Programs and Features.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == MANAJEMEN APLIKASI: DISABLE STARTUP APPS
+:: ==================================================================
+
+:RUN_DISABLE_STARTUP_APPS
+cls
+echo ===================================================
+echo          DISABLE STARTUP APPS
+echo ===================================================
+echo.
+echo Daftar aplikasi startup saat ini:
+echo.
+powershell -NoProfile -Command "Get-CimInstance Win32_StartupCommand | Select-Object Name,Command,Location | Format-Table -AutoSize"
+echo.
+echo Startup apps di Task Manager:
+echo.
+powershell -NoProfile -Command "Get-CimInstance Win32_StartupCommand | Select-Object Name,Command | Format-Table -AutoSize"
+echo.
+echo Masukkan nama aplikasi yang ingin di-disable dari startup:
+echo (Kosongkan untuk batal)
+set "startup_app="
+set /p "startup_app=Nama aplikasi: "
+if not defined startup_app goto MAIN_MENU
+echo.
+echo Menonaktifkan %startup_app% dari startup...
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v "%startup_app%" /f >nul 2>&1
+reg delete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v "%startup_app%" /f >nul 2>&1
+reg delete "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v "%startup_app%" /f >nul 2>&1
+powershell -NoProfile -Command "Disable-ScheduledTask -TaskName '%startup_app%' -ErrorAction SilentlyContinue"
+echo Selesai! Aplikasi telah di-disable dari startup.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == MANAJEMEN APLIKASI: HAPUS BLOATWARE WINDOWS
+:: ==================================================================
+
+:RUN_REMOVE_BLOATWARE
+cls
+echo ===================================================
+echo         HAPUS BLOATWARE WINDOWS
+echo ===================================================
+echo.
+echo PERINGATAN: Aplikasi bawaan Windows akan dihapus.
+echo Pastikan Anda tidak membutuhkan aplikasi ini.
+echo.
+echo Aplikasi yang akan dihapus:
+echo - Xbox Gaming
+echo - Cortana
+echo - 3D Viewer
+echo - Windows Maps
+echo - Weather
+echo - Money
+echo - News
+echo - Sports
+echo.
+set "bloat_confirm="
+set /p "bloat_confirm=Lanjutkan? (Y/N): "
+if /i not "!bloat_confirm!"=="Y" goto MAIN_MENU
+echo.
+echo Menghapus bloatware...
+powershell -NoProfile -Command "Get-AppxPackage -AllUsers | Where-Object { $_.Name -like '*Xbox*' -or $_.Name -like '*Cortana*' -or $_.Name -like '*3DViewer*' -or $_.Name -like '*Maps*' -or $_.Name -like '*Weather*' -or $_.Name -like '*BingWeather*' -or $_.Name -like '*Money*' -or $_.Name -like '*BingFinance*' -or $_.Name -like '*News*' -or $_.Name -like '*BingNews*' -or $_.Name -like '*Sports*' -or $_.Name -like '*BingSports*' } | Remove-AppxPackage -ErrorAction SilentlyContinue"
+echo.
+echo Selesai! Bloatware telah dihapus.
+echo Beberapa aplikasi mungkin masih muncul tapi tidak dapat dibuka.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == HARDWARE & DIAGNOSA: CEK SUHU CPU & MOTHERBOARD
+:: ==================================================================
+
+:RUN_CHECK_CPU_TEMP
+cls
+echo ===================================================
+echo         CEK SUHU CPU ^& MOTHERBOARD
+echo ===================================================
+echo.
+echo Memeriksa suhu hardware...
+echo.
+powershell -NoProfile -Command "$cpu = Get-CimInstance MSAcpi_ThermalZoneTemperature -ErrorAction SilentlyContinue; if ($cpu) { foreach ($c in $cpu) { $temp = [math]::Round(($c.CurrentTemperature / 10) - 273.15, 2); Write-Host ('Zone: ' + $c.InstanceName); Write-Host ('Suhu: ' + $temp + ' C') } } else { Write-Host 'Sensor suhu tidak tersedia. Mencoba alternatif...' }"
+echo.
+powershell -NoProfile -Command "try { $wmi = Get-WmiObject MSAcpi_ThermalZoneTemperature -Namespace 'root/wmi' -ErrorAction SilentlyContinue; if ($wmi) { foreach ($w in $wmi) { $temp = [math]::Round(($w.CurrentTemperature / 10) - 273.15, 2); Write-Host ('Zone: ' + $w.InstanceName); Write-Host ('Suhu: ' + $temp + ' C') } } else { Write-Host 'Sensor suhu WMI tidak tersedia.' } } catch { Write-Host 'Gagal membaca suhu via WMI.' }"
+echo.
+echo Catatan: Tidak semua motherboard/laptop mendukung pembacaan suhu via WMI.
+echo Untuk detail lebih akurat, gunakan software seperti HWMonitor atau CoreTemp.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == HARDWARE & DIAGNOSA: TEST AUDIO OUTPUT
+:: ==================================================================
+
+:RUN_TEST_AUDIO
+cls
+echo ===================================================
+echo              TEST AUDIO OUTPUT
+echo ===================================================
+echo.
+echo Memutar suara test...
+echo.
+powershell -NoProfile -Command "$player = New-Object Media.SoundPlayer; $player.SoundLocation = 'C:\Windows\Media\Windows Error.wav'; $player.PlaySync(); Write-Host 'Suara test diputar: Windows Error.wav'"
+echo.
+echo Jika Anda mendengar suara, audio berfungsi normal.
+echo Jika tidak, cek:
+echo - Driver audio terinstall?
+echo - Speaker/earphone terhubung?
+echo - Volume tidak mute?
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == HARDWARE & DIAGNOSA: TEST WEBCAM
+:: ==================================================================
+
+:RUN_TEST_WEBCAM
+cls
+echo ===================================================
+echo               TEST WEBCAM
+echo ===================================================
+echo.
+echo Mencari webcam yang terhubung...
+echo.
+powershell -NoProfile -Command "$webcams = Get-CimInstance Win32_PnPEntity | Where-Object { $_.Name -like '*Camera*' -or $_.Name -like '*Webcam*' -or $_.Name -like '*Integrated Camera*' }; if ($webcams) { Write-Host 'Webcam terdeteksi:'; $webcams | ForEach-Object { Write-Host ('  - ' + $_.Name) } } else { Write-Host 'Tidak ada webcam terdeteksi.' }"
+echo.
+echo Untuk test visual, jalankan aplikasi Camera Windows:
+echo Win + R, ketik: microsoft.windows.camera:
+echo.
+powershell -NoProfile -Command "Start-Process 'microsoft.windowscamera:' -ErrorAction SilentlyContinue"
+echo.
+echo Aplikasi Camera dibuka (jika tersedia).
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == HARDWARE & DIAGNOSA: CEK KAPASITAS DISK
+:: ==================================================================
+
+:RUN_CHECK_DISK_SPACE
+cls
+echo ===================================================
+echo            CEK KAPASITAS DISK
+echo ===================================================
+echo.
+echo Informasi semua drive:
+echo.
+powershell -NoProfile -Command "Get-Volume | Select-Object DriveLetter,FileSystemLabel,FileSystem,Size,SizeRemaining,HealthStatus | Format-Table -AutoSize"
+echo.
+echo Detail kapasitas dan penggunaan:
+echo.
+powershell -NoProfile -Command "Get-Volume | ForEach-Object { $used = $_.Size - $_.SizeRemaining; $percent = [math]::Round(($used / $_.Size) * 100, 2); Write-Host ('Drive ' + $_.DriveLetter + ':'); Write-Host ('  Label: ' + $_.FileSystemLabel); Write-Host ('  Total: ' + [math]::Round($_.Size / 1GB, 2) + ' GB'); Write-Host ('  Free: ' + [math]::Round($_.SizeRemaining / 1GB, 2) + ' GB'); Write-Host ('  Used: ' + $percent + ' %'); Write-Host ('  Health: ' + $_.HealthStatus); Write-Host '' }"
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == HARDWARE & DIAGNOSA: TEST KEYBOARD & MOUSE
+:: ==================================================================
+
+:RUN_TEST_KEYBOARD_MOUSE
+cls
+echo ===================================================
+echo           TEST KEYBOARD ^& MOUSE
+echo ===================================================
+echo.
+echo MEMERIKSA PERIPHERAL TERHUBUNG...
+echo.
+echo --- KEYBOARD ---
+powershell -NoProfile -Command "$keyboards = Get-CimInstance Win32_Keyboard; if ($keyboards) { Write-Host 'Keyboard terdeteksi:'; $keyboards | ForEach-Object { Write-Host ('  - ' + $_.Description) } } else { Write-Host 'Tidak ada keyboard terdeteksi.' }"
+echo.
+echo --- MOUSE / POINTING DEVICE ---
+powershell -NoProfile -Command "$mice = Get-CimInstance Win32_PointingDevice; if ($mice) { Write-Host 'Mouse/Pointing Device terdeteksi:'; $mice | ForEach-Object { Write-Host ('  - ' + $_.Description) } } else { Write-Host 'Tidak ada mouse terdeteksi.' }"
+echo.
+echo TEST INTERAKTIF:
+echo - Tekan tombol keyboard mana saja untuk test keyboard...
+echo - Gerakkan mouse untuk test mouse...
+echo.
+echo Tekan tombol apa saja untuk mengakhiri test...
+pause >nul
+echo.
+echo Test selesai. Jika tidak ada respon, peripheral mungkin bermasalah.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == NETWORK & USB: FORMAT FLASHDISK VIA DISKPART
+:: ==================================================================
+
+:RUN_FORMAT_USB_DISKPART
+cls
+echo ===================================================
+echo       FORMAT FLASHDISK VIA DISKPART
+echo ===================================================
+echo.
+echo PERINGATAN: Semua data di flashdisk akan dihapus permanen!
+echo.
+set "usb_drive="
+set /p "usb_drive=Masukkan huruf drive flashdisk (misal: E): "
+if not defined usb_drive (
+    echo Huruf drive tidak boleh kosong.
+    pause
+    goto MAIN_MENU
+)
+if not exist "%usb_drive%:\" (
+    echo Drive %usb_drive%: tidak ditemukan.
+    pause
+    goto MAIN_MENU
+)
+echo.
+echo Diskpart akan menghapus dan memformat drive %usb_drive%:
+echo.
+set "confirm="
+set /p "confirm=Yakin ingin melanjutkan? (Y/N): "
+if /i not "!confirm!"=="Y" goto MAIN_MENU
+echo.
+echo Membuat script diskpart...
+echo select disk %usb_drive% > "%temp%\formatusb.txt"
+echo clean >> "%temp%\formatusb.txt"
+echo create partition primary >> "%temp%\formatusb.txt"
+echo format fs=ntfs quick >> "%temp%\formatusb.txt"
+echo assign >> "%temp%\formatusb.txt"
+echo.
+echo Menjalankan diskpart...
+diskpart /s "%temp%\formatusb.txt"
+del "%temp%\formatusb.txt" >nul 2>&1
+echo.
+echo Selesai! Flashdisk telah diformat.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == NETWORK & USB: RESET NETWORK FULL
+:: ==================================================================
+
+:RUN_RESET_NETWORK_FULL
+cls
+echo ===================================================
+echo          RESET NETWORK FULL
+echo ===================================================
+echo.
+echo Mengembalikan semua setting jaringan ke default...
+echo Proses ini akan:
+echo - Reset Winsock
+echo - Reset TCP/IP stack
+echo - Flush DNS
+echo - Release/Renew IP
+echo - Hapus cache ARP dan routing
+echo.
+set "net_confirm="
+set /p "net_confirm=Lanjutkan? (Y/N): "
+if /i not "!net_confirm!"=="Y" goto MAIN_MENU
+echo.
+echo 1. Reset Winsock...
+netsh winsock reset
+echo.
+echo 2. Reset TCP/IP stack...
+netsh int ip reset
+echo.
+echo 3. Flush DNS...
+ipconfig /flushdns
+echo.
+echo 4. Release IP...
+ipconfig /release
+echo.
+echo 5. Renew IP...
+ipconfig /renew
+echo.
+echo 6. Hapus cache ARP...
+arp -d *
+echo.
+echo 7. Hapus cache routing...
+route -f
+echo.
+echo 8. Flush NetBIOS cache...
+nbtstat -R
+echo.
+echo 9. Reset Firewall ke default (opsional)...
+netsh advfirewall reset
+echo.
+echo Selesai! Jaringan telah di-reset ke default.
+echo Restart komputer disarankan.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == USER & AKUN: BUAT USER BARU
+:: ==================================================================
+
+:RUN_CREATE_NEW_USER
+cls
+echo ===================================================
+echo             BUAT USER BARU
+echo ===================================================
+echo.
+set "new_username="
+set /p "new_username=Username baru: "
+if not defined new_username (
+    echo Username tidak boleh kosong.
+    pause
+    goto MAIN_MENU
+)
+set "new_password="
+set /p "new_password=Password: "
+if not defined new_password (
+    echo Password tidak boleh kosong.
+    pause
+    goto MAIN_MENU
+)
+echo.
+echo Membuat user %new_username%...
+net user "%new_username%" "%new_password%" /add
+if errorlevel 1 (
+    echo [ERROR] Gagal membuat user.
+) else (
+    echo User berhasil dibuat.
+    echo.
+    echo Menambahkan ke grup Administrators?
+    set "admin_confirm="
+    set /p "admin_confirm=Tambah sebagai admin? (Y/N): "
+    if /i "!admin_confirm!"=="Y" (
+        net localgroup Administrators "%new_username%" /add
+        echo User ditambahkan ke grup Administrators.
+    )
+)
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == USER & AKUN: HAPUS USER PROFILE
+:: ==================================================================
+
+:RUN_DELETE_USER_PROFILE
+cls
+echo ===================================================
+echo           HAPUS USER PROFILE
+echo ===================================================
+echo.
+echo Daftar user di sistem:
+echo.
+net user
+echo.
+set "del_username="
+set /p "del_username=Username yang ingin dihapus profile-nya: "
+if not defined del_username (
+    echo Username tidak boleh kosong.
+    pause
+    goto MAIN_MENU
+)
+echo.
+echo PERINGATAN: Profile dan data user akan dihapus permanen!
+set "del_confirm="
+set /p "del_confirm=Yakin ingin menghapus profile %del_username%? (Y/N): "
+if /i not "!del_confirm!"=="Y" goto MAIN_MENU
+echo.
+echo Menghapus user %del_username%...
+net user "%del_username%" /delete
+if errorlevel 1 (
+    echo [ERROR] Gagal menghapus user.
+) else (
+    echo User berhasil dihapus.
+    echo.
+    echo Menghapus folder profile (jika masih ada)...
+    if exist "C:\Users\%del_username%" (
+        rd /s /q "C:\Users\%del_username%"
+        echo Folder profile dihapus.
+    )
+)
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == FITUR KHUSUS LAPTOP: CEK KESEHATAN BATERAI DETAIL
+:: ==================================================================
+
+:RUN_BATTERY_DETAIL
+cls
+echo ===================================================
+echo      CEK KESEHATAN BATERAI DETAIL
+echo ===================================================
+echo.
+echo Membuat laporan detail baterai...
+powercfg /batteryreport /output "%USERPROFILE%\Desktop\Battery_Detail.html" /duration 7 >nul 2>&1
+if errorlevel 1 (
+    echo [ERROR] Gagal. Fitur ini hanya untuk device dengan baterai.
+    pause
+    goto MAIN_MENU
+)
+echo.
+echo Laporan detail berhasil dibuat di Desktop.
+echo.
+echo Informasi yang ditampilkan:
+echo - Cycle count (berapa kali charge/discharge)
+echo - Design capacity vs Full charge capacity
+echo - Degradation capacity
+echo - History penggunaan baterai 7 hari terakhir
+echo.
+start "" "%USERPROFILE%\Desktop\Battery_Detail.html"
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == FITUR KHUSUS LAPTOP: CALIBRATE BATTERY
+:: ==================================================================
+
+:RUN_CALIBRATE_BATTERY
+cls
+echo ===================================================
+echo          CALIBRATE BATTERY
+echo ===================================================
+echo.
+echo Calibrasi baterai akan:
+echo 1. Charge baterai ke 100%% (jika belum)
+echo 2. Discharge hingga 0%%
+echo 3. Charge kembali ke 100%%
+echo.
+echo PERINGATAN: Proses ini memakan waktu beberapa jam.
+echo Jangan matikan laptop selama proses berjalan.
+echo.
+set "calib_confirm="
+set /p "calib_confirm=Lanjutkan? (Y/N): "
+if /i not "!calib_confirm!"=="Y" goto MAIN_MENU
+echo.
+echo Langkah-langkah manual:
+echo.
+echo 1. Charge laptop hingga 100%%, biarkan 1 jam.
+echo 2. Gunakan laptop sampai baterai habis dan mati sendiri.
+echo 3. Charge kembali hingga 100%% tanpa dinyalakan.
+echo 4. Nyalakan laptop, battery indicator seharusnya lebih akurat.
+echo.
+echo Untuk kalibrasi otomatis, gunakan software bawaan produsen.
+echo (misal: ASUS Battery Health Charging, Lenovo Vantage, dll)
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == MAINTENANCE: SCHEDULED AUTO CLEANUP
+:: ==================================================================
+
+:RUN_SCHEDULED_CLEANUP
+cls
+echo ===================================================
+echo        SCHEDULED AUTO CLEANUP
+echo ===================================================
+echo.
+echo Membuat task scheduler untuk otomatis bersihkan temp files.
+echo.
+set "task_name=AutoCleanup"
+schtasks /query /tn "%task_name%" >nul 2>&1
+if errorlevel 1 (
+    echo Task belum ada. Membuat task baru...
+    schtasks /create /tn "%task_name%" /tr "powershell -Command \"Get-ChildItem -Path $env:TEMP -Recurse -Force | Remove-Item -Force -ErrorAction SilentlyContinue; Get-ChildItem -Path 'C:\Windows\Temp' -Recurse -Force | Remove-Item -Force -ErrorAction SilentlyContinue\"" /sc weekly /d SUN /st 02:00 /ru SYSTEM /f
+    if errorlevel 1 (
+        echo [ERROR] Gagal membuat task.
+    ) else (
+        echo Task berhasil dibuat!
+        echo Akan berjalan setiap hari Minggu jam 02:00.
+    )
+) else (
+    echo Task sudah ada.
+    echo.
+    echo  [1] Hapus task
+    echo  [2] Biarkan task
+    set "task_opt="
+    set /p "task_opt=Pilih opsi: "
+    if "!task_opt!"=="1" (
+        schtasks /delete /tn "%task_name%" /f
+        echo Task berhasil dihapus.
+    )
+)
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == MAINTENANCE: OPTIMIZE SSD
+:: ==================================================================
+
+:RUN_OPTIMIZE_SSD
+cls
+echo ===================================================
+echo            OPTIMIZE SSD
+echo ===================================================
+echo.
+echo Mendeteksi drive SSD...
+echo.
+powershell -NoProfile -Command "$ssds = Get-PhysicalDisk | Where-Object { $_.MediaType -eq 'SSD' }; if ($ssds) { Write-Host 'Drive SSD terdeteksi:'; $ssds | ForEach-Object { Write-Host ('  - ' + $_.FriendlyName) } } else { Write-Host 'Tidak ada SSD terdeteksi.' }"
+echo.
+echo Menjalankan TRIM pada semua drive...
+powershell -NoProfile -Command "Optimize-Volume -Defrag -Verbose -ErrorAction SilentlyContinue"
+echo.
+echo Selesai! SSD telah dioptimasi (TRIM).
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == MAINTENANCE: DEFRAG HDD
+:: ==================================================================
+
+:RUN_DEFRAG_HDD
+cls
+echo ===================================================
+echo              DEFRAG HDD
+echo ===================================================
+echo.
+echo Mendeteksi drive HDD...
+echo.
+powershell -NoProfile -Command "$hdds = Get-PhysicalDisk | Where-Object { $_.MediaType -eq 'HDD' }; if ($hdds) { Write-Host 'Drive HDD terdeteksi:'; $hdds | ForEach-Object { Write-Host ('  - ' + $_.FriendlyName) } } else { Write-Host 'Tidak ada HDD terdeteksi.' }"
+echo.
+echo Defragmentasi semua drive HDD...
+defrag C: /O /V
+defrag D: /O /V >nul 2>&1
+defrag E: /O /V >nul 2>&1
+echo.
+echo Selesai! HDD telah didefragmentasi.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == SYSTEM: EMPTY RECYCLE BIN FORCE
+:: ==================================================================
+
+:RUN_EMPTY_RECYCLE_BIN_FORCE
+cls
+echo ===================================================
+echo         EMPTY RECYCLE BIN FORCE
+echo ===================================================
+echo.
+echo Membersihkan Recycle Bin secara paksa...
+echo.
+powershell -NoProfile -Command "Clear-RecycleBin -Force -ErrorAction SilentlyContinue"
+echo.
+echo Membersihkan file di $Recycle.Bin (hidden)...
+for /d %%d in (C:\$Recycle.Bin) do (
+    rd /s /q "%%d" >nul 2>&1
+)
+for /d %%d in (D:\$Recycle.Bin) do (
+    rd /s /q "%%d" >nul 2>&1
+)
+for /d %%d in (E:\$Recycle.Bin) do (
+    rd /s /q "%%d" >nul 2>&1
+)
+echo.
+echo Selesai! Recycle Bin telah dikosongkan paksa.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == SYSTEM: CEK WINDOWS ACTIVATION
+:: ==================================================================
+
+:RUN_CHECK_WINDOWS_ACTIVATION
+cls
+echo ===================================================
+echo        CEK WINDOWS ACTIVATION
+echo ===================================================
+echo.
+echo Memeriksa status aktivasi Windows...
+echo.
+cscript //nologo "%SystemRoot%\System32\slmgr.vbs" /dli
+echo.
+echo.
+echo Status detail:
+cscript //nologo "%SystemRoot%\System32\slmgr.vbs" /xpr
+echo.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == SYSTEM: CLEAN THUMBNAILS & ICON CACHE
+:: ==================================================================
+
+:RUN_CLEAN_THUMBNAILS_ICONS
+cls
+echo ===================================================
+echo     CLEAN THUMBNAILS ^& ICON CACHE
+echo ===================================================
+echo.
+echo Membersihkan cache thumbnail dan ikon yang mungkin corrupt...
+echo.
+echo 1. Menghentikan Windows Explorer...
+taskkill /f /im explorer.exe >nul 2>&1
+echo.
+echo 2. Menghapus file cache ikon...
+del /a /f /q "%localappdata%\IconCache.db" >nul 2>&1
+del /a /f /q "%localappdata%\IconCache_*.db" >nul 2>&1
+echo.
+echo 3. Menghapus file cache thumbnail...
+del /a /f /q "%localappdata%\Microsoft\Windows\Explorer\thumbcache_*.db" >nul 2>&1
+rd /s /q "%localappdata%\Microsoft\Windows\Explorer\IconCache" >nul 2>&1
+echo.
+echo 4. Membersihkan cache icon sistem...
+del /a /f /q "%localappdata%\Microsoft\Windows\Explorer\*.db" >nul 2>&1
+echo.
+echo 5. Menjalankan kembali Windows Explorer...
+start explorer.exe
+echo.
+echo ===================================================
+echo  SELESAI! Cache thumbnail dan ikon telah dibersihkan.
+echo  Windows akan membangun ulang cache secara otomatis.
+echo ===================================================
+echo.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == SYSTEM: RESET FONT CACHE
+:: ==================================================================
+
+:RUN_RESET_FONT_CACHE
+cls
+echo ===================================================
+echo           RESET FONT CACHE
+echo ===================================================
+echo.
+echo Membersihkan cache font yang mungkin corrupt...
+echo.
+echo 1. Menghentikan service Windows Font Cache Service...
+net stop "FontCache" >nul 2>&1
+echo.
+echo 2. Menghapus folder font cache...
+rd /s /q "%SystemRoot%\ServiceProfiles\LocalService\AppData\Local\FontCache" >nul 2>&1
+rd /s /q "%localappdata%\FontCache" >nul 2>&1
+echo.
+echo 3. Menjalankan kembali service Windows Font Cache Service...
+net start "FontCache" >nul 2>&1
+echo.
+echo ===================================================
+echo  SELESAI! Font cache telah di-reset.
+echo  Font yang tampil aneh seharusnya kembali normal.
+echo ===================================================
+echo.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == SYSTEM: REPAIR MICROSOFT OFFICE
+:: ==================================================================
+
+:RUN_REPAIR_OFFICE
+cls
+echo ===================================================
+echo        REPAIR MICROSOFT OFFICE
+echo ===================================================
+echo.
+echo Mencari instalasi Microsoft Office...
+echo.
+set "office_found=0"
+for /f "tokens=*" %%a in ('reg query "HKLM\SOFTWARE\Microsoft\Office\ClickToRun" /s /f "Configuration" 2^>nul ^| findstr "Configuration"') do (
+    set "office_found=1"
+)
+if "!office_found!"=="0" (
+    echo Microsoft Office tidak ditemukan atau bukan Click-to-Run.
+    echo.
+    echo Untuk Office MSI, gunakan Control Panel ^> Programs and Features.
+    pause
+    goto MAIN_MENU
+)
+echo.
+echo Menjalankan repair Microsoft Office...
+echo.
+echo PERINGATAN: Pastikan semua aplikasi Office ditutup.
+set "repair_confirm="
+set /p "repair_confirm=Lanjutkan repair? (Y/N): "
+if /i not "!repair_confirm!"=="Y" goto MAIN_MENU
+echo.
+echo Memulai repair...
+powershell -NoProfile -Command "Get-AppxPackage -Name '*Office*' | ForEach-Object { Repair-AppxPackage -PackageName $_.PackageFamilyName -ErrorAction SilentlyContinue }"
+echo.
+echo Mencoba metode alternatif via MSI...
+for /f "tokens=*" %%a in ('dir /b /s "%ProgramFiles%\Microsoft Office\Office16\EXCEL.EXE" 2^>nul') do (
+    set "office_path=%%a"
+    goto RUN_OFFICE_REPAIR_FOUND
+)
+echo.
+echo Selesai. Jika masih error, coba uninstall dan reinstall Office.
+pause
+goto MAIN_MENU
+
+:RUN_OFFICE_REPAIR_FOUND
+echo.
+echo Ditemukan Office di: %office_path%
+cd /d "%ProgramFiles%\Microsoft Office\Office16"
+excel.exe /repair
+echo.
+echo Repair command telah dijalankan.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
 :: == PEMELIHARAAN: PERBAIKI FILE SISTEM DENGAN SFC DAN DISM
 :: ==================================================================
 
@@ -1443,18 +2302,6 @@ powershell -NoProfile -ExecutionPolicy Bypass -Command "$ErrorActionPreference='
 echo  +---------------------------------------------------------------+
 goto :eof
 
-:RUN_SPEEDTEST_GOOGLE
-goto RUN_SPEEDTEST_ADAPTERS
-cls
-echo ===================================================
-echo       SPEEDTEST INTERNET - SERVER PUBLIK
-echo ===================================================
-echo.
-powershell -NoProfile -ExecutionPolicy Bypass -Command "$ErrorActionPreference='SilentlyContinue'; $target='speed.cloudflare.com'; $targetIps=@(Resolve-DnsName -Name $target -Type A -ErrorAction SilentlyContinue | Select-Object -ExpandProperty IPAddress); $targetIp=if ($targetIps.Count -gt 0) {$targetIps -join ', '} else {'tidak dapat diketahui'}; Write-Host ('Server speedtest: ' + $target + ' [' + $targetIp + ']'); Write-Host 'Mengukur ping, latensi, dan jitter ke server publik...'; $pingValues=@(); 1..10 | ForEach-Object { $reply=Test-Connection -ComputerName $target -Count 1 -ErrorAction SilentlyContinue; if ($reply) {$pingValues += [double]$reply.ResponseTime} }; $ping=$null; $latency=$null; $jitter=$null; if ($pingValues.Count -gt 0) {$ping=[math]::Round(($pingValues | Measure-Object -Average).Average,2); $latency=$ping; if ($pingValues.Count -gt 1) {$jitterValues=@(); for ($index=1; $index -lt $pingValues.Count; $index++) {$jitterValues += [math]::Abs($pingValues[$index]-$pingValues[$index-1])}; $jitter=[math]::Round(($jitterValues | Measure-Object -Average).Average,2)} else {$jitter=0}}; Write-Host 'Mengukur download melalui HTTPS server publik selama 8 detik...'; $handler=New-Object System.Net.Http.HttpClientHandler; $handler.AutomaticDecompression=[System.Net.DecompressionMethods]::GZip -bor [System.Net.DecompressionMethods]::Deflate; $client=New-Object System.Net.Http.HttpClient($handler); $client.Timeout=[TimeSpan]::FromSeconds(15); $downloadBytes=0; $downloadWatch=[Diagnostics.Stopwatch]::StartNew(); try {while ($downloadWatch.Elapsed.TotalSeconds -lt 8) {$response=$client.GetAsync(('https://speed.cloudflare.com/__down?bytes=25000000&speedtest=' + [guid]::NewGuid()),[System.Net.Http.HttpCompletionOption]::ResponseContentRead).Result; $downloadBytes += $response.Content.ReadAsByteArrayAsync().Result.Length; $response.Dispose()}} catch {}; $downloadWatch.Stop(); $downloadMbps=0; if ($downloadWatch.Elapsed.TotalSeconds -gt 0) {$downloadMbps=[math]::Round(($downloadBytes*8/$downloadWatch.Elapsed.TotalSeconds/1000000),2)}; Write-Host 'Mengukur upload dengan payload HTTPS 4 MB ke server publik...'; $uploadPayload=New-Object byte[] (4MB); (New-Object System.Random).NextBytes($uploadPayload); $uploadWatch=[Diagnostics.Stopwatch]::StartNew(); try {$uploadResponse=$client.PostAsync('https://speed.cloudflare.com/__up',[System.Net.Http.ByteArrayContent]::new($uploadPayload)).Result; $uploadResponse.Dispose()} catch {}; $uploadWatch.Stop(); $uploadMbps=0; if ($uploadWatch.Elapsed.TotalSeconds -gt 0) {$uploadMbps=[math]::Round(($uploadPayload.Length*8/$uploadWatch.Elapsed.TotalSeconds/1000000),2)}; $client.Dispose(); Write-Host ''; Write-Host '================ HASIL SPEEDTEST ================'; if ($ping -ne $null) {Write-Host ('Ping       : ' + $ping + ' ms')} else {Write-Host 'Ping       : gagal'}; if ($latency -ne $null) {Write-Host ('Latensi    : ' + $latency + ' ms (rata-rata respons server publik)')} else {Write-Host 'Latensi    : gagal'}; if ($jitter -ne $null) {Write-Host ('Jitter     : ' + $jitter + ' ms (perubahan antar-sampel latensi)')} else {Write-Host 'Jitter     : gagal'}; Write-Host ('Download   : ' + $downloadMbps + ' Mbps (HTTPS dari server publik)'); Write-Host ('Upload     : ' + $uploadMbps + ' Mbps (HTTPS ke server publik)'); Write-Host ''; Write-Host 'Keterangan:'; Write-Host '- Mbps lebih besar berarti transfer data lebih cepat.'; Write-Host '- Ping dan latensi lebih kecil berarti respons lebih cepat.'; Write-Host '- Jitter lebih kecil berarti koneksi lebih stabil.'; Write-Host '- Hasil dipengaruhi Wi-Fi, VPN, trafik, dan beban server speedtest.'; Write-Host '- IP server dapat berubah karena memakai jaringan CDN anycast.'"
-echo.
-echo Speedtest selesai.
-pause
-goto MAIN_MENU
 
 
 :: ==================================================================
@@ -1553,6 +2400,9 @@ echo  [1] Device Manager
 echo  [2] Services
 echo  [3] Network Connections
 echo  [4] Add / Remove Programs
+echo  [5] Event Viewer
+echo  [6] Task Manager
+echo  [7] Control Panel
 echo  [0] Kembali
 echo.
 set "admin_shortcut="
@@ -1561,6 +2411,9 @@ if "!admin_shortcut!"=="1" start "Device Manager" devmgmt.msc
 if "!admin_shortcut!"=="2" start "Services" services.msc
 if "!admin_shortcut!"=="3" start "Network Connections" ncpa.cpl
 if "!admin_shortcut!"=="4" start "Programs and Features" appwiz.cpl
+if "!admin_shortcut!"=="5" start "Event Viewer" eventvwr.msc
+if "!admin_shortcut!"=="6" start "Task Manager" taskmgr
+if "!admin_shortcut!"=="7" start "Control Panel" control
 if "!admin_shortcut!"=="0" goto MAIN_MENU
 if not "!admin_shortcut!"=="0" pause
 goto RUN_ADMIN_SHORTCUTS
@@ -1924,3 +2777,459 @@ if /i "!core_isolation_status!"=="0x1" (
 )
 pause
 goto CORE_ISOLATION_MENU
+
+
+:: ==================================================================
+:: == PRIVACY & HISTORY: CLEAR RECENT FILES
+:: ==================================================================
+
+:RUN_CLEAR_RECENT_FILES
+cls
+echo ===================================================
+echo          CLEAR RECENT FILES
+echo ===================================================
+echo.
+echo Membersihkan history dokumen, run, dan recent files...
+echo.
+echo 1. Clear jump list...
+reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist" /f >nul 2>&1
+echo.
+echo 2. Clear run history...
+reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU" /f >nul 2>&1
+echo.
+echo 3. Clear recent documents...
+reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs" /f >nul 2>&1
+echo.
+echo 4. Clear typed paths...
+reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths" /f >nul 2>&1
+echo.
+echo 5. Clear recent files from Office...
+reg delete "HKCU\Software\Microsoft\Office\*\User MRU" /f >nul 2>&1
+echo.
+echo 6. Clear recent files from Windows Media Player...
+reg delete "HKCU\Software\Microsoft\MediaPlayer\Player\RecentFileList" /f >nul 2>&1
+echo.
+echo ===================================================
+echo  SELESAI! History recent files telah dibersihkan.
+echo ===================================================
+echo.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == PRIVACY & HISTORY: CLEAR RUN HISTORY
+:: ==================================================================
+
+:RUN_CLEAR_RUN_HISTORY
+cls
+echo ===================================================
+echo           CLEAR RUN HISTORY
+echo ===================================================
+echo.
+echo Membersihkan history command prompt run...
+echo.
+reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU" /f >nul 2>&1
+echo.
+echo Selesai! History run CMD telah dibersihkan.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == PRIVACY & HISTORY: TOGGLE CORTANA
+:: ==================================================================
+
+:RUN_TOGGLE_CORTANA
+cls
+echo ===================================================
+echo           TOGGLE CORTANA
+echo ===================================================
+echo.
+reg query "HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search" /v AllowCortana >nul 2>&1
+if errorlevel 1 (
+    echo Cortana belum diatur di registry.
+    echo.
+    echo  [1] Matikan Cortana
+    echo  [2] Aktifkan Cortana
+    echo  [0] Batal
+    echo.
+    set "cortana_opt="
+    set /p "cortana_opt=Pilih opsi: "
+    if "!cortana_opt!"=="1" (
+        reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search" /v AllowCortana /t REG_DWORD /d 0 /f
+        echo Cortana telah dimatikan.
+    )
+    if "!cortana_opt!"=="2" (
+        reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search" /v AllowCortana /t REG_DWORD /d 1 /f
+        echo Cortana telah diaktifkan.
+    )
+) else (
+    reg query "HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search" /v AllowCortana | findstr "0x0" >nul
+    if errorlevel 1 (
+        echo Status Cortana: AKTIF
+        echo.
+        echo  [1] Matikan Cortana
+        echo  [0] Batal
+        set "cortana_opt="
+        set /p "cortana_opt=Pilih opsi: "
+        if "!cortana_opt!"=="1" (
+            reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search" /v AllowCortana /t REG_DWORD /d 0 /f
+            echo Cortana telah dimatikan.
+        )
+    ) else (
+        echo Status Cortana: NONAKTIF
+        echo.
+        echo  [1] Aktifkan Cortana
+        echo  [0] Batal
+        set "cortana_opt="
+        set /p "cortana_opt=Pilih opsi: "
+        if "!cortana_opt!"=="1" (
+            reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search" /v AllowCortana /t REG_DWORD /d 1 /f
+            echo Cortana telah diaktifkan.
+        )
+    )
+)
+echo.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == PRIVACY & HISTORY: TOGGLE TELEMETRY
+:: ==================================================================
+
+:RUN_TOGGLE_TELEMETRY
+cls
+echo ===================================================
+echo          TOGGLE TELEMETRY
+echo ===================================================
+echo.
+echo Telemetry Windows mengirim data penggunaan ke Microsoft.
+echo.
+reg query "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTelemetry >nul 2>&1
+if errorlevel 1 (
+    echo Telemetry belum diatur di registry.
+    echo.
+    echo  [1] Matikan Telemetry (Minimal)
+    echo  [2] Aktifkan Telemetry (Full)
+    echo  [0] Batal
+    echo.
+    set "telemetry_opt="
+    set /p "telemetry_opt=Pilih opsi: "
+    if "!telemetry_opt!"=="1" (
+        reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTelemetry /t REG_DWORD /d 0 /f
+        echo Telemetry telah dimatikan (Minimal).
+    )
+    if "!telemetry_opt!"=="2" (
+        reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTelemetry /t REG_DWORD /d 3 /f
+        echo Telemetry telah diaktifkan (Full).
+    )
+) else (
+    reg query "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTelemetry | findstr "0x0" >nul
+    if errorlevel 1 (
+        echo Status Telemetry: AKTIF/DEFAULT
+        echo.
+        echo  [1] Barikan Telemetry (Minimal)
+        echo  [0] Batal
+        set "telemetry_opt="
+        set /p "telemetry_opt=Pilih opsi: "
+        if "!telemetry_opt!"=="1" (
+            reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTelemetry /t REG_DWORD /d 0 /f
+            echo Telemetry telah dimatikan (Minimal).
+        )
+    ) else (
+        echo Status Telemetry: NONAKTIF (Minimal)
+        echo.
+        echo  [1] Aktifkan Telemetry (Full)
+        echo  [0] Batal
+        set "telemetry_opt="
+        set /p "telemetry_opt=Pilih opsi: "
+        if "!telemetry_opt!"=="1" (
+            reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTelemetry /t REG_DWORD /d 3 /f
+            echo Telemetry telah diaktifkan (Full).
+        )
+    )
+)
+echo.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == PRIVACY & HISTORY: TOGGLE NOTIFICATIONS
+:: ==================================================================
+
+:RUN_TOGGLE_NOTIFICATIONS
+cls
+echo ===================================================
+echo       TOGGLE NOTIFICATIONS (FOCUS MODE)
+echo ===================================================
+echo.
+reg query "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\PushNotifications" /v ToastEnabled >nul 2>&1
+if errorlevel 1 (
+    echo Notifications belum diatur di registry.
+    echo.
+    echo  [1] Matikan Notifications (Focus Mode)
+    echo  [2] Aktifkan Notifications
+    echo  [0] Batal
+    echo.
+    set "notif_opt="
+    set /p "notif_opt=Pilih opsi: "
+    if "!notif_opt!"=="1" (
+        reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\PushNotifications" /v ToastEnabled /t REG_DWORD /d 0 /f
+        echo Notifications telah dimatikan (Focus Mode aktif).
+    )
+    if "!notif_opt!"=="2" (
+        reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\PushNotifications" /v ToastEnabled /t REG_DWORD /d 1 /f
+        echo Notifications telah diaktifkan.
+    )
+) else (
+    reg query "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\PushNotifications" /v ToastEnabled | findstr "0x0" >nul
+    if errorlevel 1 (
+        echo Status Notifications: AKTIF
+        echo.
+        echo  [1] Matikan Notifications (Focus Mode)
+        echo  [0] Batal
+        set "notif_opt="
+        set /p "notif_opt=Pilih opsi: "
+        if "!notif_opt!"=="1" (
+            reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\PushNotifications" /v ToastEnabled /t REG_DWORD /d 0 /f
+            echo Notifications telah dimatikan (Focus Mode aktif).
+        )
+    ) else (
+        echo Status Notifications: NONAKTIF (Focus Mode)
+        echo.
+        echo  [1] Aktifkan Notifications
+        echo  [0] Batal
+        set "notif_opt="
+        set /p "notif_opt=Pilih opsi: "
+        if "!notif_opt!"=="1" (
+            reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\PushNotifications" /v ToastEnabled /t REG_DWORD /d 1 /f
+            echo Notifications telah diaktifkan.
+        )
+    )
+)
+echo.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == SYSTEM TWEAKS: RENAME COMPUTER
+:: ==================================================================
+
+:RUN_RENAME_COMPUTER
+cls
+echo ===================================================
+echo            RENAME COMPUTER
+echo ===================================================
+echo.
+echo Nama komputer saat ini:
+hostname
+echo.
+set "new_name="
+set /p "new_name=Masukkan nama komputer baru: "
+if not defined new_name (
+    echo Nama komputer tidak boleh kosong.
+    pause
+    goto MAIN_MENU
+)
+echo.
+echo Mengubah nama komputer menjadi: %new_name%...
+wmic computersystem where name="%COMPUTERNAME%" call rename name="%new_name%"
+if errorlevel 1 (
+    echo [ERROR] Gagal mengubah nama komputer.
+) else (
+    echo Selesai! Nama komputer berhasil diubah menjadi %new_name%.
+    echo Restart komputer untuk menerapkan perubahan.
+)
+echo.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == SYSTEM TWEAKS: CHECK COMPUTER NAME
+:: ==================================================================
+
+:RUN_CHECK_COMPUTER_NAME
+cls
+echo ===================================================
+echo           CHECK COMPUTER NAME
+echo ===================================================
+echo.
+echo Nama komputer saat ini:
+hostname
+echo.
+echo Nama komputer lengkap:
+wmic computersystem get name
+echo.
+echo Workgroup/Domain:
+wmic computersystem get domain
+echo.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == SYSTEM TWEAKS: TOGGLE HIBERNATION
+:: ==================================================================
+
+:RUN_TOGGLE_HIBERNATION
+cls
+echo ===================================================
+echo          TOGGLE HIBERNATION
+echo ===================================================
+echo.
+powercfg /hibernate | findstr /i "hibernate"
+if errorlevel 1 (
+    echo Status Hibernation: MATIK
+    echo.
+    echo  [1] Aktifkan Hibernation
+    echo  [0] Batal
+    echo.
+    set "hib_opt="
+    set /p "hib_opt=Pilih opsi: "
+    if "!hib_opt!"=="1" (
+        powercfg /hibernate on
+        echo Hibernation telah diaktifkan.
+    )
+) else (
+    echo Status Hibernation: AKTIF
+    echo.
+    echo  [1] Matikan Hibernation
+    echo  [0] Batal
+    echo.
+    set "hib_opt="
+    set /p "hib_opt=Pilih opsi: "
+    if "!hib_opt!"=="1" (
+        powercfg /hibernate off
+        echo Hibernation telah dimatikan.
+        echo File hiberfil.sys akan dihapus saat restart.
+    )
+)
+echo.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == SYSTEM TWEAKS: CHECK WINDOWS VERSION
+:: ==================================================================
+
+:RUN_CHECK_WINDOWS_VERSION
+cls
+echo ===================================================
+echo          CHECK WINDOWS VERSION
+echo ===================================================
+echo.
+systeminfo | findstr /B /C:"OS Name" /C:"OS Version" /C:"OS Build" /C:"System Type"
+echo.
+echo Detail lengkap:
+wmic os get Caption,Version,BuildNumber,SerialNumber,WindowsDirectory
+echo.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == SYSTEM TWEAKS: CHECK INSTALLED UPDATES
+:: ==================================================================
+
+:RUN_CHECK_INSTALLED_UPDATES
+cls
+echo ===================================================
+echo        CHECK INSTALLED UPDATES
+echo ===================================================
+echo.
+echo Daftar update Windows yang terinstall:
+echo.
+wmic qfe list brief /format:table
+echo.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == HARDWARE TEST: TEST MIKROFON
+:: ==================================================================
+
+:RUN_TEST_MICROPHONE
+cls
+echo ===================================================
+echo             TEST MIKROFON
+echo ===================================================
+echo.
+echo Mendeteksi perangkat audio input...
+echo.
+powershell -NoProfile -Command "$mics = Get-CimInstance Win32_PnPEntity | Where-Object { $_.Name -like '*Audio*' -or $_.Name -like '*Microphone*' -or $_.Name -like '*Mic*' }; if ($mics) { Write-Host 'Mikrofon terdeteksi:'; $mics | ForEach-Object { Write-Host ('  - ' + $_.Name) } } else { Write-Host 'Tidak ada mikrofon terdeteksi.' }"
+echo.
+echo Untuk test audio input:
+echo 1. Buka Settings ^> System ^> Sound ^> Input
+echo 2. Pilih mikrofon dan klik Test
+echo 3. Bicara untuk menguji level input
+echo.
+echo Atau buka aplikasi Voice Recorder untuk test rekaman.
+echo.
+powershell -NoProfile -Command "Start-Process 'mspaint:' -ErrorAction SilentlyContinue" >nul 2>&1
+echo Voice Recorder dibuka (Sound Recorder terintegrasi di Paint di Windows 11).
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == HARDWARE TEST: TAKE SCREENSHOT
+:: ==================================================================
+
+:RUN_TAKE_SCREENSHOT
+cls
+echo ===================================================
+echo            TAKE SCREENSHOT
+echo ===================================================
+echo.
+echo Screenshot akan diambil dan disimpan ke Desktop.
+echo.
+set "screenshot_name=Screenshot_%date:~-0,2%%date:~-3,2%%date:~-6,2%_%time:~0,2%%time:~3,2%%time:~6,2%.png"
+set "screenshot_path=%USERPROFILE%\Desktop\%screenshot_name%"
+echo.
+echo Menyimpan screenshot ke: %screenshot_path%
+echo.
+powershell -NoProfile -Command "Add-Type -AssemblyName System.Windows.Forms; Add-Type -AssemblyName System.Drawing; $bounds = [System.Windows.Forms.Screen]::PrimaryScreen.Bounds; $bmp = New-Object System.Drawing.Bitmap $bounds.width, $bounds.height; $graphics = [System.Drawing.Graphics]::FromImage($bmp); $graphics.CopyFromScreen($bounds.x, $bounds.y, $bounds.width, $bounds.height); $bmp.Save('%screenshot_path%'); $graphics.Dispose(); $bmp.Dispose(); Write-Host 'Screenshot berhasil disimpan.'"
+echo.
+if exist "%screenshot_path%" (
+    echo Selesai! Screenshot tersimpan di Desktop.
+    start "" "%screenshot_path%"
+) else (
+    echo [ERROR] Gagal mengambil screenshot.
+)
+echo.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == HARDWARE TEST: CHECK WEBCAM RESOLUTION
+:: ==================================================================
+
+:RUN_CHECK_WEBCAM_RESOLUTION
+cls
+echo ===================================================
+echo         CHECK WEBCAM RESOLUTION
+echo ===================================================
+echo.
+echo Mendeteksi webcam dan resolusi...
+echo.
+powershell -NoProfile -Command "$webcams = Get-CimInstance Win32_PnPEntity | Where-Object { $_.Name -like '*Camera*' -or $_.Name -like '*Webcam*' }; if ($webcams) { Write-Host 'Webcam terdeteksi:'; $webcams | ForEach-Object { Write-Host ('  - ' + $_.Name) } } else { Write-Host 'Tidak ada webcam terdeteksi.' }"
+echo.
+echo.
+echo Untuk cek resolusi webcam:
+echo 1. Buka aplikasi Camera Windows
+echo 2. Klik gear icon (Settings)
+echo 3. Lihat resolusi yang tersedia
+echo.
+powershell -NoProfile -Command "Start-Process 'microsoft.windowscamera:' -ErrorAction SilentlyContinue"
+echo.
+echo Aplikasi Camera dibuka.
+pause
+goto MAIN_MENU
