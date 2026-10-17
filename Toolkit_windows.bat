@@ -16,117 +16,38 @@ echo ===================================================
 echo            WINDOWS TOOLKIT GABUNGAN
 echo ===================================================
 echo.
-echo  --- WINDOWS UPDATE ^& SYSTEM ---
-echo  [1]  Matikan Windows Update ^& Bersihkan Cache Update
-echo  [2]  Aktifkan Kembali Windows Update
-echo  [3]  Empty Recycle Bin Force
-echo  [4]  Cek Windows Activation
-echo  [5]  Clean Thumbnails ^& Icon Cache
-echo  [6]  Reset Font Cache
-echo  [7]  Repair Microsoft Office
+echo  --- UPDATE ^& SYSTEM ---
+echo  [1] Matikan Update    [2] Aktifkan Update   [3] Empty Recycle   [4] Cek Activation
+echo  [5] Clean Thumbnails  [6] Reset Font       [7] Repair Office    [8] Pengaturan DNS
 echo.
-echo  --- DNS ^& NETWORK ---
-echo  [8]  Pengaturan DNS (IPv4, IPv6, DoH)
-echo  [9]  Refresh IP ^& Routing Jaringan
-echo  [10] Format Flashdisk via Diskpart
-echo  [11] Reset Network Full
-echo  [12] Kunci / Buka USB Storage
-echo  [13] Lihat Password Wi-Fi Tersimpan
-echo  [14] Bebaskan Port Macet (Kill PID)
+echo  --- NETWORK ^& CLEANUP ---
+echo  [9] Refresh IP        [10] Format USB       [11] Reset Network   [12] Kunci USB
+echo [13] Password Wi-Fi    [14] Kill Port        [15] Bersihkan Temp  [16] Bersihkan Clip
+echo [17] Cache Office      [18] Cache Chrome     [19] Cache Edge      [20] Cache Delivery
+echo [21] Bersihkan Log     [22] Auto Cleanup     [23] Optimize SSD     [24] Defrag HDD
 echo.
-echo  --- CLEANUP ^& MAINTENANCE ---
-echo  [15] Bersihkan File Sampah Umum (Temp, Prefetch, dll.)
-echo  [16] Bersihkan Riwayat Clipboard
-echo  [17] Bersihkan Cache Microsoft Office
-echo  [18] Bersihkan Cache Google Chrome
-echo  [19] Bersihkan Cache Microsoft Edge
-echo  [20] Hapus Cache Delivery Optimization (Hemat Disk)
-echo  [21] Bersihkan Semua Event Log
-echo  [22] Scheduled Auto Cleanup
-echo  [23] Optimize SSD
-echo  [24] Defrag HDD
+echo  --- UTILITAS ^& APPS ---
+echo [25] Restart Explorer  [26] Kill Not Resp    [27] Rebuild Cache    [28] Toggle File
+echo [29] GodMode           [30] Restart Adaptor  [31] Lihat Program    [32] Uninstall Paksa
+echo [33] Disable Startup   [34] Hapus Bloatware  [35] Reset Store      [36] Cek Suhu CPU
+echo [37] Test Audio        [38] Test Webcam      [39] Cek Kapasitas    [40] Test Keyboard
+echo [41] Cek Spesifikasi   [42] Speedtest        [43] Cek S.M.A.R.T    [44] Cek Driver
 echo.
-echo  --- UTILITAS SISTEM ---
-echo  [25] Restart Windows Explorer
-echo  [26] Tutup Paksa Aplikasi "Not Responding"
-echo  [27] Bangun Ulang Cache Ikon ^& Thumbnail
-echo  [28] Toggle File Tersembunyi ^& Ekstensi
-echo  [29] Buat Folder GodMode di Desktop
-echo  [30] Restart Semua Adaptor Jaringan
+echo  --- PRINTER ^& USER ---
+echo [45] Reset Spooler     [46] Restart Postgres [47] Buat User       [48] Hapus User
+echo [49] Aktif Admin       [50] Baterai Detail   [51] Calibrate        [52] Laporan Baterai
 echo.
-echo  --- MANAJEMEN APLIKASI ---
-echo  [31] Lihat Program Terinstall
-echo  [32] Uninstall Program Paksa
-echo  [33] Disable Startup Apps
-echo  [34] Hapus Bloatware Windows
-echo  [35] Reset Microsoft Store ^& Apps Bawaan
+echo  --- MAINTENANCE ---
+echo [53] Perbaiki SFC      [54] Folder Startup   [55] Reset Search     [56] Restore Point
+echo [57] Core Isolation    [58] Fast Startup     [59] Private Network [60] Backup Driver
+echo [61] Cek Lisensi       [62] Never Sleep       [63] Matikan Defender [64] Product Key
+echo [65] Cek Uptime        [66] Unhide Flashdisk  [67] Sync Jam         [68] Hapus Paksa
 echo.
-echo  --- HARDWARE ^& DIAGNOSA ---
-echo  [36] Cek Suhu CPU ^& Motherboard
-echo  [37] Test Audio Output
-echo  [38] Test Webcam
-echo  [39] Cek Kapasitas Disk
-echo  [40] Test Keyboard ^& Mouse
-echo  [41] Cek Spesifikasi Hardware ^& Sistem
-echo  [42] Speedtest Internet (Server Google)
-echo  [43] Cek Kesehatan SSD / HDD (S.M.A.R.T)
-echo  [44] Cek Driver Bermasalah (Error Code)
-echo.
-echo  --- PRINTER ^& PERIPHERAL ---
-echo  [45] Reset Print Spooler (Perbaiki Printer Macet)
-echo  [46] Restart Layanan Database PostgreSQL
-echo.
-echo  --- USER ^& AKUN ---
-echo  [47] Buat User Baru
-echo  [48] Hapus User Profile
-echo  [49] Aktifkan Akun Administrator Bawaan
-echo.
-echo  --- FITUR KHUSUS LAPTOP ---
-echo  [50] Cek Kesehatan Baterai Detail
-echo  [51] Calibrate Battery
-echo  [52] Laporan Kesehatan Baterai (Khusus Laptop)
-echo.
-echo  --- PEMELIHARAAN LANJUT ---
-echo  [53] Perbaiki File Sistem Corrupt (SFC ^& DISM)
-echo  [54] Buka Folder Startup Windows
-echo  [55] Reset Windows Search ^& Indexing
-echo  [56] Buat System Restore Point
-echo  [57] Core Isolation - Memory Integrity
-echo  [58] Toggle Fast Startup (Perbaiki Bug Shutdown)
-echo  [59] Ubah Jaringan ke Private (Fix Share Folder)
-echo.
-echo  --- SPESIALIS SERVIS PC ---
-echo  [60] Backup Semua Driver Sistem
-echo  [61] Cek Status Lisensi Windows
-echo  [62] Menu Pintas Admin
-echo  [63] Set Power Scheme Never Sleep
-echo  [64] Matikan Sementara Windows Defender
-echo  [65] Ekstrak Product Key Windows dari BIOS
-echo  [66] Cek Uptime Sistem ^& Umur Windows
-echo.
-echo  --- EMERGENCY TROUBLESHOOTING ---
-echo  [67] Unhide File Flashdisk (Pawang Virus Shortcut)
-echo  [68] Force Sync Jam Windows (Fix Error SSL)
-echo  [69] Hapus Paksa File / Folder Membandel
-echo.
-echo  --- PRIVACY ^& HISTORY ---
-echo  [70] Clear Recent Files
-echo  [71] Clear Run History
-echo  [72] Disable / Enable Cortana
-echo  [73] Disable / Enable Telemetry
-echo  [74] Disable / Enable Notifications
-echo.
-echo  --- SYSTEM TWEAKS ---
-echo  [75] Rename Computer
-echo  [76] Check Computer Name
-echo  [77] Enable / Disable Hibernation
-echo  [78] Check Windows Version
-echo  [79] Check Installed Updates
-echo.
-echo  --- HARDWARE TEST ---
-echo  [80] Test Mikrofon
-echo  [81] Take Screenshot
-echo  [82] Check Webcam Resolution
+echo  --- PRIVACY ^& TWEAKS ---
+echo [69] Clear Recent      [70] Clear Run        [71] Toggle Cortana   [72] Telemetry
+echo [73] Notifications    [74] Rename PC        [75] Cek Nama PC      [76] Hibernation
+echo [77] Windows Version   [78] Installed Updates [79] Test Mikrofon  [80] Screenshot
+echo [81] Webcam Res        [82] Event Viewer     [83] Task Manager     [84] Control Panel
 echo.
 echo  [0] Keluar
 echo ===================================================
@@ -194,27 +115,29 @@ if "%main_opt%"=="58" goto RUN_TOGGLE_FAST_STARTUP
 if "%main_opt%"=="59" goto RUN_SET_NETWORK_PRIVATE
 if "%main_opt%"=="60" goto RUN_BACKUP_DRIVERS
 if "%main_opt%"=="61" goto RUN_WINDOWS_LICENSE
-if "%main_opt%"=="62" goto RUN_ADMIN_SHORTCUTS
-if "%main_opt%"=="63" goto RUN_NEVER_SLEEP
-if "%main_opt%"=="64" goto RUN_DISABLE_DEFENDER_TEMP
-if "%main_opt%"=="65" goto RUN_GET_PRODUCT_KEY
-if "%main_opt%"=="66" goto RUN_CHECK_UPTIME
-if "%main_opt%"=="67" goto RUN_UNHIDE_FLASHDISK
-if "%main_opt%"=="68" goto RUN_SYNC_TIME
-if "%main_opt%"=="69" goto RUN_FORCE_DELETE
-if "%main_opt%"=="70" goto RUN_CLEAR_RECENT_FILES
-if "%main_opt%"=="71" goto RUN_CLEAR_RUN_HISTORY
-if "%main_opt%"=="72" goto RUN_TOGGLE_CORTANA
-if "%main_opt%"=="73" goto RUN_TOGGLE_TELEMETRY
-if "%main_opt%"=="74" goto RUN_TOGGLE_NOTIFICATIONS
-if "%main_opt%"=="75" goto RUN_RENAME_COMPUTER
-if "%main_opt%"=="76" goto RUN_CHECK_COMPUTER_NAME
-if "%main_opt%"=="77" goto RUN_TOGGLE_HIBERNATION
-if "%main_opt%"=="78" goto RUN_CHECK_WINDOWS_VERSION
-if "%main_opt%"=="79" goto RUN_CHECK_INSTALLED_UPDATES
-if "%main_opt%"=="80" goto RUN_TEST_MICROPHONE
-if "%main_opt%"=="81" goto RUN_TAKE_SCREENSHOT
-if "%main_opt%"=="82" goto RUN_CHECK_WEBCAM_RESOLUTION
+if "%main_opt%"=="62" goto RUN_NEVER_SLEEP
+if "%main_opt%"=="63" goto RUN_DISABLE_DEFENDER_TEMP
+if "%main_opt%"=="64" goto RUN_GET_PRODUCT_KEY
+if "%main_opt%"=="65" goto RUN_CHECK_UPTIME
+if "%main_opt%"=="66" goto RUN_UNHIDE_FLASHDISK
+if "%main_opt%"=="67" goto RUN_SYNC_TIME
+if "%main_opt%"=="68" goto RUN_FORCE_DELETE
+if "%main_opt%"=="69" goto RUN_CLEAR_RECENT_FILES
+if "%main_opt%"=="70" goto RUN_CLEAR_RUN_HISTORY
+if "%main_opt%"=="71" goto RUN_TOGGLE_CORTANA
+if "%main_opt%"=="72" goto RUN_TOGGLE_TELEMETRY
+if "%main_opt%"=="73" goto RUN_TOGGLE_NOTIFICATIONS
+if "%main_opt%"=="74" goto RUN_RENAME_COMPUTER
+if "%main_opt%"=="75" goto RUN_CHECK_COMPUTER_NAME
+if "%main_opt%"=="76" goto RUN_TOGGLE_HIBERNATION
+if "%main_opt%"=="77" goto RUN_CHECK_WINDOWS_VERSION
+if "%main_opt%"=="78" goto RUN_CHECK_INSTALLED_UPDATES
+if "%main_opt%"=="79" goto RUN_TEST_MICROPHONE
+if "%main_opt%"=="80" goto RUN_TAKE_SCREENSHOT
+if "%main_opt%"=="81" goto RUN_CHECK_WEBCAM_RESOLUTION
+if "%main_opt%"=="82" goto RUN_OPEN_EVENT_VIEWER
+if "%main_opt%"=="83" goto RUN_OPEN_TASK_MANAGER
+if "%main_opt%"=="84" goto RUN_OPEN_CONTROL_PANEL
 if "%main_opt%"=="0" exit
 goto MAIN_MENU
 
@@ -2390,34 +2313,6 @@ echo.
 pause
 goto MAIN_MENU
 
-:RUN_ADMIN_SHORTCUTS
-cls
-echo ===================================================
-echo                  MENU PINTAS ADMIN
-echo ===================================================
-echo.
-echo  [1] Device Manager
-echo  [2] Services
-echo  [3] Network Connections
-echo  [4] Add / Remove Programs
-echo  [5] Event Viewer
-echo  [6] Task Manager
-echo  [7] Control Panel
-echo  [0] Kembali
-echo.
-set "admin_shortcut="
-set /p "admin_shortcut=Pilih shortcut: "
-if "!admin_shortcut!"=="1" start "Device Manager" devmgmt.msc
-if "!admin_shortcut!"=="2" start "Services" services.msc
-if "!admin_shortcut!"=="3" start "Network Connections" ncpa.cpl
-if "!admin_shortcut!"=="4" start "Programs and Features" appwiz.cpl
-if "!admin_shortcut!"=="5" start "Event Viewer" eventvwr.msc
-if "!admin_shortcut!"=="6" start "Task Manager" taskmgr
-if "!admin_shortcut!"=="7" start "Control Panel" control
-if "!admin_shortcut!"=="0" goto MAIN_MENU
-if not "!admin_shortcut!"=="0" pause
-goto RUN_ADMIN_SHORTCUTS
-
 :RUN_NEVER_SLEEP
 cls
 echo ===================================================
@@ -2930,7 +2825,7 @@ if errorlevel 1 (
     if errorlevel 1 (
         echo Status Telemetry: AKTIF/DEFAULT
         echo.
-        echo  [1] Barikan Telemetry (Minimal)
+        echo  [1] Matikan Telemetry (Minimal)
         echo  [0] Batal
         set "telemetry_opt="
         set /p "telemetry_opt=Pilih opsi: "
@@ -3231,5 +3126,62 @@ echo.
 powershell -NoProfile -Command "Start-Process 'microsoft.windowscamera:' -ErrorAction SilentlyContinue"
 echo.
 echo Aplikasi Camera dibuka.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == ADMIN SHORTCUTS: OPEN EVENT VIEWER
+:: ==================================================================
+
+:RUN_OPEN_EVENT_VIEWER
+cls
+echo ===================================================
+echo           OPEN EVENT VIEWER
+echo ===================================================
+echo.
+echo Membuka Event Viewer...
+echo.
+eventvwr.msc
+echo.
+echo Event Viewer dibuka.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == ADMIN SHORTCUTS: OPEN TASK MANAGER
+:: ==================================================================
+
+:RUN_OPEN_TASK_MANAGER
+cls
+echo ===================================================
+echo           OPEN TASK MANAGER
+echo ===================================================
+echo.
+echo Membuka Task Manager...
+echo.
+taskmgr
+echo.
+echo Task Manager dibuka.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == ADMIN SHORTCUTS: OPEN CONTROL PANEL
+:: ==================================================================
+
+:RUN_OPEN_CONTROL_PANEL
+cls
+echo ===================================================
+echo           OPEN CONTROL PANEL
+echo ===================================================
+echo.
+echo Membuka Control Panel...
+echo.
+control
+echo.
+echo Control Panel dibuka.
 pause
 goto MAIN_MENU

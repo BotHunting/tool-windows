@@ -12,10 +12,11 @@
 
 ## 📊 Statistik
 
-- **Total Fitur**: 82 menu utama + 60+ opsi DNS
-- **Kategori**: 15 kategori fitur
-- **Baris Kode**: 3,234 baris
+- **Total Fitur**: 84 menu utama + 60+ opsi DNS
+- **Kategori**: 6 kategori utama dengan 16 sub-kategori
+- **Baris Kode**: 3,186 baris
 - **Bahasa**: Indonesia
+- **Layout Menu**: Compact 4 kolom dengan header kategori (terorganisir dan mudah dibaca)
 
 ---
 
@@ -106,7 +107,6 @@
 ### 1️⃣1️⃣ Spesialis Servis PC
 - 💾 Backup semua driver sistem
 - ✅ Cek status lisensi Windows
-- 🎛️ Menu pintas admin
 - 💤 Set power scheme Never Sleep
 - 🛡️ Matikan sementara Windows Defender
 - 🔑 Ekstrak Product Key Windows dari BIOS
@@ -118,23 +118,28 @@
 - 🗑️ Hapus paksa file/folder membandel
 
 ### 1️⃣3️⃣ Privacy & History
-- 📄 Clear Recent Files (history dokumen, run, recent)
-- 📋 Clear Run History (history command prompt)
-- 🤖 Disable/Enable Cortana (toggle asisten Windows)
-- 📊 Disable/Enable Telemetry (data collection Windows)
-- 🔔 Disable/Enable Notifications (focus mode)
+- 🗑️ Clear Recent Files (hapus history dokumen, run, recent files)
+- 📋 Clear Run History (hapus history command prompt run)
+- 🤖 Disable/Enable Cortana (matikan/aktifkan Cortana)
+- 📊 Disable/Enable Telemetry (matikan/aktifkan data collection Windows)
+- 🔕 Disable/Enable Notifications (Focus Mode - matikan notifikasi)
 
 ### 1️⃣4️⃣ System Tweaks
-- 💻 Rename Computer (ganti nama PC)
-- 🏷️ Check Computer Name (cek nama PC saat ini)
-- 💤 Enable/Disable Hibernation (hemat space disk)
-- 🔍 Check Windows Version (build number, detail)
-- 📦 Check Installed Updates (history update Windows)
+- 💻 Rename Computer (ubah nama komputer)
+- 🏷️ Check Computer Name (cek nama komputer saat ini)
+- 💤 Enable/Disable Hibernation (matikan/aktifkan hibernasi untuk hemat disk)
+- 🖥️ Check Windows Version (lihat versi Windows detail)
+- 📝 Check Installed Updates (lihat history update Windows)
 
 ### 1️⃣5️⃣ Hardware Test
-- 🎤 Test Mikrofon (cek mic untuk Zoom/Teams/Meet)
-- 📸 Take Screenshot (tangkap layar untuk dokumentasi)
+- 🎤 Test Mikrofon (cek microphone untuk Zoom/Teams/Meet)
+- 📸 Take Screenshot (ambil screenshot dan simpan ke Desktop)
 - 📷 Check Webcam Resolution (cek resolusi webcam)
+
+### 1️⃣6️⃣ Admin Shortcuts
+- 📋 Open Event Viewer (buka log event system)
+- 📊 Open Task Manager (buka task manager)
+- ⚙️ Open Control Panel (buka panel kontrol)
 
 ---
 
@@ -145,11 +150,13 @@
 Klik kanan pada Toolkit_windows.bat > Run as Administrator
 
 # 2. Pilih menu sesuai kebutuhan
-Masukkan nomor menu yang diinginkan
+Masukkan nomor menu yang diinginkan (1-84)
 
 # 3. Ikuti instruksi yang muncul
 Baca petunjuk dengan teliti sebelum konfirmasi
 ```
+
+**Catatan Layout**: Menu ditampilkan dalam format 3 kolom compact untuk menghemat space dan memudahkan navigasi.
 
 ---
 
@@ -162,8 +169,6 @@ Baca petunjuk dengan teliti sebelum konfirmasi
 | RAM | 512 MB | 2 GB+ |
 | Ruang Disk | 50 MB | 100 MB+ |
 | Akses | Administrator | Administrator |
-
----
 
 ---
 
