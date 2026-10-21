@@ -16,24 +16,24 @@ echo ===================================================
 echo            WINDOWS TOOLKIT GABUNGAN
 echo ===================================================
 echo.
-echo  --- UPDATE ^& SYSTEM ---
+echo  --- UPDATE SYSTEM ---
 echo  [1] Matikan Update    [2] Aktifkan Update   [3] Empty Recycle   [4] Cek Activation
 echo  [5] Clean Thumbnails  [6] Reset Font       [7] Repair Office    [8] Pengaturan DNS
 echo.
-echo  --- NETWORK ^& CLEANUP ---
+echo  --- NETWORK CLEANUP ---
 echo  [9] Refresh IP        [10] Format USB       [11] Reset Network   [12] Kunci USB
 echo [13] Password Wi-Fi    [14] Kill Port        [15] Bersihkan Temp  [16] Bersihkan Clip
 echo [17] Cache Office      [18] Cache Chrome     [19] Cache Edge      [20] Cache Delivery
 echo [21] Bersihkan Log     [22] Auto Cleanup     [23] Optimize SSD     [24] Defrag HDD
 echo.
-echo  --- UTILITAS ^& APPS ---
+echo  --- UTILITAS APPS ---
 echo [25] Restart Explorer  [26] Kill Not Resp    [27] Rebuild Cache    [28] Toggle File
 echo [29] GodMode           [30] Restart Adaptor  [31] Lihat Program    [32] Uninstall Paksa
 echo [33] Disable Startup   [34] Hapus Bloatware  [35] Reset Store      [36] Cek Suhu CPU
 echo [37] Test Audio        [38] Test Webcam      [39] Cek Kapasitas    [40] Test Keyboard
 echo [41] Cek Spesifikasi   [42] Speedtest        [43] Cek S.M.A.R.T    [44] Cek Driver
 echo.
-echo  --- PRINTER ^& USER ---
+echo  --- PRINTER USER ---
 echo [45] Reset Spooler     [46] Restart Postgres [47] Buat User       [48] Hapus User
 echo [49] Aktif Admin       [50] Baterai Detail   [51] Calibrate        [52] Laporan Baterai
 echo.
@@ -43,7 +43,7 @@ echo [57] Core Isolation    [58] Fast Startup     [59] Private Network [60] Back
 echo [61] Cek Lisensi       [62] Never Sleep       [63] Matikan Defender [64] Product Key
 echo [65] Cek Uptime        [66] Unhide Flashdisk  [67] Sync Jam         [68] Hapus Paksa
 echo.
-echo  --- PRIVACY ^& TWEAKS ---
+echo  --- PRIVACY TWEAKS ---
 echo [69] Clear Recent      [70] Clear Run        [71] Toggle Cortana   [72] Telemetry
 echo [73] Notifications    [74] Rename PC        [75] Cek Nama PC      [76] Hibernation
 echo [77] Windows Version   [78] Installed Updates [79] Test Mikrofon  [80] Screenshot
