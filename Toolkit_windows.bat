@@ -42,6 +42,16 @@ echo [53] Perbaiki SFC      [54] Folder Startup   [55] Reset Search     [56] Res
 echo [57] Core Isolation    [58] Fast Startup     [59] Private Network [60] Backup Driver
 echo [61] Cek Lisensi       [62] Never Sleep       [63] Matikan Defender [64] Product Key
 echo [65] Cek Uptime        [66] Unhide Flashdisk  [67] Sync Jam         [68] Hapus Paksa
+echo [85] Startup Repair    [86] System Image      [87] Disk Cleanup     [88] Compact OS
+echo [89] Page File
+echo.
+echo  --- QUICK ACTIONS ---
+echo [90] Restart Delay     [91] Shutdown Delay    [92] Force Restart    [93] Safe Mode
+echo [94] Boot to BIOS
+echo.
+echo  --- PERFORMANCE TUNING ---
+echo [95] Power Plan        [96] Performance       [97] Disable Serv     [98] Visual Effects
+echo [99] CPU Core Park
 echo.
 echo  --- PRIVACY TWEAKS ---
 echo [69] Clear Recent      [70] Clear Run        [71] Toggle Cortana   [72] Telemetry
@@ -122,6 +132,21 @@ if "%main_opt%"=="65" goto RUN_CHECK_UPTIME
 if "%main_opt%"=="66" goto RUN_UNHIDE_FLASHDISK
 if "%main_opt%"=="67" goto RUN_SYNC_TIME
 if "%main_opt%"=="68" goto RUN_FORCE_DELETE
+if "%main_opt%"=="85" goto RUN_STARTUP_REPAIR
+if "%main_opt%"=="86" goto RUN_SYSTEM_IMAGE_BACKUP
+if "%main_opt%"=="87" goto RUN_DISK_CLEANUP_MANAGER
+if "%main_opt%"=="88" goto RUN_COMPACT_OS
+if "%main_opt%"=="89" goto RUN_PAGE_FILE_MANAGER
+if "%main_opt%"=="90" goto RUN_RESTART_DELAY
+if "%main_opt%"=="91" goto RUN_SHUTDOWN_DELAY
+if "%main_opt%"=="92" goto RUN_FORCE_RESTART
+if "%main_opt%"=="93" goto RUN_SAFE_MODE_BOOT
+if "%main_opt%"=="94" goto RUN_BOOT_TO_BIOS
+if "%main_opt%"=="95" goto RUN_POWER_PLAN_MANAGER
+if "%main_opt%"=="96" goto RUN_PERFORMANCE_MODE
+if "%main_opt%"=="97" goto RUN_DISABLE_SERVICES
+if "%main_opt%"=="98" goto RUN_VISUAL_EFFECTS_TOGGLE
+if "%main_opt%"=="99" goto RUN_CPU_CORE_PARKING
 if "%main_opt%"=="69" goto RUN_CLEAR_RECENT_FILES
 if "%main_opt%"=="70" goto RUN_CLEAR_RUN_HISTORY
 if "%main_opt%"=="71" goto RUN_TOGGLE_CORTANA
@@ -3185,3 +3210,1150 @@ echo.
 echo Control Panel dibuka.
 pause
 goto MAIN_MENU
+
+
+:: ==================================================================
+:: == SYSTEM MAINTENANCE: STARTUP REPAIR
+:: ==================================================================
+
+:RUN_STARTUP_REPAIR
+cls
+echo ===================================================
+echo           STARTUP REPAIR WINDOWS
+echo ===================================================
+echo.
+echo Startup Repair akan memperbaiki masalah boot Windows.
+echo.
+echo PERINGATAN: PC akan restart dan masuk ke lingkungan repair.
+echo Pastikan Anda memiliki data penting tersimpan.
+echo.
+set "startup_repair_confirm="
+set /p "startup_repair_confirm=Lanjutkan? (Y/N): "
+if /i not "!startup_repair_confirm!"=="Y" goto MAIN_MENU
+echo.
+echo Memeriksa dan menjalankan Startup Repair...
+reagentc /enable >nul 2>&1
+bcdedit /set {default} recoveryenabled Yes >nul 2>&1
+bcdedit /set {default} bootstatuspolicy IgnoreAllFailures >nul 2>&1
+echo.
+echo Pengaturan Startup Repair telah diaktifkan.
+echo Untuk menjalankan repair sekarang, lakukan salah satu:
+echo.
+echo  [1] Restart sekarang dan tekan F8/F11 saat boot untuk Advanced Startup
+echo  [2] Buka Settings ^> Update ^& Security ^> Recovery ^> Advanced Startup
+echo  [3] Gunakan command: shutdown /r /o /t 0
+echo.
+set "startup_reboot_opt="
+set /p "startup_reboot_opt=Restart sekarang ke Advanced Startup? (Y/N): "
+if /i "!startup_reboot_opt!"=="Y" (
+    shutdown /r /o /t 0
+    exit /b
+)
+echo.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == SYSTEM MAINTENANCE: SYSTEM IMAGE BACKUP
+:: ==================================================================
+
+:RUN_SYSTEM_IMAGE_BACKUP
+cls
+echo ===================================================
+echo         SYSTEM IMAGE BACKUP
+echo ===================================================
+echo.
+echo System Image Backup akan membuat backup lengkap sistem Windows.
+echo.
+echo PERINGATAN: Proses ini memakan waktu lama dan ruang disk besar.
+echo Pastikan drive eksternal tersedia jika backup ke drive lain.
+echo.
+echo  [1] Backup ke Drive Eksternal (Rekomendasi)
+echo  [2] Backup ke Drive Lokal (C:\WindowsImageBackup)
+echo  [0] Batal
+echo.
+set "backup_opt="
+set /p "backup_opt=Pilih opsi: "
+if "%backup_opt%"=="0" goto MAIN_MENU
+if "%backup_opt%"=="1" (
+    echo.
+    echo Masukkan huruf drive tujuan (misal: D): 
+    set "backup_drive="
+    set /p "backup_drive=Drive: "
+    if not defined backup_drive goto RUN_SYSTEM_IMAGE_BACKUP
+    if not exist "%backup_drive%:\" (
+        echo Drive %backup_drive%: tidak ditemukan.
+        pause
+        goto RUN_SYSTEM_IMAGE_BACKUP
+    )
+    echo.
+    echo Memulai System Image Backup ke drive %backup_drive%:...
+    echo Proses ini mungkin memakan waktu berjam-jam.
+    pause
+    wbadmin start backup -backupTarget:%backup_drive%: -include:C: -allCritical -systemState -quiet
+    if errorlevel 1 (
+        echo [ERROR] Backup gagal. Pastikan drive tersedia dan cukup ruang.
+    ) else (
+        echo Backup berhasil! File image tersimpan di %backup_drive%:\WindowsImageBackup
+    )
+    pause
+    goto MAIN_MENU
+)
+if "%backup_opt%"=="2" (
+    echo.
+    echo PERINGATAN: Backup ke drive lokal akan memakan ruang di C:.
+    echo Pastikan cukup ruang tersedia (minimal 50GB).
+    set "backup_local_confirm="
+    set /p "backup_local_confirm=Lanjutkan? (Y/N): "
+    if /i not "!backup_local_confirm!"=="Y" goto MAIN_MENU
+    echo.
+    echo Memulai System Image Backup ke drive lokal...
+    wbadmin start backup -include:C: -allCritical -systemState -backupTarget:D: -quiet >nul 2>&1
+    if errorlevel 1 (
+        echo [ERROR] Backup ke lokal memerlukan drive terpisah.
+        echo Gunakan opsi [1] dengan drive eksternal.
+    ) else (
+        echo Backup berhasil!
+    )
+    pause
+    goto MAIN_MENU
+)
+echo Pilihan tidak valid.
+goto RUN_SYSTEM_IMAGE_BACKUP
+
+
+:: ==================================================================
+:: == SYSTEM MAINTENANCE: DISK CLEANUP MANAGER
+:: ==================================================================
+
+:RUN_DISK_CLEANUP_MANAGER
+cls
+echo ===================================================
+echo        DISK CLEANUP MANAGER
+echo ===================================================
+echo.
+echo Disk Cleanup akan membersihkan file sementara, cache, dan file sampah.
+echo.
+echo  [1] Disk Cleanup Biasa (C:)
+echo  [2] Disk Cleanup dengan Opsi Lengkap (Termasuk Update Windows)
+echo  [3] Disk Cleanup Semua Drive
+echo  [0] Batal
+echo.
+set "cleanup_opt="
+set /p "cleanup_opt=Pilih opsi: "
+if "%cleanup_opt%"=="0" goto MAIN_MENU
+if "%cleanup_opt%"=="1" (
+    echo.
+    echo Membuka Disk Cleanup untuk drive C:...
+    cleanmgr /dC:
+    echo Disk Cleanup dibuka.
+    pause
+    goto MAIN_MENU
+)
+if "%cleanup_opt%"=="2" (
+    echo.
+    echo Membersihkan dengan opsi lengkap (Windows Update Cache, dll)...
+    echo Proses ini akan memakan waktu dan memerlukan restart.
+    set "cleanup_full_confirm="
+    set /p "cleanup_full_confirm=Lanjutkan? (Y/N): "
+    if /i not "!cleanup_full_confirm!"=="Y" goto MAIN_MENU
+    echo.
+    echo Membersihkan Windows Update Cache dan sampah sistem...
+    cleanmgr /sagerun:1
+    echo.
+    echo Disk Cleanup selesai dengan opsi lengkap.
+    pause
+    goto MAIN_MENU
+)
+if "%cleanup_opt%"=="3" (
+    echo.
+    echo Membuka Disk Cleanup untuk semua drive...
+    cleanmgr /dC: /dD: /dE:
+    echo Disk Cleanup dibuka untuk multiple drive.
+    pause
+    goto MAIN_MENU
+)
+echo Pilihan tidak valid.
+goto RUN_DISK_CLEANUP_MANAGER
+
+
+:: ==================================================================
+:: == SYSTEM MAINTENANCE: COMPACT OS
+:: ==================================================================
+
+:RUN_COMPACT_OS
+cls
+echo ===================================================
+echo              COMPACT OS (KOMPRESI)
+echo ===================================================
+echo.
+echo Compact OS akan mengompresi file sistem Windows untuk menghemat ruang.
+echo.
+echo Keuntungan:
+echo - Hemat 2-5 GB ruang disk (tergantung system)
+echo - Mendukung SSD (menggunakan LZX compression)
+echo.
+echo Kerugian:
+echo - Sedikit penurunan performa CPU saat decompress
+echo - Tidak disarankan untuk HDD lama
+echo.
+echo PERINGATAN: Proses ini memakan waktu 10-30 menit.
+echo Jangan matikan PC selama proses berjalan.
+echo.
+echo  [1] Cek Status Compact OS
+echo  [2] Aktifkan Compact OS
+echo  [3] Nonaktifkan Compact OS (Uncompact)
+echo  [0] Batal
+echo.
+set "compact_opt="
+set /p "compact_opt=Pilih opsi: "
+if "%compact_opt%"=="0" goto MAIN_MENU
+if "%compact_opt%"=="1" (
+    echo.
+    echo Mengecek status Compact OS...
+    compact /compactos:query
+    echo.
+    pause
+    goto MAIN_MENU
+)
+if "%compact_opt%"=="2" (
+    echo.
+    echo Mengaktifkan Compact OS...
+    echo Ini akan mengompresi file sistem Windows.
+    set "compact_enable_confirm="
+    set /p "compact_enable_confirm=Lanjutkan? (Y/N): "
+    if /i not "!compact_enable_confirm!"=="Y" goto MAIN_MENU
+    echo.
+    echo Memulai kompresi sistem...
+    compact /compactos:always
+    echo.
+    echo Compact OS berhasil diaktifkan.
+    echo Restart komputer disarankan.
+    pause
+    goto MAIN_MENU
+)
+if "%compact_opt%"=="3" (
+    echo.
+    echo Menonaktifkan Compact OS (Uncompact)...
+    echo Ini akan mengembalikan file ke ukuran asli.
+    set "compact_disable_confirm="
+    set /p "compact_disable_confirm=Lanjutkan? (Y/N): "
+    if /i not "!compact_disable_confirm!"=="Y" goto MAIN_MENU
+    echo.
+    echo Memulai dekompresi sistem...
+    compact /compactos:never
+    echo.
+    echo Compact OS berhasil dinonaktifkan.
+    echo Restart komputer disarankan.
+    pause
+    goto MAIN_MENU
+)
+echo Pilihan tidak valid.
+goto RUN_COMPACT_OS
+
+
+:: ==================================================================
+:: == SYSTEM MAINTENANCE: PAGE FILE MANAGEMENT
+:: ==================================================================
+
+:RUN_PAGE_FILE_MANAGER
+cls
+echo ===================================================
+echo          PAGE FILE MANAGEMENT (VIRTUAL MEMORY)
+echo ===================================================
+echo.
+echo Page file (virtual memory) digunakan ketika RAM penuh.
+echo.
+echo Status saat ini:
+wmic pagefile list /format:list
+echo.
+echo  [1] Atur Page File Manual (Custom Size)
+echo  [2] Atur Page File ke Sistem Managed
+echo  [3] Hapus Page File di Drive Tertentu
+echo  [4] Cek Usage Page File
+echo  [0] Batal
+echo.
+set "pagefile_opt="
+set /p "pagefile_opt=Pilih opsi: "
+if "%pagefile_opt%"=="0" goto MAIN_MENU
+if "%pagefile_opt%"=="1" (
+    echo.
+    echo Masukkan ukuran page file dalam MB.
+    echo Minimum: 1.5x RAM (MB)
+    echo Maximum: 3x RAM (MB)
+    echo.
+    set "pf_drive="
+    set /p "pf_drive=Drive (misal: C): "
+    if not defined pf_drive goto RUN_PAGE_FILE_MANAGER
+    set "pf_min="
+    set /p "pf_min=Ukuran Minimum (MB): "
+    if not defined pf_min goto RUN_PAGE_FILE_MANAGER
+    set "pf_max="
+    set /p "pf_max=Ukuran Maximum (MB): "
+    if not defined pf_max goto RUN_PAGE_FILE_MANAGER
+    echo.
+    echo Mengatur page file di drive %pf_drive%: (Min: %pf_min% MB, Max: %pf_max% MB)...
+    wmic pagefileset where "name='%pf_drive%:\\pagefile.sys'" set InitialSize=%pf_min%,MaximumSize=%pf_max%
+    if errorlevel 1 (
+        echo [ERROR] Gagal mengatur page file.
+        echo Mencoba metode alternatif via registry...
+        reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "PagingFiles" /t REG_MULTI_SZ /d "%pf_drive%:\pagefile.sys %pf_min% %pf_max%" /f
+        if errorlevel 1 (
+            echo [ERROR] Gagal mengatur page file.
+        ) else (
+            echo Page file berhasil diatur. Restart diperlukan.
+        )
+    ) else (
+        echo Page file berhasil diatur. Restart diperlukan.
+    )
+    pause
+    goto MAIN_MENU
+)
+if "%pagefile_opt%"=="2" (
+    echo.
+    echo Mengatur page file ke System Managed...
+    wmic pagefileset where "name='C:\\pagefile.sys'" set InitialSize=0,MaximumSize=0
+    if errorlevel 1 (
+        echo [ERROR] Gagal mengatur page file.
+    ) else (
+        echo Page file diatur ke System Managed. Restart diperlukan.
+    )
+    pause
+    goto MAIN_MENU
+)
+if "%pagefile_opt%"=="3" (
+    echo.
+    echo Masukkan drive yang ingin dihapus page file-nya:
+    set "pf_del_drive="
+    set /p "pf_del_drive=Drive (misal: D): "
+    if not defined pf_del_drive goto RUN_PAGE_FILE_MANAGER
+    echo.
+    echo PERINGATAN: Menghapus page file dapat menyebabkan error jika RAM penuh.
+    set "pf_del_confirm="
+    set /p "pf_del_confirm=Yakin ingin menghapus page file di %pf_del_drive%:? (Y/N): "
+    if /i not "!pf_del_confirm!"=="Y" goto MAIN_MENU
+    echo.
+    echo Menghapus page file di drive %pf_del_drive%:...
+    wmic pagefileset where "name='%pf_del_drive%:\\pagefile.sys'" delete
+    if errorlevel 1 (
+        echo [ERROR] Gagal menghapus page file.
+    ) else (
+        echo Page file berhasil dihapus. Restart diperlukan.
+    )
+    pause
+    goto MAIN_MENU
+)
+if "%pagefile_opt%"=="4" (
+    echo.
+    echo Cek penggunaan page file saat ini...
+    powershell -NoProfile -Command "$pagefile = Get-CimInstance Win32_PageFileUsage; if ($pagefile) { $pagefile | Select-Object Name,AllocatedBaseSize,PeakUsage,CurrentUsage | Format-Table -AutoSize } else { Write-Host 'Informasi page file tidak tersedia.' }"
+    echo.
+    echo Cek performa memory...
+    powershell -NoProfile -Command "$os = Get-CimInstance Win32_OperatingSystem; $totalMem = [math]::Round($os.TotalVisibleMemorySize / 1MB, 2); $freeMem = [math]::Round($os.FreePhysicalMemory / 1MB, 2); $usedMem = $totalMem - $freeMem; $percent = [math]::Round(($usedMem / $totalMem) * 100, 2); Write-Host ('Total RAM: ' + $totalMem + ' GB'); Write-Host ('RAM Used: ' + $usedMem + ' GB (' + $percent + ' %)'); Write-Host ('RAM Free: ' + $freeMem + ' GB')"
+    echo.
+    pause
+    goto MAIN_MENU
+)
+echo Pilihan tidak valid.
+goto RUN_PAGE_FILE_MANAGER
+
+
+:: ==================================================================
+:: == QUICK ACTIONS: RESTART WITH DELAY
+:: ==================================================================
+
+:RUN_RESTART_DELAY
+cls
+echo ===================================================
+echo           RESTART WITH DELAY (TIMER)
+echo ===================================================
+echo.
+echo Restart PC dengan timer. Berguna untuk remote support.
+echo.
+set "restart_delay_time="
+set /p "restart_delay_time=Masukkan waktu delay dalam detik (misal: 60): "
+if not defined restart_delay_time goto RUN_RESTART_DELAY
+set /a restart_delay_check=restart_delay_time 2>nul
+if !restart_delay_check! LSS 1 (
+    echo Waktu minimal 1 detik.
+    pause
+    goto RUN_RESTART_DELAY
+)
+echo.
+echo PC akan restart dalam !restart_delay_time! detik...
+echo Untuk membatalkan, gunakan: shutdown /a
+echo.
+echo.
+set "restart_delay_confirm="
+set /p "restart_delay_confirm=Lanjutkan? (Y/N): "
+if /i not "!restart_delay_confirm!"=="Y" goto MAIN_MENU
+echo.
+echo Restart dijadwalkan dalam !restart_delay_time! detik...
+shutdown /r /t !restart_delay_time! /c "Restart dengan timer dari Toolkit"
+echo.
+echo [INFO] Untuk membatalkan: shutdown /a
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == QUICK ACTIONS: SHUTDOWN WITH DELAY
+:: ==================================================================
+
+:RUN_SHUTDOWN_DELAY
+cls
+echo ===================================================
+echo          SHUTDOWN WITH DELAY (TIMER)
+echo ===================================================
+echo.
+echo Shutdown PC dengan timer. Berguna untuk remote support.
+echo.
+set "shutdown_delay_time="
+set /p "shutdown_delay_time=Masukkan waktu delay dalam detik (misal: 60): "
+if not defined shutdown_delay_time goto RUN_SHUTDOWN_DELAY
+set /a shutdown_delay_check=shutdown_delay_time 2>nul
+if !shutdown_delay_check! LSS 1 (
+    echo Waktu minimal 1 detik.
+    pause
+    goto RUN_SHUTDOWN_DELAY
+)
+echo.
+echo PC akan shutdown dalam !shutdown_delay_time! detik...
+echo Untuk membatalkan, gunakan: shutdown /a
+echo.
+echo.
+set "shutdown_delay_confirm="
+set /p "shutdown_delay_confirm=Lanjutkan? (Y/N): "
+if /i not "!shutdown_delay_confirm!"=="Y" goto MAIN_MENU
+echo.
+echo Shutdown dijadwalkan dalam !shutdown_delay_time! detik...
+shutdown /s /t !shutdown_delay_time! /c "Shutdown dengan timer dari Toolkit"
+echo.
+echo [INFO] Untuk membatalkan: shutdown /a
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == QUICK ACTIONS: FORCE RESTART
+:: ==================================================================
+
+:RUN_FORCE_RESTART
+cls
+echo ===================================================
+echo             FORCE RESTART (RESTART PAKSA)
+echo ===================================================
+echo.
+echo PERINGATAN: Ini akan memaksa restart tanpa menyimpan aplikasi.
+echo Gunakan hanya jika PC benar-benar hang dan tidak merespon.
+echo.
+echo Aplikasi yang sedang berjalan akan ditutup paksa.
+echo Data yang belum disimpan akan HILANG.
+echo.
+set "force_restart_confirm="
+set /p "force_restart_confirm=Yakin ingin FORCE RESTART? (Y/N): "
+if /i not "!force_restart_confirm!"=="Y" goto MAIN_MENU
+echo.
+echo Memaksa restart PC sekarang...
+shutdown /r /f /t 0 /c "Force restart dari Toolkit"
+exit /b
+
+
+:: ==================================================================
+:: == QUICK ACTIONS: SAFE MODE BOOT
+:: ==================================================================
+
+:RUN_SAFE_MODE_BOOT
+cls
+echo ===================================================
+echo              SAFE MODE BOOT
+echo ===================================================
+echo.
+echo PC akan restart dan masuk ke Safe Mode.
+echo.
+echo Safe Mode berguna untuk:
+echo - Memperbaiki driver bermasalah
+echo - Menghapus malware yang sulit dihapus
+echo - Memperbaiki error sistem
+echo.
+echo PERINGATAN: Anda perlu boot ulang ke normal setelah selesai.
+echo.
+echo  [1] Safe Mode (Minimal)
+echo  [2] Safe Mode with Networking
+echo  [3] Safe Mode with Command Prompt
+echo  [0] Batal
+echo.
+set "safemode_opt="
+set /p "safemode_opt=Pilih opsi: "
+if "%safemode_opt%"=="0" goto MAIN_MENU
+if "%safemode_opt%"=="1" (
+    echo.
+    echo PC akan restart ke Safe Mode (Minimal)...
+    bcdedit /set {default} safeboot minimal
+    if errorlevel 1 (
+        echo [ERROR] Gagal mengatur Safe Mode.
+        pause
+        goto MAIN_MENU
+    )
+    echo.
+    echo Restart dalam 5 detik...
+    shutdown /r /t 5 /c "Restart ke Safe Mode"
+    exit /b
+)
+if "%safemode_opt%"=="2" (
+    echo.
+    echo PC akan restart ke Safe Mode with Networking...
+    bcdedit /set {default} safeboot network
+    if errorlevel 1 (
+        echo [ERROR] Gagal mengatur Safe Mode.
+        pause
+        goto MAIN_MENU
+    )
+    echo.
+    echo Restart dalam 5 detik...
+    shutdown /r /t 5 /c "Restart ke Safe Mode with Networking"
+    exit /b
+)
+if "%safemode_opt%"=="3" (
+    echo.
+    echo PC akan restart ke Safe Mode with Command Prompt...
+    bcdedit /set {default} safeboot minimal
+    bcdedit /set {default} sos on
+    if errorlevel 1 (
+        echo [ERROR] Gagal mengatur Safe Mode.
+        pause
+        goto MAIN_MENU
+    )
+    echo.
+    echo Restart dalam 5 detik...
+    shutdown /r /t 5 /c "Restart ke Safe Mode with Command Prompt"
+    exit /b
+)
+echo Pilihan tidak valid.
+goto RUN_SAFE_MODE_BOOT
+
+
+:: ==================================================================
+:: == QUICK ACTIONS: BOOT TO BIOS/UEFI
+:: ==================================================================
+
+:RUN_BOOT_TO_BIOS
+cls
+echo ===================================================
+echo             BOOT TO BIOS/UEFI
+echo ===================================================
+echo.
+echo PC akan restart dan masuk ke BIOS/UEFI setup.
+echo.
+echo PERINGATAN:
+echo - Metode ini menggunakan Advanced Startup Options Windows.
+echo - Tidak semua motherboard mendukung metode ini.
+echo - Jika gagal, tekan tombol BIOS (F2, F10, Del, F12) saat boot.
+echo.
+echo  [1] Boot ke BIOS/UEFI Setup
+echo  [2] Boot ke Firmware Settings (Windows 11)
+echo  [3] Cancel Safe Mode (Jika sebelumnya aktif)
+echo  [0] Batal
+echo.
+set "bios_opt="
+set /p "bios_opt=Pilih opsi: "
+if "%bios_opt%"=="0" goto MAIN_MENU
+if "%bios_opt%"=="1" (
+    echo.
+    echo Mengatur boot ke BIOS/UEFI...
+    shutdown /r /o /t 5 /c "Boot to BIOS/UEFI"
+    echo.
+    echo PC akan restart dalam 5 detik.
+    echo Pilih "Troubleshoot" ^> "Advanced options" ^> "UEFI Firmware Settings"
+    echo.
+    exit /b
+)
+if "%bios_opt%"=="2" (
+    echo.
+    echo Mengatur boot ke Firmware Settings (Windows 11)...
+    shutdown /r /o /t 5 /c "Boot to Firmware Settings"
+    echo.
+    echo PC akan restart dalam 5 detik.
+    echo Pilih "Troubleshoot" ^> "Advanced options" ^> "UEFI Firmware Settings"
+    echo.
+    exit /b
+)
+if "%bios_opt%"=="3" (
+    echo.
+    echo Menghapus setting Safe Mode...
+    bcdedit /deletevalue {default} safeboot
+    bcdedit /deletevalue {default} sos
+    if errorlevel 1 (
+        echo [ERROR] Gagal menghapus setting Safe Mode atau tidak ada setting.
+    ) else (
+        echo Setting Safe Mode berhasil dihapus.
+        echo PC akan boot normal pada restart berikutnya.
+    )
+    echo.
+    pause
+    goto MAIN_MENU
+)
+echo Pilihan tidak valid.
+goto RUN_BOOT_TO_BIOS
+
+
+:: ==================================================================
+:: == PERFORMANCE TUNING: POWER PLAN MANAGER
+:: ==================================================================
+
+:RUN_POWER_PLAN_MANAGER
+cls
+echo ===================================================
+echo            POWER PLAN MANAGER
+echo ===================================================
+echo.
+echo Power plan mengatur konsumsi daya dan performa sistem.
+echo.
+echo Power plan tersedia:
+echo.
+powershell -NoProfile -Command "$plans = powercfg -list; $plans | ForEach-Object { if ($_ -match '(\d+)\s+([^(]+)\(([^)]+)\)') { $id = $matches[1]; $name = $matches[2].Trim(); $status = if ($_ -match '\*') {'[AKTIF]'} else {''}; Write-Host ('  ' + $status + ' ' + $name) } }"
+echo.
+echo  [1] Power Saver (Hemat Daya)
+echo  [2] Balanced (Seimbang)
+echo  [3] High Performance (Performa Tinggi)
+echo  [4] Ultimate Performance (Performa Ekstrem - Windows 10/11 Pro)
+echo  [5] Cek Power Plan Aktif
+echo  [0] Batal
+echo.
+set "powerplan_opt="
+set /p "powerplan_opt=Pilih opsi: "
+if "%powerplan_opt%"=="0" goto MAIN_MENU
+if "%powerplan_opt%"=="1" (
+    echo.
+    echo Mengatur ke Power Saver...
+    powercfg -setactive a1841308-0354-4abc-b7dd-0e6575847f2a
+    if errorlevel 1 (echo [ERROR] Gagal mengatur power plan.) else echo Power plan diubah ke Power Saver.
+    pause
+    goto MAIN_MENU
+)
+if "%powerplan_opt%"=="2" (
+    echo.
+    echo Mengatur ke Balanced...
+    powercfg -setactive 381b4222-f694-41f0-9685-ff5bb260df2e
+    if errorlevel 1 (echo [ERROR] Gagal mengatur power plan.) else echo Power plan diubah ke Balanced.
+    pause
+    goto MAIN_MENU
+)
+if "%powerplan_opt%"=="3" (
+    echo.
+    echo Mengatur ke High Performance...
+    powercfg -setactive 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
+    if errorlevel 1 (echo [ERROR] Gagal mengatur power plan.) else echo Power plan diubah ke High Performance.
+    pause
+    goto MAIN_MENU
+)
+if "%powerplan_opt%"=="4" (
+    echo.
+    echo Mengatur ke Ultimate Performance...
+    powercfg -setactive e9a42b02-d5df-448d-aa00-03f14749eb61
+    if errorlevel 1 (
+        echo [ERROR] Ultimate Performance tidak tersedia.
+        echo Fitur ini hanya untuk Windows 10/11 Pro/Enterprise.
+        echo Untuk mengaktifkan: powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
+    ) else echo Power plan diubah ke Ultimate Performance.
+    pause
+    goto MAIN_MENU
+)
+if "%powerplan_opt%"=="5" (
+    echo.
+    echo Power plan yang sedang aktif:
+    powercfg -getactivescheme
+    echo.
+    pause
+    goto MAIN_MENU
+)
+echo Pilihan tidak valid.
+goto RUN_POWER_PLAN_MANAGER
+
+
+:: ==================================================================
+:: == PERFORMANCE TUNING: PERFORMANCE MODE
+:: ==================================================================
+
+:RUN_PERFORMANCE_MODE
+cls
+echo ===================================================
+echo            PERFORMANCE MODE
+echo ===================================================
+echo.
+echo Mode performa akan mengoptimalkan sistem untuk kecepatan maksimal.
+echo.
+echo PERINGATAN: Mode ini akan meningkatkan konsumsi daya dan suhu.
+echo Tidak disarankan untuk laptop dengan baterai rendah.
+echo.
+echo  [1] High Performance Mode (Gaming/Workstation)
+echo  [2] Ultimate Performance Mode (Ekstrem)
+echo  [3] Balanced Mode (Kembali ke seimbang)
+echo  [4] Custom Performance (Optimasi Advanced)
+echo  [0] Batal
+echo.
+set "perf_opt="
+set /p "perf_opt=Pilih opsi: "
+if "%perf_opt%"=="0" goto MAIN_MENU
+if "%perf_opt%"=="1" (
+    echo.
+    echo Mengatur ke High Performance Mode...
+    powercfg -setactive 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
+    powercfg -change -monitor-timeout-ac 0
+    powercfg -change -monitor-timeout-dc 0
+    powercfg -change -standby-timeout-ac 0
+    powercfg -change -standby-timeout-dc 0
+    powercfg -change -hibernate-timeout-ac 0
+    powercfg -change -hibernate-timeout-dc 0
+    echo.
+    echo High Performance Mode diaktifkan.
+    echo - Sleep dan Hibernate dimatikan
+    echo - Monitor timeout dimatikan
+    pause
+    goto MAIN_MENU
+)
+if "%perf_opt%"=="2" (
+    echo.
+    echo Mengatur ke Ultimate Performance Mode...
+    powercfg -setactive e9a42b02-d5df-448d-aa00-03f14749eb61
+    if errorlevel 1 (
+        echo Mengaktifkan Ultimate Performance scheme terlebih dahulu...
+        powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
+        powercfg -setactive e9a42b02-d5df-448d-aa00-03f14749eb61
+    )
+    powercfg -change -monitor-timeout-ac 0
+    powercfg -change -monitor-timeout-dc 0
+    powercfg -change -standby-timeout-ac 0
+    powercfg -change -standby-timeout-dc 0
+    powercfg -change -hibernate-timeout-ac 0
+    powercfg -change -hibernate-timeout-dc 0
+    echo.
+    echo Ultimate Performance Mode diaktifkan.
+    echo - Semua limitasi performa dihapus
+    echo - Sleep dan Hibernate dimatikan
+    pause
+    goto MAIN_MENU
+)
+if "%perf_opt%"=="3" (
+    echo.
+    echo Mengatur ke Balanced Mode...
+    powercfg -setactive 381b4222-f694-41f0-9a85-a6e23a8c635c
+    powercfg -change -monitor-timeout-ac 10
+    powercfg -change -monitor-timeout-dc 5
+    powercfg -change -standby-timeout-ac 30
+    powercfg -change -standby-timeout-dc 15
+    echo.
+    echo Balanced Mode diaktifkan.
+    echo - Pengaturan daya dikembalikan ke default
+    pause
+    goto MAIN_MENU
+)
+if "%perf_opt%"=="4" (
+    echo.
+    echo Custom Performance Optimasi Advanced...
+    echo.
+    echo  [1] Disable CPU Throttling
+    echo  [2] Disable HDD Spindown
+    echo  [3] Disable USB Selective Suspend
+    echo  [4] Enable PCI Express Power Management
+    echo  [0] Kembali
+    echo.
+    set "custom_opt="
+    set /p "custom_opt=Pilih opsi: "
+    if "%custom_opt%"=="0" goto RUN_PERFORMANCE_MODE
+    if "%custom_opt%"=="1" (
+        echo.
+        echo Disable CPU Throttling...
+        powercfg -setacvalueindex SCHEME_CURRENT SUB_PROCESSOR PROCTHROTAC 0
+        powercfg -setactive SCHEME_CURRENT
+        echo CPU Throttling dinonaktifkan.
+        pause
+        goto RUN_PERFORMANCE_MODE
+    )
+    if "%custom_opt%"=="2" (
+        echo.
+        echo Disable HDD Spindown...
+        powercfg -setacvalueindex SCHEME_CURRENT SUB_DISK DISKIDLE 0
+        powercfg -setactive SCHEME_CURRENT
+        echo HDD Spindown dinonaktifkan.
+        pause
+        goto RUN_PERFORMANCE_MODE
+    )
+    if "%custom_opt%"=="3" (
+        echo.
+        echo Disable USB Selective Suspend...
+        powercfg -setacvalueindex SCHEME_CURRENT SUB_USB USBSELECTIVESUSPEND 0
+        powercfg -setactive SCHEME_CURRENT
+        echo USB Selective Suspend dinonaktifkan.
+        pause
+        goto RUN_PERFORMANCE_MODE
+    )
+    if "%custom_opt%"=="4" (
+        echo.
+        echo Enable PCI Express Power Management...
+        powercfg -setacvalueindex SCHEME_CURRENT SUB_PCIEXPRESS ASPM 0
+        powercfg -setactive SCHEME_CURRENT
+        echo PCI Express Power Management dinonaktifkan (untuk performa).
+        pause
+        goto RUN_PERFORMANCE_MODE
+    )
+    echo Pilihan tidak valid.
+    goto RUN_PERFORMANCE_MODE
+)
+echo Pilihan tidak valid.
+goto RUN_PERFORMANCE_MODE
+
+
+:: ==================================================================
+:: == PERFORMANCE TUNING: DISABLE SERVICES
+:: ==================================================================
+
+:RUN_DISABLE_SERVICES
+cls
+echo ===================================================
+echo          DISABLE UNNECESSARY SERVICES
+echo ===================================================
+echo.
+echo Menggunakan preset untuk menonaktifkan services yang tidak perlu.
+echo.
+echo PERINGATAN: Beberapa services mungkin diperlukan oleh aplikasi tertentu.
+echo Pastikan Anda tahu fungsi service sebelum menonaktifkannya.
+echo.
+echo  [1] Gaming Preset (Disable background services)
+echo  [2] Minimal Preset (Disable banyak services untuk performa maksimal)
+echo  [3] Bloatware Preset (Disable telemetry & ad services)
+echo  [4] Restore Default Services
+echo  [5] List Disabled Services
+echo  [0] Batal
+echo.
+set "service_opt="
+set /p "service_opt=Pilih opsi: "
+if "%service_opt%"=="0" goto MAIN_MENU
+if "%service_opt%"=="1" (
+    echo.
+    echo Menggunakan Gaming Preset...
+    echo Menonaktifkan background services yang mengganggu gaming...
+    sc config "DiagTrack" start= disabled >nul 2>&1
+    sc config "WSearch" start= disabled >nul 2>&1
+    sc config "SysMain" start= disabled >nul 2>&1
+    sc config "XblAuthManager" start= disabled >nul 2>&1
+    sc config "XblGameSave" start= disabled >nul 2>&1
+    sc config "XboxNetApiSvc" start= disabled >nul 2>&1
+    echo.
+    echo Gaming Preset diterapkan.
+    echo Services yang dinonaktifkan:
+    echo - Telemetry (DiagTrack)
+    echo - Windows Search (WSearch)
+    echo - Superfetch (SysMain)
+    echo - Xbox Services
+    pause
+    goto MAIN_MENU
+)
+if "%service_opt%"=="2" (
+    echo.
+    echo Menggunakan Minimal Preset...
+    echo Menonaktifkan banyak services untuk performa maksimal...
+    sc config "Themes" start= disabled >nul 2>&1
+    sc config "wuauserv" start= disabled >nul 2>&1
+    sc config "wercplsupport" start= disabled >nul 2>&1
+    sc config "WinRM" start= disabled >nul 2>&1
+    sc config "WinHttpAutoProxySvc" start= disabled >nul 2>&1
+    sc config "XblAuthManager" start= disabled >nul 2>&1
+    sc config "XblGameSave" start= disabled >nul 2>&1
+    sc config "XboxNetApiSvc" start= disabled >nul 2>&1
+    sc config "WMPNetworkSvc" start= disabled >nul 2>&1
+    sc config "Wms" start= disabled >nul 2>&1
+    echo.
+    echo Minimal Preset diterapkan.
+    echo Beberapa fitur Windows mungkin tidak berfungsi setelah ini.
+    pause
+    goto MAIN_MENU
+)
+if "%service_opt%"=="3" (
+    echo.
+    echo Menggunakan Bloatware Preset...
+    echo Menonaktifkan telemetry dan ad services...
+    sc config "DiagTrack" start= disabled >nul 2>&1
+    sc config "dmwappushservice" start= disabled >nul 2>&1
+    sc config "Advertising" start= disabled >nul 2>&1
+    sc config "wbengine" start= disabled >nul 2>&1
+    sc config "Wecsvc" start= disabled >nul 2>&1
+    sc config "WerSvc" start= disabled >nul 2>&1
+    echo.
+    echo Bloatware Preset diterapkan.
+    echo Telemetry dan ad services dinonaktifkan.
+    pause
+    goto MAIN_MENU
+)
+if "%service_opt%"=="4" (
+    echo.
+    echo Restore Default Services...
+    echo Mengembalikan services ke konfigurasi default...
+    sc config "Themes" start= auto >nul 2>&1
+    sc config "wuauserv" start= auto >nul 2>&1
+    sc config "WSearch" start= auto >nul 2>&1
+    sc config "SysMain" start= auto >nul 2>&1
+    sc config "DiagTrack" start= auto >nul 2>&1
+    sc config "dmwappushservice" start= auto >nul 2>&1
+    sc config "XblAuthManager" start= auto >nul 2>&1
+    sc config "XblGameSave" start= auto >nul 2>&1
+    sc config "XboxNetApiSvc" start= auto >nul 2>&1
+    echo.
+    echo Services dikembalikan ke default.
+    echo Restart komputer disarankan.
+    pause
+    goto MAIN_MENU
+)
+if "%service_opt%"=="5" (
+    echo.
+    echo List services yang dinonaktifkan:
+    echo.
+    sc query type= state= all | findstr /i "STATE_DISABLED"
+    echo.
+    pause
+    goto MAIN_MENU
+)
+echo Pilihan tidak valid.
+goto RUN_DISABLE_SERVICES
+
+
+:: ==================================================================
+:: == PERFORMANCE TUNING: VISUAL EFFECTS TOGGLE
+:: ==================================================================
+
+:RUN_VISUAL_EFFECTS_TOGGLE
+cls
+echo ===================================================
+echo            VISUAL EFFECTS TOGGLE
+echo ===================================================
+echo.
+echo Visual effects mempengaruhi performa terutama pada GPU/rendah.
+echo.
+echo Visual effects saat ini:
+echo.
+powershell -NoProfile -Command "$key='HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects'; $visualfx=(Get-ItemProperty -Path $key -Name VisualFXSetting -ErrorAction SilentlyContinue).VisualFXSetting; if ($visualfx -eq 0) { Write-Host 'Status: Let Windows choose (Default)' } elseif ($visualfx -eq 1) { Write-Host 'Status: All effects enabled' } elseif ($visualfx -eq 2) { Write-Host 'Status: All effects disabled (Best Performance)' } else { Write-Host 'Status: Custom' }"
+echo.
+echo  [1] Best Performance (Disable all effects)
+echo  [2] Best Appearance (Enable all effects)
+echo  [3] Let Windows choose (Default)
+echo  [4] Custom (Select specific effects)
+echo  [0] Batal
+echo.
+set "visual_opt="
+set /p "visual_opt=Pilih opsi: "
+if "%visual_opt%"=="0" goto MAIN_MENU
+if "%visual_opt%"=="1" (
+    echo.
+    echo Mengatur ke Best Performance (Disable all effects)...
+    reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" /v VisualFXSetting /t REG_DWORD /d 2 /f
+    reg add "HKCU\Control Panel\Desktop" /v DragFullWindows /t REG_SZ /d 0 /f
+    reg add "HKCU\Control Panel\Desktop\WindowMetrics" /v MinAnimate /t REG_SZ /d 0 /f
+    reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarAnimations /t REG_DWORD /d 0 /f
+    reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ListviewAlphaSelect /t REG_DWORD /d 0 /f
+    reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ListviewShadow /t REG_DWORD /d 0 /f
+    reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarGlomLevel /t REG_DWORD /d 2 /f
+    echo.
+    echo Best Performance diaktifkan.
+    echo Semua visual effects dinonaktifkan.
+    echo Restart Explorer untuk menerapkan perubahan.
+    taskkill /f /im explorer.exe >nul 2>&1
+    start explorer.exe
+    pause
+    goto MAIN_MENU
+)
+if "%visual_opt%"=="2" (
+    echo.
+    echo Mengatur ke Best Appearance (Enable all effects)...
+    reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" /v VisualFXSetting /t REG_DWORD /d 1 /f
+    reg add "HKCU\Control Panel\Desktop" /v DragFullWindows /t REG_SZ /d 1 /f
+    reg add "HKCU\Control Panel\Desktop\WindowMetrics" /v MinAnimate /t REG_SZ /d 1 /f
+    reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarAnimations /t REG_DWORD /d 1 /f
+    reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ListviewAlphaSelect /t REG_DWORD /d 1 /f
+    reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ListviewShadow /t REG_DWORD /d 1 /f
+    reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarGlomLevel /t REG_DWORD /d 1 /f
+    echo.
+    echo Best Appearance diaktifkan.
+    echo Semua visual effects diaktifkan.
+    echo Restart Explorer untuk menerapkan perubahan.
+    taskkill /f /im explorer.exe >nul 2>&1
+    start explorer.exe
+    pause
+    goto MAIN_MENU
+)
+if "%visual_opt%"=="3" (
+    echo.
+    echo Mengatur ke Let Windows choose (Default)...
+    reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" /v VisualFXSetting /t REG_DWORD /d 0 /f
+    echo.
+    echo Pengaturan dikembalikan ke default Windows.
+    echo Restart Explorer untuk menerapkan perubahan.
+    taskkill /f /im explorer.exe >nul 2>&1
+    start explorer.exe
+    pause
+    goto MAIN_MENU
+)
+if "%visual_opt%"=="4" (
+    echo.
+    echo Custom Visual Effects Selection...
+    echo.
+    echo  [1] Disable animations
+    echo  [2] Disable transparency effects
+    echo  [3] Disable window shadows
+    echo  [4] Disable taskbar animations
+    echo  [5] Disable thumbnail previews
+    echo  [0] Kembali
+    echo.
+    set "custom_visual_opt="
+    set /p "custom_visual_opt=Pilih opsi: "
+    if "%custom_visual_opt%"=="0" goto RUN_VISUAL_EFFECTS_TOGGLE
+    if "%custom_visual_opt%"=="1" (
+        reg add "HKCU\Control Panel\Desktop\WindowMetrics" /v MinAnimate /t REG_SZ /d 0 /f
+        reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarAnimations /t REG_DWORD /d 0 /f
+        echo Animations dinonaktifkan.
+        pause
+        goto RUN_VISUAL_EFFECTS_TOGGLE
+    )
+    if "%custom_visual_opt%"=="2" (
+        reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v EnableTransparency /t REG_DWORD /d 0 /f
+        echo Transparency effects dinonaktifkan.
+        pause
+        goto RUN_VISUAL_EFFECTS_TOGGLE
+    )
+    if "%custom_visual_opt%"=="3" (
+        reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ListviewShadow /t REG_DWORD /d 0 /f
+        echo Window shadows dinonaktifkan.
+        pause
+        goto RUN_VISUAL_EFFECTS_TOGGLE
+    )
+    if "%custom_visual_opt%"=="4" (
+        reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarAnimations /t REG_DWORD /d 0 /f
+        echo Taskbar animations dinonaktifkan.
+        pause
+        goto RUN_VISUAL_EFFECTS_TOGGLE
+    )
+    if "%custom_visual_opt%"=="5" (
+        reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarGlomLevel /t REG_DWORD /d 2 /f
+        echo Thumbnail previews dinonaktifkan.
+        pause
+        goto RUN_VISUAL_EFFECTS_TOGGLE
+    )
+    echo Pilihan tidak valid.
+    goto RUN_VISUAL_EFFECTS_TOGGLE
+)
+echo Pilihan tidak valid.
+goto RUN_VISUAL_EFFECTS_TOGGLE
+
+
+:: ==================================================================
+:: == PERFORMANCE TUNING: CPU CORE PARKING
+:: ==================================================================
+
+:RUN_CPU_CORE_PARKING
+cls
+echo ===================================================
+echo            CPU CORE PARKING
+echo ===================================================
+echo.
+echo Core Parking adalah fitur Windows yang mematikan beberapa core CPU
+echo saat idle untuk menghemat daya. Menonaktifkannya meningkatkan performa.
+echo.
+echo PERINGATAN: Menonaktifkan core parking akan meningkatkan konsumsi daya
+echo dan suhu CPU. Hanya gunakan untuk workstation/gaming.
+echo.
+echo  [1] Disable Core Parking (All Cores Active)
+echo  [2] Enable Core Parking (Default - Power Saving)
+echo  [3] Check Core Parking Status
+echo  [4] Advanced Core Settings
+echo  [0] Batal
+echo.
+set "corepark_opt="
+set /p "corepark_opt=Pilih opsi: "
+if "%corepark_opt%"=="0" goto MAIN_MENU
+if "%corepark_opt%"=="1" (
+    echo.
+    echo Menonaktifkan Core Parking (Mengaktifkan semua core)...
+    echo.
+    powershell -NoProfile -Command "$powerPlan = powercfg -getactivescheme; if ($powerPlan -match '(\{[A-F0-9-]+\})') { $guid = $matches[1]; Write-Host ('Power Plan GUID: ' + $guid); $processorGuid = '{54533251-82be-4824-96c7-20deb4f4e8ad}'; $minProc = 0; $maxProc = 100; powercfg -setacvalueindex $guid $processorGuid 5d76a2ca-e8c0-402f-a133-2158492d5ad8 $minProc; powercfg -setacvalueindex $guid $processorGuid 638baff8-7929-4f7a-a624-1f2a003db778 $maxProc; powercfg -setactive $guid; Write-Host 'Core Parking dinonaktifkan.' } else { Write-Host 'Gagal mendapatkan power plan GUID.' }"
+    echo.
+    echo Core Parking dinonaktifkan.
+    echo Semua core CPU akan tetap aktif.
+    pause
+    goto MAIN_MENU
+)
+if "%corepark_opt%"=="2" (
+    echo.
+    echo Mengaktifkan Core Parking (Default)...
+    echo.
+    powershell -NoProfile -Command "$powerPlan = powercfg -getactivescheme; if ($powerPlan -match '(\{[A-F0-9-]+\})') { $guid = $matches[1]; Write-Host ('Power Plan GUID: ' + $guid); $processorGuid = '{54533251-82be-4824-96c7-20deb4f4e8ad}'; $minProc = 5; $maxProc = 100; powercfg -setacvalueindex $guid $processorGuid 5d76a2ca-e8c0-402f-a133-2158492d5ad8 $minProc; powercfg -setacvalueindex $guid $processorGuid 638baff8-7929-4f7a-a624-1f2a003db778 $maxProc; powercfg -setactive $guid; Write-Host 'Core Parking diaktifkan (default).' } else { Write-Host 'Gagal mendapatkan power plan GUID.' }"
+    echo.
+    echo Core Parking diaktifkan.
+    echo Windows akan mematikan core saat idle untuk hemat daya.
+    pause
+    goto MAIN_MENU
+)
+if "%corepark_opt%"=="3" (
+    echo.
+    echo Cek Status Core Parking...
+    echo.
+    powershell -NoProfile -Command "$powerPlan = powercfg -getactivescheme; if ($powerPlan -match '(\{[A-F0-9-]+\})') { $guid = $matches[1]; $processorGuid = '{54533251-82be-4824-96c7-20deb4f4e8ad}'; $minProc = powercfg -q $guid $processorGuid 5d76a2ca-e8c0-402f-a133-2158492d5ad8; $maxProc = powercfg -q $guid $processorGuid 638baff8-7929-4f7a-a624-1f2a003db778; Write-Host ('Min Unparked Cores: ' + $minProc + '%%'); Write-Host ('Max Unparked Cores: ' + $maxProc + '%%'); if ($minProc -eq 0) { Write-Host 'Core Parking: DISABLED (All cores active)' } else { Write-Host 'Core Parking: ENABLED (Some cores may park)' } } else { Write-Host 'Gagal membaca status core parking.' }"
+    echo.
+    pause
+    goto MAIN_MENU
+)
+if "%corepark_opt%"=="4" (
+    echo.
+    echo Advanced Core Settings...
+    echo.
+    echo  [1] Set Minimum Unparked Cores (0-100%%)
+    echo  [2] Set Maximum Unparked Cores (0-100%%)
+    echo  [3] Check CPU Info (Core/Thread count)
+    echo  [0] Kembali
+    echo.
+    set "advanced_core_opt="
+    set /p "advanced_core_opt=Pilih opsi: "
+    if "%advanced_core_opt%"=="0" goto RUN_CPU_CORE_PARKING
+    if "%advanced_core_opt%"=="1" (
+        echo.
+        set "min_unparked="
+        set /p "min_unparked=Masukkan minimum unparked cores (0-100): "
+        if not defined min_unparked goto RUN_CPU_CORE_PARKING
+        set /a min_unparked_check=min_unparked 2>nul
+        if !min_unparked_check! LSS 0 if !min_unparked_check! GTR 100 (
+            echo Nilai harus antara 0-100.
+            pause
+            goto RUN_CPU_CORE_PARKING
+        )
+        powershell -NoProfile -Command "$powerPlan = powercfg -getactivescheme; if ($powerPlan -match '(\{[A-F0-9-]+\})') { $guid = $matches[1]; $processorGuid = '{54533251-82be-4824-96c7-20deb4f4e8ad}'; powercfg -setacvalueindex $guid $processorGuid 5d76a2ca-e8c0-402f-a133-2158492d5ad8 !min_unparked_check!; powercfg -setactive $guid; Write-Host ('Minimum unparked cores diatur ke ' + !min_unparked_check! + '%%') }"
+        pause
+        goto RUN_CPU_CORE_PARKING
+    )
+    if "%advanced_core_opt%"=="2" (
+        echo.
+        set "max_unparked="
+        set /p "max_unparked=Masukkan maximum unparked cores (0-100): "
+        if not defined max_unparked goto RUN_CPU_CORE_PARKING
+        set /a max_unparked_check=max_unparked 2>nul
+        if !max_unparked_check! LSS 0 if !max_unparked_check! GTR 100 (
+            echo Nilai harus antara 0-100.
+            pause
+            goto RUN_CPU_CORE_PARKING
+        )
+        powershell -NoProfile -Command "$powerPlan = powercfg -getactivescheme; if ($powerPlan -match '(\{[A-F0-9-]+\})') { $guid = $matches[1]; $processorGuid = '{54533251-82be-4824-96c7-20deb4f4e8ad}'; powercfg -setacvalueindex $guid $processorGuid 638baff8-7929-4f7a-a624-1f2a003db778 !max_unparked_check!; powercfg -setactive $guid; Write-Host ('Maximum unparked cores diatur ke ' + !max_unparked_check! + '%%') }"
+        pause
+        goto RUN_CPU_CORE_PARKING
+    )
+    if "%advanced_core_opt%"=="3" (
+        echo.
+        echo CPU Information:
+        echo.
+        powershell -NoProfile -Command "$cpu = Get-CimInstance Win32_Processor | Select-Object -First 1; Write-Host ('Processor: ' + $cpu.Name); Write-Host ('Cores: ' + $cpu.NumberOfCores); Write-Host ('Logical Processors: ' + $cpu.NumberOfLogicalProcessors); Write-Host ('Max Clock Speed: ' + $cpu.MaxClockSpeed + ' MHz')"
+        echo.
+        pause
+        goto RUN_CPU_CORE_PARKING
+    )
+    echo Pilihan tidak valid.
+    goto RUN_CPU_CORE_PARKING
+)
+echo Pilihan tidak valid.
+goto RUN_CPU_CORE_PARKING

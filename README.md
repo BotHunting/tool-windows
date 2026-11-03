@@ -12,9 +12,9 @@
 
 ## 📊 Statistik
 
-- **Total Fitur**: 84 menu utama + 60+ opsi DNS
-- **Kategori**: 6 kategori utama dengan 16 sub-kategori
-- **Baris Kode**: 3,186 baris
+- **Total Fitur**: 99 menu utama + 60+ opsi DNS
+- **Kategori**: 8 kategori utama dengan 19 sub-kategori
+- **Baris Kode**: 4,300+ baris
 - **Bahasa**: Indonesia
 - **Layout Menu**: Compact 4 kolom dengan header kategori (terorganisir dan mudah dibaca)
 
@@ -141,6 +141,27 @@
 - 📊 Open Task Manager (buka task manager)
 - ⚙️ Open Control Panel (buka panel kontrol)
 
+### 1️⃣7️⃣ System Maintenance
+- 🔧 Startup Repair - Jalankan startup repair Windows untuk perbaikan boot
+- 💾 System Image Backup - Backup sistem image lengkap ke drive eksternal
+- 🧹 Disk Cleanup Manager - Buka Disk Cleanup dengan opsi lengkap (termasuk Windows Update cache)
+- 📦 Compact OS - Kompresi OS untuk hemat ruang (hemat 2-5 GB, cocok untuk SSD)
+- 💿 Page File Management - Atur page file (virtual memory) manual/system managed
+
+### 1️⃣8️⃣ Quick Actions
+- ⏱️ Restart with Delay - Restart dengan timer (untuk remote support)
+- ⏰ Shutdown with Delay - Shutdown dengan timer (untuk remote support)
+- 🔄 Force Restart - Restart paksa jika PC hang
+- 🛡️ Safe Mode Boot - Reboot ke Safe Mode (Minimal/Networking/Command Prompt)
+- ⚙️ Boot to BIOS/UEFI - Reboot ke BIOS setup (via Advanced Startup)
+
+### 1️⃣9️⃣ Performance Tuning
+- ⚡ Power Plan Manager - Switch antar power plan (Power Saver/Balanced/High Performance/Ultimate)
+- 🚀 Performance Mode - Set high performance mode (gaming/workstation) dengan optimasi advanced
+- 🚫 Disable Services - Disable services yang tidak perlu (Gaming/Minimal/Bloatware preset)
+- 🎨 Visual Effects Toggle - Optimasi visual effects (Best Performance/Best Appearance/Custom)
+- 💻 CPU Core Parking - Atur core parking CPU (disable untuk performa maksimal, semua core aktif)
+
 ---
 
 ## 📖 Cara Penggunaan
@@ -150,13 +171,13 @@
 Klik kanan pada Toolkit_windows.bat > Run as Administrator
 
 # 2. Pilih menu sesuai kebutuhan
-Masukkan nomor menu yang diinginkan (1-84)
+Masukkan nomor menu yang diinginkan (1-99)
 
 # 3. Ikuti instruksi yang muncul
 Baca petunjuk dengan teliti sebelum konfirmasi
 ```
 
-**Catatan Layout**: Menu ditampilkan dalam format 3 kolom compact untuk menghemat space dan memudahkan navigasi.
+**Catatan Layout**: Menu ditampilkan dalam format 4 kolom compact untuk menghemat space dan memudahkan navigasi.
 
 ---
 
@@ -178,6 +199,24 @@ Baca petunjuk dengan teliti sebelum konfirmasi
 - 💾 Selalu **backup data penting** sebelum melakukan perubahan sistem
 - 🛡️ Toolkit ini bersifat **"as-is" tanpa garansi**
 - 📌 Gunakan dengan bijak dan risiko Anda sendiri
+
+### ⚠️ Peringatan Khusus Fitur Baru
+
+**System Maintenance (Menu 85-89)**
+- **Startup Repair**: PC akan restart dan masuk ke lingkungan repair. Pastikan data tersimpan.
+- **System Image Backup**: Memakan waktu lama dan ruang disk besar. Gunakan drive eksternal.
+- **Compact OS**: Disarankan untuk SSD. Tidak disarankan untuk HDD lama. Proses 10-30 menit.
+- **Page File Management**: Menghapus page file dapat menyebabkan error jika RAM penuh.
+
+**Quick Actions (Menu 90-94)**
+- **Force Restart**: Data yang belum disimpan akan HILANG. Hanya gunakan jika PC benar-benar hang.
+- **Safe Mode Boot**: PC akan masuk ke Safe Mode. Perlu boot ulang ke normal setelah selesai.
+- **Boot to BIOS/UEFI**: Tidak semua motherboard mendukung metode ini. Bisa gunakan tombol BIOS manual (F2, F10, Del, F12).
+
+**Performance Tuning (Menu 95-99)**
+- **Performance Mode**: Meningkatkan konsumsi daya dan suhu. Tidak disarankan untuk laptop dengan baterai rendah.
+- **Disable Services**: Beberapa services mungkin diperlukan oleh aplikasi tertentu. Pastikan Anda tahu fungsi service.
+- **CPU Core Parking**: Menonaktifkan core parking akan meningkatkan konsumsi daya dan suhu CPU. Hanya untuk workstation/gaming.
 
 ---
 
