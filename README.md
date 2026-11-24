@@ -12,9 +12,9 @@
 
 ## 📊 Statistik
 
-- **Total Fitur**: 99 menu utama + 60+ opsi DNS
+- **Total Fitur**: 101 menu utama + 60+ opsi DNS
 - **Kategori**: 8 kategori utama dengan 19 sub-kategori
-- **Baris Kode**: 4,300+ baris
+- **Baris Kode**: 4,846 baris
 - **Bahasa**: Indonesia
 - **Layout Menu**: Compact 4 kolom dengan header kategori (terorganisir dan mudah dibaca)
 
@@ -80,9 +80,12 @@
 - 📡 Speedtest internet (server Google)
 - 💿 Cek kesehatan SSD/HDD (S.M.A.R.T)
 - ⚠️ Cek driver bermasalah (error code)
+- 📋 Cek semua driver (list lengkap, export CSV, cek driver lama/tanpa signature)
+- 🔄 Update driver (via Windows Update, folder lokal, Device Manager, pnputil)
 
 ### 7️⃣ Printer & Peripheral
 - 🖨️ Reset Print Spooler (perbaiki printer macet)
+- 🖨️ Install Printer Driver (perbaikan & pemasangan driver printer, scanner terbaca tapi antrean tidak muncul)
 - 🗄️ Restart layanan database PostgreSQL
 
 ### 8️⃣ User & Akun
@@ -217,6 +220,12 @@ Baca petunjuk dengan teliti sebelum konfirmasi
 - **Performance Mode**: Meningkatkan konsumsi daya dan suhu. Tidak disarankan untuk laptop dengan baterai rendah.
 - **Disable Services**: Beberapa services mungkin diperlukan oleh aplikasi tertentu. Pastikan Anda tahu fungsi service.
 - **CPU Core Parking**: Menonaktifkan core parking akan meningkatkan konsumsi daya dan suhu CPU. Hanya untuk workstation/gaming.
+
+**Printer & Peripheral (Menu 46 - Install Printer Driver)**
+- **Audit Driver & Port**: Memeriksa driver di DriverStore dan port USB yang tersedia. Pastikan printer terhubung sebelum memulai.
+- **Registrasi Driver**: Dukung pencarian file .inf dari DriverStore, path manual, atau folder lokal. Pastikan file .inf valid dan kompatibel.
+- **Pembuatan Antrean**: Jika gagal membuat antrean, cek validitas port, driver, dan nama printer yang belum digunakan.
+- **Service Spooler**: Fitur ini akan memastikan service Print Spooler berjalan dalam mode auto sebelum registrasi driver.
 
 ---
 

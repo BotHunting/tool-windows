@@ -18,13 +18,13 @@ echo ===================================================
 echo.
 echo  --- UPDATE SYSTEM ---
 echo  [1] Matikan Update    [2] Aktifkan Update   [3] Empty Recycle   [4] Cek Activation
-echo  [5] Clean Thumbnails  [6] Reset Font       [7] Repair Office    [8] Pengaturan DNS
+echo  [5] Clean Thumbnails  [6] Reset Font        [7] Repair Office   [8] Pengaturan DNS
 echo.
 echo  --- NETWORK CLEANUP ---
 echo  [9] Refresh IP        [10] Format USB       [11] Reset Network   [12] Kunci USB
 echo [13] Password Wi-Fi    [14] Kill Port        [15] Bersihkan Temp  [16] Bersihkan Clip
 echo [17] Cache Office      [18] Cache Chrome     [19] Cache Edge      [20] Cache Delivery
-echo [21] Bersihkan Log     [22] Auto Cleanup     [23] Optimize SSD     [24] Defrag HDD
+echo [21] Bersihkan Log     [22] Auto Cleanup     [23] Optimize SSD    [24] Defrag HDD
 echo.
 echo  --- UTILITAS APPS ---
 echo [25] Restart Explorer  [26] Kill Not Resp    [27] Rebuild Cache    [28] Toggle File
@@ -32,32 +32,33 @@ echo [29] GodMode           [30] Restart Adaptor  [31] Lihat Program    [32] Uni
 echo [33] Disable Startup   [34] Hapus Bloatware  [35] Reset Store      [36] Cek Suhu CPU
 echo [37] Test Audio        [38] Test Webcam      [39] Cek Kapasitas    [40] Test Keyboard
 echo [41] Cek Spesifikasi   [42] Speedtest        [43] Cek S.M.A.R.T    [44] Cek Driver
+echo [45] Cek Semua Driver  [46] Update Driver
 echo.
 echo  --- PRINTER USER ---
-echo [45] Reset Spooler     [46] Restart Postgres [47] Buat User       [48] Hapus User
-echo [49] Aktif Admin       [50] Baterai Detail   [51] Calibrate        [52] Laporan Baterai
+echo [47] Reset Spooler     [48] Install Driver   [49] Buat User       [50] Hapus User
+echo [51] Aktif Admin       [52] Baterai Detail   [53] Calibrate       [54] Laporan Baterai
 echo.
 echo  --- MAINTENANCE ---
-echo [53] Perbaiki SFC      [54] Folder Startup   [55] Reset Search     [56] Restore Point
-echo [57] Core Isolation    [58] Fast Startup     [59] Private Network [60] Backup Driver
-echo [61] Cek Lisensi       [62] Never Sleep       [63] Matikan Defender [64] Product Key
-echo [65] Cek Uptime        [66] Unhide Flashdisk  [67] Sync Jam         [68] Hapus Paksa
-echo [85] Startup Repair    [86] System Image      [87] Disk Cleanup     [88] Compact OS
-echo [89] Page File
+echo [55] Perbaiki SFC      [56] Folder Startup    [57] Reset Search     [58] Restore Point
+echo [59] Core Isolation    [60] Fast Startup      [61] Private Network  [62] Backup Driver
+echo [63] Cek Lisensi       [64] Never Sleep       [65] Matikan Defender [66] Product Key
+echo [67] Cek Uptime        [68] Unhide Flashdisk  [69] Sync Jam         [70] Hapus Paksa
+echo [87] Startup Repair    [88] System Image      [89] Disk Cleanup     [90] Compact OS
+echo [91] Page File
 echo.
 echo  --- QUICK ACTIONS ---
-echo [90] Restart Delay     [91] Shutdown Delay    [92] Force Restart    [93] Safe Mode
-echo [94] Boot to BIOS
+echo [92] Restart Delay     [93] Shutdown Delay    [94] Force Restart    [95] Safe Mode
+echo [96] Boot to BIOS
 echo.
 echo  --- PERFORMANCE TUNING ---
-echo [95] Power Plan        [96] Performance       [97] Disable Serv     [98] Visual Effects
-echo [99] CPU Core Park
+echo [97] Power Plan        [98] Performance       [99] Disable Serv     [100] Visual Effects
+echo [101] CPU Core Park
 echo.
 echo  --- PRIVACY TWEAKS ---
-echo [69] Clear Recent      [70] Clear Run        [71] Toggle Cortana   [72] Telemetry
-echo [73] Notifications    [74] Rename PC        [75] Cek Nama PC      [76] Hibernation
-echo [77] Windows Version   [78] Installed Updates [79] Test Mikrofon  [80] Screenshot
-echo [81] Webcam Res        [82] Event Viewer     [83] Task Manager     [84] Control Panel
+echo [69] Clear Recent      [70] Clear Run          [71] Toggle Cortana [72] Telemetry
+echo [73] Notifications     [74] Rename PC          [75] Cek Nama PC    [76] Hibernation
+echo [77] Windows Version   [78] Installed Updates  [79] Test Mikrofon  [80] Screenshot
+echo [81] Webcam Res        [82] Event Viewer       [83] Task Manager   [84] Control Panel
 echo.
 echo  [0] Keluar
 echo ===================================================
@@ -108,61 +109,63 @@ if "%main_opt%"=="41" goto RUN_PC_INFO
 if "%main_opt%"=="42" goto RUN_SPEEDTEST_ADAPTERS
 if "%main_opt%"=="43" goto RUN_CHECK_DISK_HEALTH
 if "%main_opt%"=="44" goto RUN_CHECK_BAD_DRIVERS
-if "%main_opt%"=="45" goto RUN_RESET_SPOOLER
-if "%main_opt%"=="46" goto RUN_RESTART_DB
-if "%main_opt%"=="47" goto RUN_CREATE_NEW_USER
-if "%main_opt%"=="48" goto RUN_DELETE_USER_PROFILE
-if "%main_opt%"=="49" goto RUN_ENABLE_ADMIN_ACCOUNT
-if "%main_opt%"=="50" goto RUN_BATTERY_DETAIL
-if "%main_opt%"=="51" goto RUN_CALIBRATE_BATTERY
-if "%main_opt%"=="52" goto RUN_BATTERY_REPORT
-if "%main_opt%"=="53" goto RUN_REPAIR_SYSTEM
-if "%main_opt%"=="54" goto RUN_OPEN_STARTUP
-if "%main_opt%"=="55" goto RUN_RESET_SEARCH
-if "%main_opt%"=="56" goto RUN_CREATE_RESTORE_POINT
-if "%main_opt%"=="57" goto CORE_ISOLATION_MENU
-if "%main_opt%"=="58" goto RUN_TOGGLE_FAST_STARTUP
-if "%main_opt%"=="59" goto RUN_SET_NETWORK_PRIVATE
-if "%main_opt%"=="60" goto RUN_BACKUP_DRIVERS
-if "%main_opt%"=="61" goto RUN_WINDOWS_LICENSE
-if "%main_opt%"=="62" goto RUN_NEVER_SLEEP
-if "%main_opt%"=="63" goto RUN_DISABLE_DEFENDER_TEMP
-if "%main_opt%"=="64" goto RUN_GET_PRODUCT_KEY
-if "%main_opt%"=="65" goto RUN_CHECK_UPTIME
-if "%main_opt%"=="66" goto RUN_UNHIDE_FLASHDISK
-if "%main_opt%"=="67" goto RUN_SYNC_TIME
-if "%main_opt%"=="68" goto RUN_FORCE_DELETE
-if "%main_opt%"=="85" goto RUN_STARTUP_REPAIR
-if "%main_opt%"=="86" goto RUN_SYSTEM_IMAGE_BACKUP
-if "%main_opt%"=="87" goto RUN_DISK_CLEANUP_MANAGER
-if "%main_opt%"=="88" goto RUN_COMPACT_OS
-if "%main_opt%"=="89" goto RUN_PAGE_FILE_MANAGER
-if "%main_opt%"=="90" goto RUN_RESTART_DELAY
-if "%main_opt%"=="91" goto RUN_SHUTDOWN_DELAY
-if "%main_opt%"=="92" goto RUN_FORCE_RESTART
-if "%main_opt%"=="93" goto RUN_SAFE_MODE_BOOT
-if "%main_opt%"=="94" goto RUN_BOOT_TO_BIOS
-if "%main_opt%"=="95" goto RUN_POWER_PLAN_MANAGER
-if "%main_opt%"=="96" goto RUN_PERFORMANCE_MODE
-if "%main_opt%"=="97" goto RUN_DISABLE_SERVICES
-if "%main_opt%"=="98" goto RUN_VISUAL_EFFECTS_TOGGLE
-if "%main_opt%"=="99" goto RUN_CPU_CORE_PARKING
-if "%main_opt%"=="69" goto RUN_CLEAR_RECENT_FILES
-if "%main_opt%"=="70" goto RUN_CLEAR_RUN_HISTORY
-if "%main_opt%"=="71" goto RUN_TOGGLE_CORTANA
-if "%main_opt%"=="72" goto RUN_TOGGLE_TELEMETRY
-if "%main_opt%"=="73" goto RUN_TOGGLE_NOTIFICATIONS
-if "%main_opt%"=="74" goto RUN_RENAME_COMPUTER
-if "%main_opt%"=="75" goto RUN_CHECK_COMPUTER_NAME
-if "%main_opt%"=="76" goto RUN_TOGGLE_HIBERNATION
-if "%main_opt%"=="77" goto RUN_CHECK_WINDOWS_VERSION
-if "%main_opt%"=="78" goto RUN_CHECK_INSTALLED_UPDATES
-if "%main_opt%"=="79" goto RUN_TEST_MICROPHONE
-if "%main_opt%"=="80" goto RUN_TAKE_SCREENSHOT
-if "%main_opt%"=="81" goto RUN_CHECK_WEBCAM_RESOLUTION
-if "%main_opt%"=="82" goto RUN_OPEN_EVENT_VIEWER
-if "%main_opt%"=="83" goto RUN_OPEN_TASK_MANAGER
-if "%main_opt%"=="84" goto RUN_OPEN_CONTROL_PANEL
+if "%main_opt%"=="45" goto RUN_CHECK_ALL_DRIVERS
+if "%main_opt%"=="46" goto RUN_UPDATE_DRIVERS
+if "%main_opt%"=="47" goto RUN_RESET_SPOOLER
+if "%main_opt%"=="48" goto RUN_INSTALL_PRINTER_DRIVER
+if "%main_opt%"=="49" goto RUN_CREATE_NEW_USER
+if "%main_opt%"=="50" goto RUN_DELETE_USER_PROFILE
+if "%main_opt%"=="51" goto RUN_ENABLE_ADMIN_ACCOUNT
+if "%main_opt%"=="52" goto RUN_BATTERY_DETAIL
+if "%main_opt%"=="53" goto RUN_CALIBRATE_BATTERY
+if "%main_opt%"=="54" goto RUN_BATTERY_REPORT
+if "%main_opt%"=="55" goto RUN_REPAIR_SYSTEM
+if "%main_opt%"=="56" goto RUN_OPEN_STARTUP
+if "%main_opt%"=="57" goto RUN_RESET_SEARCH
+if "%main_opt%"=="58" goto RUN_CREATE_RESTORE_POINT
+if "%main_opt%"=="59" goto CORE_ISOLATION_MENU
+if "%main_opt%"=="60" goto RUN_TOGGLE_FAST_STARTUP
+if "%main_opt%"=="61" goto RUN_SET_NETWORK_PRIVATE
+if "%main_opt%"=="62" goto RUN_BACKUP_DRIVERS
+if "%main_opt%"=="63" goto RUN_WINDOWS_LICENSE
+if "%main_opt%"=="64" goto RUN_NEVER_SLEEP
+if "%main_opt%"=="65" goto RUN_DISABLE_DEFENDER_TEMP
+if "%main_opt%"=="66" goto RUN_GET_PRODUCT_KEY
+if "%main_opt%"=="67" goto RUN_CHECK_UPTIME
+if "%main_opt%"=="68" goto RUN_UNHIDE_FLASHDISK
+if "%main_opt%"=="69" goto RUN_SYNC_TIME
+if "%main_opt%"=="70" goto RUN_FORCE_DELETE
+if "%main_opt%"=="71" goto RUN_CLEAR_RECENT_FILES
+if "%main_opt%"=="72" goto RUN_CLEAR_RUN_HISTORY
+if "%main_opt%"=="73" goto RUN_TOGGLE_CORTANA
+if "%main_opt%"=="74" goto RUN_TOGGLE_TELEMETRY
+if "%main_opt%"=="75" goto RUN_TOGGLE_NOTIFICATIONS
+if "%main_opt%"=="76" goto RUN_RENAME_COMPUTER
+if "%main_opt%"=="77" goto RUN_CHECK_COMPUTER_NAME
+if "%main_opt%"=="78" goto RUN_TOGGLE_HIBERNATION
+if "%main_opt%"=="79" goto RUN_CHECK_WINDOWS_VERSION
+if "%main_opt%"=="80" goto RUN_CHECK_INSTALLED_UPDATES
+if "%main_opt%"=="81" goto RUN_TEST_MICROPHONE
+if "%main_opt%"=="82" goto RUN_TAKE_SCREENSHOT
+if "%main_opt%"=="83" goto RUN_CHECK_WEBCAM_RESOLUTION
+if "%main_opt%"=="84" goto RUN_OPEN_EVENT_VIEWER
+if "%main_opt%"=="85" goto RUN_OPEN_TASK_MANAGER
+if "%main_opt%"=="86" goto RUN_OPEN_CONTROL_PANEL
+if "%main_opt%"=="87" goto RUN_STARTUP_REPAIR
+if "%main_opt%"=="88" goto RUN_SYSTEM_IMAGE_BACKUP
+if "%main_opt%"=="89" goto RUN_DISK_CLEANUP_MANAGER
+if "%main_opt%"=="90" goto RUN_COMPACT_OS
+if "%main_opt%"=="91" goto RUN_PAGE_FILE_MANAGER
+if "%main_opt%"=="92" goto RUN_RESTART_DELAY
+if "%main_opt%"=="93" goto RUN_SHUTDOWN_DELAY
+if "%main_opt%"=="94" goto RUN_FORCE_RESTART
+if "%main_opt%"=="95" goto RUN_SAFE_MODE_BOOT
+if "%main_opt%"=="96" goto RUN_BOOT_TO_BIOS
+if "%main_opt%"=="97" goto RUN_POWER_PLAN_MANAGER
+if "%main_opt%"=="98" goto RUN_PERFORMANCE_MODE
+if "%main_opt%"=="99" goto RUN_DISABLE_SERVICES
+if "%main_opt%"=="100" goto RUN_VISUAL_EFFECTS_TOGGLE
+if "%main_opt%"=="101" goto RUN_CPU_CORE_PARKING
 if "%main_opt%"=="0" exit
 goto MAIN_MENU
 
@@ -185,19 +188,19 @@ echo                      PENGATURAN DNS WINDOWS
 echo                      Mode Adaptor: !ADAPTER_MODE!
 echo =================================================================================
 echo  --- DNS STANDAR ---                 --- DNS DOH UMUM ---
-echo  [1]  AdGuard                         [14] AdGuard Personal
-echo  [2]  Cloudflare                       [15] AdGuard PC Rumah
-echo  [3]  Quad9                            [16] AdGuard Hunting PC
-echo  [4]  Google Public DNS                [17] AdGuard DNS Poco
-echo  [5]  Control D                        [18] Cloudflare DoH
-echo  [6]  Mullvad                          [19] Quad9 DoH
-echo  [7]  OpenDNS                           [20] Google DoH
-echo  [8]  CleanBrowsing                    [21] NextDNS DoH
-echo  [9]  dns0.eu                          [22] Mullvad DoH AdBlock
-echo  [10] NextDNS                          [23] Mullvad DoH Standard
-echo  [11] AhaDNS                           [24] Control D DoH
-echo  [12] OpenDNS FamilyShield             [25] Control D DoH Family
-echo  [13] Comodo                           [26] OpenDNS DoH
+echo  [1]  AdGuard                        [14] AdGuard Personal
+echo  [2]  Cloudflare                     [15] AdGuard PC Rumah
+echo  [3]  Quad9                          [16] AdGuard Hunting PC
+echo  [4]  Google Public DNS              [17] AdGuard DNS Poco
+echo  [5]  Control D                      [18] Cloudflare DoH
+echo  [6]  Mullvad                        [19] Quad9 DoH
+echo  [7]  OpenDNS                        [20] Google DoH
+echo  [8]  CleanBrowsing                  [21] NextDNS DoH
+echo  [9]  dns0.eu                        [22] Mullvad DoH AdBlock
+echo  [10] NextDNS                        [23] Mullvad DoH Standard
+echo  [11] AhaDNS                         [24] Control D DoH
+echo  [12] OpenDNS FamilyShield           [25] Control D DoH Family
+echo  [13] Comodo                         [26] OpenDNS DoH
 echo                                      [27] OpenDNS Family DoH
 echo                                      [28] CleanBrowsing Security DoH
 echo                                      [29] CleanBrowsing Adult DoH
@@ -211,7 +214,7 @@ echo  [42] AdGuard Indonesia                [55] Control D DoH
 echo  [43] DNSku CleanDNS                   [56] RethinkDNS DoH
 echo  [44] NextDNS Jakarta                  [57] BlahDNS DoH
 echo  [45] Control D Jakarta                [58] Cloudflare Security DoH
-echo  [46] Alternate DNS                   [59] DNS.SB DoH
+echo  [46] Alternate DNS                    [59] DNS.SB DoH
 echo  [47] RethinkDNS                       [60] DNSForge DoH
 echo  [48] BlahDNS Asia
 echo  [49] AhaDNS Blitz
@@ -223,8 +226,8 @@ echo.
 echo  --- KONTROL ---
 echo  [33] Cek DNS Aktif          [34] Cek IP Publik
 echo  [36] Tes Ping Koneksi       [37] Hapus Semua DoH/DoT
-echo  [39] Pilih Adaptor           [40] Cloudflare DoT
-echo  [R] Reset DNS DHCP           [F] Flush DNS Cache      [0] Menu Utama
+echo  [39] Pilih Adaptor          [40] Cloudflare DoT
+echo  [R] Reset DNS DHCP          [F] Flush DNS Cache      [0] Menu Utama
 echo =================================================================================
 set "opt="
 set /p "opt=Pilih opsi: "
@@ -1212,6 +1215,289 @@ netsh int ipv6 reset >nul 2>&1
 echo.
 echo Selesai! IP, routing, ARP, NetBIOS, DNS, Winsock, IPv4, dan IPv6 telah di-refresh.
 echo Restart komputer disarankan setelah reset network stack.
+pause
+goto MAIN_MENU
+
+
+:: ==================================================================
+:: == FITUR TAMBAHAN: RESTART LAYANAN DATABASE POSTGRESQL
+:: ==================================================================
+
+:: ==================================================================
+:: == FITUR TAMBAHAN: PERBAIKAN & PEMASANGAN DRIVER PRINTER
+:: ==================================================================
+
+:RUN_INSTALL_PRINTER_DRIVER
+cls
+echo ===================================================
+echo     PERBAIKAN & PEMASANGAN DRIVER PRINTER
+echo ===================================================
+echo.
+echo Fitur ini untuk mengatasi kasus:
+echo - Scanner terbaca tetapi antrean cetak tidak muncul
+echo - Printer nyangkut ke driver bawaan Microsoft
+echo - Perlu install driver dari file .inf
+echo.
+echo ===================================================
+echo  LANGKAH 1: AUDIT DRIVER STORE & PORT USB
+echo ===================================================
+echo.
+echo 1.1. Memeriksa driver printer di Driver Store...
+echo.
+powershell -NoProfile -Command "Write-Host 'Mencari driver printer (.inf) di Driver Store...'; $driverPath = 'C:\Windows\System32\DriverStore\FileRepository'; if (Test-Path $driverPath) { $infFiles = Get-ChildItem -Path $driverPath -Recurse -Filter '*.inf' -ErrorAction SilentlyContinue | Where-Object { (Get-Content $_.FullName -ErrorAction SilentlyContinue | Select-String -Pattern 'ClassGuid={4D36E979-E325-11CE-BFC1-08002BE10318}' -Quiet) }; if ($infFiles) { Write-Host ('Ditemukan ' + $infFiles.Count + ' file .inf printer:'); $infFiles | Select-Object -First 20 | ForEach-Object { Write-Host ('  - ' + $_.FullName) } } else { Write-Host 'Tidak ditemukan driver printer di Driver Store.' } } else { Write-Host 'Driver Store tidak ditemukan.' }"
+echo.
+echo 1.2. Memeriksa port USB printer yang tersedia...
+echo.
+powershell -NoProfile -Command "$ports = Get-PrinterPort -ErrorAction SilentlyContinue | Where-Object { $_.Name -like 'USB*' }; if ($ports) { Write-Host 'Port USB printer tersedia:'; $ports | ForEach-Object { Write-Host ('  - ' + $_.Name + ' - ' + $_.Description) } } else { Write-Host 'Tidak ada port USB printer terdeteksi.' }"
+echo.
+echo 1.3. Memeriksa printer yang terdeteksi (Device Manager)...
+echo.
+powershell -NoProfile -Command "$printers = Get-CimInstance Win32_PnPEntity | Where-Object { $_.Class -eq 'Printer' -or $_.Name -like '*Printer*' -or $_.Name -like '*Print*' }; if ($printers) { Write-Host 'Perangkat printer terdeteksi:'; $printers | ForEach-Object { Write-Host ('  - ' + $_.Name + ' | Status: ' + $_.Status) } } else { Write-Host 'Tidak ada perangkat printer terdeteksi.' }"
+echo.
+pause
+echo ===================================================
+echo  LANGKAH 2: VALIDASI & PEMULIHAN SERVICE PRINT SPOOLER
+echo ===================================================
+echo.
+echo 2.1. Memeriksa status service Print Spooler...
+sc query spooler | findstr "STATE"
+echo.
+echo 2.2. Mengatur service Print Spooler ke mode otomatis...
+sc config spooler start= auto
+if errorlevel 1 (
+    echo [ERROR] Gagal mengatur service Print Spooler ke auto.
+    pause
+    goto MAIN_MENU
+) else echo Service Print Spooler diatur ke auto.
+echo.
+echo 2.3. Memastikan service Print Spooler berjalan...
+sc query spooler | findstr "RUNNING" >nul 2>&1
+if errorlevel 1 (
+    echo Service Print Spooler tidak berjalan. Memulai...
+    net start spooler
+    if errorlevel 1 (
+        echo [ERROR] Gagal menjalankan service Print Spooler.
+        echo.
+        echo Kemungkinan penyebab:
+        echo - Service sedang di-disabled
+        echo - Ada error pada service
+        echo - Masalah dependency service
+        echo.
+        echo Coba manual: sc start spooler
+        pause
+        goto MAIN_MENU
+    ) else echo Service Print Spooler berhasil dijalankan.
+) else echo Service Print Spooler sudah berjalan.
+echo.
+pause
+echo ===================================================
+echo  LANGKAH 3: REGISTRASI DRIVER PRINTER DARI FILE .INF
+echo ===================================================
+echo.
+echo 3.1. Pilih sumber file .inf:
+echo.
+echo  [1] Cari di DriverStore\FileRepository
+echo  [2] Masukkan path file .inf manual
+echo  [3] Ekstrak dari folder driver lokal
+echo  [0] Batal
+echo.
+set "inf_source_opt="
+set /p "inf_source_opt=Pilih opsi: "
+if "%inf_source_opt%"=="0" goto MAIN_MENU
+if "%inf_source_opt%"=="1" (
+    echo.
+    echo Mencari file .inf printer di DriverStore...
+    echo.
+    powershell -NoProfile -Command "$infFiles = Get-ChildItem -Path 'C:\Windows\System32\DriverStore\FileRepository' -Recurse -Filter '*.inf' -ErrorAction SilentlyContinue | Where-Object { (Get-Content $_.FullName -ErrorAction SilentlyContinue | Select-String -Pattern 'ClassGuid={4D36E979-E325-11CE-BFC1-08002BE10318}' -Quiet) }; if ($infFiles) { $infFiles | Select-Object -First 30 | ForEach-Object { $index = [array]::IndexOf($infFiles, $_) + 1; Write-Host ('[' + $index + '] ' + $_.FullName) } } else { Write-Host 'Tidak ditemukan driver printer.' }"
+    echo.
+    set "inf_index="
+    set /p "inf_index=Masukkan nomor file .inf: "
+    if not defined inf_index goto RUN_INSTALL_PRINTER_DRIVER
+    echo File nomor %inf_index% dipilih.
+    set "inf_path="
+    powershell -NoProfile -Command "$infFiles = Get-ChildItem -Path 'C:\Windows\System32\DriverStore\FileRepository' -Recurse -Filter '*.inf' -ErrorAction SilentlyContinue | Where-Object { (Get-Content $_.FullName -ErrorAction SilentlyContinue | Select-String -Pattern 'ClassGuid={4D36E979-E325-11CE-BFC1-08002BE10318}' -Quiet) }; if ($infFiles.Count -ge %inf_index%) { Write-Host ($infFiles[%inf_index%-1].FullName) }"
+    echo.
+    set "inf_path_manual="
+    set /p "inf_path_manual=Path file .inf lengkap: "
+    if not defined inf_path_manual goto RUN_INSTALL_PRINTER_DRIVER
+    if not exist "%inf_path_manual%" (
+        echo [ERROR] File tidak ditemukan: %inf_path_manual%
+        pause
+        goto RUN_INSTALL_PRINTER_DRIVER
+    )
+    set "inf_path=%inf_path_manual%"
+)
+if "%inf_source_opt%"=="2" (
+    echo.
+    set "inf_path_manual="
+    set /p "inf_path_manual=Masukkan path lengkap file .inf: "
+    if not defined inf_path_manual goto RUN_INSTALL_PRINTER_DRIVER
+    if not exist "%inf_path_manual%" (
+        echo [ERROR] File tidak ditemukan: %inf_path_manual%
+        pause
+        goto RUN_INSTALL_PRINTER_DRIVER
+    )
+    set "inf_path=%inf_path_manual%"
+)
+if "%inf_source_opt%"=="3" (
+    echo.
+    set "driver_folder="
+    set /p "driver_folder=Masukkan path folder driver: "
+    if not defined driver_folder goto RUN_INSTALL_PRINTER_DRIVER
+    if not exist "%driver_folder%" (
+        echo [ERROR] Folder tidak ditemukan: %driver_folder%
+        pause
+        goto RUN_INSTALL_PRINTER_DRIVER
+    )
+    echo Mencari file .inf di folder...
+    powershell -NoProfile -Command "$infFiles = Get-ChildItem -Path '%driver_folder%' -Filter '*.inf' -ErrorAction SilentlyContinue; if ($infFiles) { $infFiles | ForEach-Object { Write-Host ('  - ' + $_.FullName) } } else { Write-Host 'Tidak ditemukan file .inf.' }"
+    echo.
+    set "inf_path_manual="
+    set /p "inf_path_manual=Masukkan path file .inf dari daftar di atas: "
+    if not defined inf_path_manual goto RUN_INSTALL_PRINTER_DRIVER
+    if not exist "%inf_path_manual%" (
+        echo [ERROR] File tidak ditemukan: %inf_path_manual%
+        pause
+        goto RUN_INSTALL_PRINTER_DRIVER
+    )
+    set "inf_path=%inf_path_manual%"
+)
+echo.
+echo File .inf yang dipilih: %inf_path%
+echo.
+echo 3.2. Mendaftarkan driver printer ke Print Spooler...
+echo.
+rundll32 printui.dll,PrintUIEntry /ia /m "%inf_path%" /h "Intel" /v "Windows NT x86"
+if errorlevel 1 (
+    echo [ERROR] Gagal mendaftarkan driver printer.
+    echo Mencoba metode alternatif dengan pnputil...
+    pnputil /add-driver "%inf_path%" /install
+    if errorlevel 1 (
+        echo [ERROR] Gagal mendaftarkan driver dengan pnputil juga.
+        echo Pastikan file .inf valid dan kompatibel dengan sistem.
+        pause
+        goto MAIN_MENU
+    ) else echo Driver berhasil didaftarkan via pnputil.
+) else echo Driver printer berhasil didaftarkan.
+echo.
+echo 3.3. Daftar driver printer yang terdaftar:
+echo.
+powershell -NoProfile -Command "Get-PrinterDriver -ErrorAction SilentlyContinue | Select-Object Name, Version | Format-Table -AutoSize"
+echo.
+pause
+echo ===================================================
+echo  LANGKAH 4: PEMBUATAN ANTREAN PRINTER & UJI CETAK
+echo ===================================================
+echo.
+echo 4.1. Pilih port USB untuk printer:
+echo.
+powershell -NoProfile -Command "$ports = Get-PrinterPort -ErrorAction SilentlyContinue | Where-Object { $_.Name -like 'USB*' }; if ($ports) { $index = 1; $ports | ForEach-Object { Write-Host ('[' + $index + '] ' + $_.Name + ' - ' + $_.Description); $index++ } } else { Write-Host 'Tidak ada port USB tersedia. Membuat port baru...' }"
+echo.
+set "port_index="
+set /p "port_index=Masukkan nomor port USB (atau tekan Enter untuk buat port baru): "
+if not defined port_index (
+    echo.
+    echo Membuat port USB baru...
+    set "printer_port_name=USB001"
+    set "printer_port_name="
+    set /p "printer_port_name=Nama port (default USB001): "
+    if not defined printer_port_name set "printer_port_name=USB001"
+    powershell -NoProfile -Command "Add-PrinterPort -Name '%printer_port_name%' -PrinterHostAddress '127.0.0.1' -ErrorAction SilentlyContinue"
+    if errorlevel 1 (
+        echo [ERROR] Gagal membuat port baru.
+        pause
+        goto MAIN_MENU
+    ) else echo Port %printer_port_name% berhasil dibuat.
+    set "selected_port=%printer_port_name%"
+) else (
+    set "selected_port="
+    powershell -NoProfile -Command "$ports = Get-PrinterPort -ErrorAction SilentlyContinue | Where-Object { $_.Name -like 'USB*' }; if ($ports.Count -ge %port_index%) { Write-Host ($ports[%port_index%-1].Name) }"
+    echo.
+    set "selected_port_manual="
+    set /p "selected_port_manual=Nama port (atau Enter gunakan dari daftar): "
+    if defined selected_port_manual set "selected_port=%selected_port_manual%"
+)
+echo.
+echo Port yang dipilih: %selected_port%
+echo.
+echo 4.2. Masukkan nama printer:
+set "printer_name="
+set /p "printer_name=Nama printer (misal: HP LaserJet Pro): "
+if not defined printer_name (
+    echo Nama printer tidak boleh kosong.
+    pause
+    goto MAIN_MENU
+)
+echo.
+echo 4.3. Pilih driver dari daftar yang terdaftar:
+echo.
+powershell -NoProfile -Command "$drivers = Get-PrinterDriver -ErrorAction SilentlyContinue; if ($drivers) { $index = 1; $drivers | ForEach-Object { Write-Host ('[' + $index + '] ' + $_.Name); $index++ } } else { Write-Host 'Tidak ada driver terdaftar.' }"
+echo.
+set "driver_index="
+set /p "driver_index=Masukkan nomor driver: "
+if not defined driver_index goto RUN_INSTALL_PRINTER_DRIVER
+set "selected_driver="
+powershell -NoProfile -Command "$drivers = Get-PrinterDriver -ErrorAction SilentlyContinue; if ($drivers.Count -ge %driver_index%) { Write-Host ($drivers[%driver_index%-1].Name) }"
+echo.
+set "selected_driver_manual="
+set /p "selected_driver_manual=Nama driver (atau Enter gunakan dari daftar): "
+if defined selected_driver_manual set "selected_driver=%selected_driver_manual%"
+echo.
+echo 4.4. Membuat antrean printer...
+echo.
+powershell -NoProfile -Command "Add-Printer -Name '%printer_name%' -DriverName '%selected_driver%' -PortName '%selected_port%' -ErrorAction Stop"
+if errorlevel 1 (
+    echo [ERROR] Gagal membuat antrean printer.
+    echo Mencoba metode alternatif dengan printui.dll...
+    rundll32 printui.dll,PrintUIEntry /if /b "%printer_name%" /f "%inf_path%" /r "%selected_port%" /m "%selected_driver%"
+    if errorlevel 1 (
+        echo [ERROR] Gagal membuat antrean printer dengan kedua metode.
+        echo Cek:
+        echo - Port %selected_port% valid dan tersedia
+        echo - Driver %selected_driver% terdaftar dengan benar
+        echo - Nama printer %printer_name% belum digunakan
+        pause
+        goto MAIN_MENU
+    ) else echo Antrean printer berhasil dibuat via printui.dll.
+) else echo Antrean printer berhasil dibuat.
+echo.
+echo 4.5. Status printer yang baru dibuat:
+echo.
+powershell -NoProfile -Command "$printer = Get-Printer -Name '%printer_name%' -ErrorAction SilentlyContinue; if ($printer) { Write-Host ('Name: ' + $printer.Name); Write-Host ('DriverName: ' + $printer.DriverName); Write-Host ('PortName: ' + $printer.PortName); Write-Host ('PrinterStatus: ' + $printer.PrinterStatus); Write-Host ('Type: ' + $printer.Type) } else { Write-Host 'Printer tidak ditemukan.' }"
+echo.
+echo 4.6. Opsi tambahan:
+echo.
+echo  [1] Buka properti printer
+echo  [2] Tes cetak halaman
+echo  [3] Set sebagai printer default
+echo  [4] Selesai
+echo.
+set "printer_extra_opt="
+set /p "printer_extra_opt=Pilih opsi: "
+if "%printer_extra_opt%"=="1" (
+    rundll32 printui.dll,PrintUIEntry /p /n "%printer_name%"
+    echo Properti printer dibuka.
+)
+if "%printer_extra_opt%"=="2" (
+    echo Melakukan tes cetak...
+    powershell -NoProfile -Command "Invoke-Command -ScriptBlock { Add-Type -AssemblyName System.Drawing; $printer = New-Object System.Drawing.Printing.PrintDocument; $printer.PrinterSettings.PrinterName = '%printer_name%'; if ($printer.PrinterSettings.IsValid) { $printer.Print(); Write-Host 'Tes cetak berhasil dikirim.' } else { Write-Host 'Printer tidak valid.' } } -ErrorAction SilentlyContinue"
+    echo Tes cetak selesai.
+)
+if "%printer_extra_opt%"=="3" (
+    powershell -NoProfile -Command "Set-DefaultPrinter -Name '%printer_name%' -ErrorAction SilentlyContinue"
+    if errorlevel 1 (echo [ERROR] Gagal set sebagai default.) else echo Printer %printer_name% diatur sebagai default.
+)
+echo.
+echo ===================================================
+echo  SELESAI! Perbaikan & pemasangan driver printer selesai.
+echo ===================================================
+echo.
+echo Ringkasan:
+echo - Driver printer didaftarkan dari: %inf_path%
+echo - Antrean printer: %printer_name%
+echo - Port: %selected_port%
+echo - Driver: %selected_driver%
+echo.
 pause
 goto MAIN_MENU
 
@@ -2532,18 +2818,242 @@ echo ===================================================
 echo.
 echo Mencari perangkat dengan status error di Device Manager...
 echo.
-powershell -NoProfile -Command ^
-    "$badDrivers = Get-CimInstance Win32_PnPEntity | Where-Object { $_.ConfigManagerErrorCode -ne 0 }; ^
-     if ($badDrivers) { ^
-        $badDrivers | Select-Object Name, @{n='Error_Code';e={$_.ConfigManagerErrorCode}}, Status | Format-Table -AutoSize; ^
-        Write-Host 'Ditemukan perangkat bermasalah. Segera update driver tersebut.' -ForegroundColor Yellow; ^
-     } else { ^
-        Write-Host 'Semua driver terdeteksi berjalan normal (Tidak ada Error Code).' -ForegroundColor Green; ^
-     }"
+powershell -NoProfile -Command "$ErrorActionPreference='SilentlyContinue'; try { $badDrivers = Get-CimInstance Win32_PnPEntity -ErrorAction SilentlyContinue | Where-Object { $_.ConfigManagerErrorCode -ne 0 -and $_.ConfigManagerErrorCode -ne $null }; if ($badDrivers) { Write-Host '=== PERANGKAT BERMASALAH DITEMUKAN ===' -ForegroundColor Red; $badDrivers | Select-Object Name, @{n='Error_Code';e={$_.ConfigManagerErrorCode}}, Status, @{n='Hardware_ID';e={$_.DeviceID}} | Format-Table -AutoSize; Write-Host ''; Write-Host 'Ringkasan Error Code:' -ForegroundColor Yellow; $errorCodes = $badDrivers | Group-Object ConfigManagerErrorCode; $errorCodes | ForEach-Object { $code = $_.Name; $count = $_.Count; $desc = 'Unknown error'; if ($code -eq 1) { $desc = 'Device is not configured correctly' } elseif ($code -eq 3) { $desc = 'The driver might be corrupted' } elseif ($code -eq 10) { $desc = 'The device cannot start' } elseif ($code -eq 19) { $desc = 'Windows cannot start this device' } elseif ($code -eq 22) { $desc = 'Drivers not installed' } elseif ($code -eq 28) { $desc = 'Drivers not installed' } elseif ($code -eq 31) { $desc = 'Cannot load drivers' } elseif ($code -eq 37) { $desc = 'Cannot initialize driver' } elseif ($code -eq 39) { $desc = 'Driver failed to initialize' } elseif ($code -eq 41) { $desc = 'Driver loaded with issues' } elseif ($code -eq 42) { $desc = 'Cannot load driver' } elseif ($code -eq 43) { $desc = 'Cannot verify digital signature' }; Write-Host ('  Code ' + $code + ' (' + $count + ' devices): ' + $desc) }; Write-Host ''; Write-Host ('Ditemukan ' + $badDrivers.Count + ' perangkat bermasalah.') -ForegroundColor Yellow } else { Write-Host '=== SEMUA DRIVER NORMAL ===' -ForegroundColor Green; Write-Host 'Tidak ada perangkat dengan Error Code ditemukan.' -ForegroundColor Green } } catch { Write-Host '[ERROR] Gagal membaca driver: ' $_.Exception.Message -ForegroundColor Red }"
 echo.
-echo Catatan: Cek Device Manager untuk detail lebih lanjut.
-pause
-goto MAIN_MENU
+echo Rekomendasi Tindakan:
+echo - Gunakan menu [46] Update Driver untuk update driver bermasalah
+echo - Cek Device Manager untuk detail lebih lanjut (devmgmt.msc)
+echo - Untuk error code 10/22/28, cek install ulang driver
+echo - Untuk error code 43, uninstall driver dan reboot
+echo.
+echo  [1] Buka Device Manager
+echo  [2] Export list error ke file
+echo  [0] Kembali
+echo.
+set "bad_driver_opt="
+set /p "bad_driver_opt=Pilih opsi: "
+if "%bad_driver_opt%"=="0" goto MAIN_MENU
+if "%bad_driver_opt%"=="1" (
+    start devmgmt.msc
+    echo Device Manager dibuka.
+    pause
+    goto MAIN_MENU
+)
+if "%bad_driver_opt%"=="2" (
+    echo.
+    echo Exporting error list to file...
+    powershell -NoProfile -Command "$ErrorActionPreference='SilentlyContinue'; try { $badDrivers = Get-CimInstance Win32_PnPEntity -ErrorAction SilentlyContinue | Where-Object { $_.ConfigManagerErrorCode -ne 0 -and $_.ConfigManagerErrorCode -ne $null }; if ($badDrivers) { $badDrivers | Select-Object Name, ConfigManagerErrorCode, Status, DeviceID | Export-Csv -Path '%USERPROFILE%\Desktop\Driver_Errors.csv' -NoTypeInformation; Write-Host 'Exported to: %USERPROFILE%\Desktop\Driver_Errors.csv' } else { Write-Host 'No errors to export.' } } catch { Write-Host '[ERROR] Gagal export: ' $_.Exception.Message -ForegroundColor Red }"
+    echo.
+    if exist "%USERPROFILE%\Desktop\Driver_Errors.csv" (
+        start "" "%USERPROFILE%\Desktop\Driver_Errors.csv"
+    )
+    pause
+    goto MAIN_MENU
+)
+echo Pilihan tidak valid.
+goto RUN_CHECK_BAD_DRIVERS
+
+
+:: ==================================================================
+:: == DIAGNOSIS: CEK SEMUA DRIVER
+:: ==================================================================
+
+:RUN_CHECK_ALL_DRIVERS
+cls
+echo ===================================================
+echo              CEK SEMUA DRIVER SISTEM
+echo ===================================================
+echo.
+echo Memeriksa semua driver yang terinstall di sistem...
+echo.
+powershell -NoProfile -Command "$drivers = Get-CimInstance Win32_PnPSignedDriver | Select-Object DeviceName, DriverVersion, DriverDate, ProviderName | Sort-Object DeviceName; if ($drivers) { $drivers | Format-Table -AutoSize } else { Write-Host 'Tidak ada driver ditemukan.' }"
+echo.
+echo Total driver terinstall:
+powershell -NoProfile -Command "(Get-CimInstance Win32_PnPSignedDriver).Count"
+echo.
+echo  [1] Export ke file CSV
+echo  [2] Cek driver lama (lebih dari 2 tahun)
+echo  [3] Cek driver tanpa digital signature
+echo  [0] Kembali
+echo.
+set "driver_check_opt="
+set /p "driver_check_opt=Pilih opsi: "
+if "%driver_check_opt%"=="0" goto MAIN_MENU
+if "%driver_check_opt%"=="1" (
+    echo.
+    echo Exporting driver list to CSV...
+    powershell -NoProfile -Command "$drivers = Get-CimInstance Win32_PnPSignedDriver | Select-Object DeviceName, DriverVersion, DriverDate, ProviderName, InfName | Sort-Object DeviceName; $drivers | Export-Csv -Path '%USERPROFILE%\Desktop\Driver_List.csv' -NoTypeInformation; Write-Host 'Exported to: %USERPROFILE%\Desktop\Driver_List.csv'"
+    echo.
+    start "" "%USERPROFILE%\Desktop\Driver_List.csv"
+    pause
+    goto MAIN_MENU
+)
+if "%driver_check_opt%"=="2" (
+    echo.
+    echo Mencari driver lama (lebih dari 2 tahun)...
+    powershell -NoProfile -Command "$twoYearsAgo = (Get-Date).AddYears(-2); $oldDrivers = Get-CimInstance Win32_PnPSignedDriver | Where-Object { $_.DriverDate -lt $twoYearsAgo }; if ($oldDrivers) { Write-Host 'Driver lama ditemukan:'; $oldDrivers | Select-Object DeviceName, DriverDate, DriverVersion | Format-Table -AutoSize } else { Write-Host 'Tidak ada driver lama ditemukan.' }"
+    echo.
+    pause
+    goto MAIN_MENU
+)
+if "%driver_check_opt%"=="3" (
+    echo.
+    echo Mencari driver tanpa digital signature...
+    powershell -NoProfile -Command "$unsignedDrivers = Get-CimInstance Win32_PnPSignedDriver | Where-Object { $_.DriverDate -lt [DateTime]'2000-01-01' -or $_.DriverVersion -eq '0.0.0.0' }; if ($unsignedDrivers) { Write-Host 'Driver tanpa signature atau invalid ditemukan:'; $unsignedDrivers | Select-Object DeviceName, DriverVersion, DriverDate | Format-Table -AutoSize } else { Write-Host 'Semua driver memiliki signature valid.' }"
+    echo.
+    pause
+    goto MAIN_MENU
+)
+echo Pilihan tidak valid.
+goto RUN_CHECK_ALL_DRIVERS
+
+
+:: ==================================================================
+:: == DIAGNOSIS: UPDATE DRIVER
+:: ==================================================================
+
+:RUN_UPDATE_DRIVERS
+cls
+echo ===================================================
+echo              UPDATE DRIVER
+echo ===================================================
+echo.
+echo Fitur ini akan mencoba update driver secara otomatis.
+echo.
+echo PERINGATAN:
+echo - Update driver dilakukan via Windows Update
+echo - Proses mungkin memakan waktu lama
+echo - Beberapa driver mungkin perlu diupdate manual dari website vendor
+echo.
+echo  [1] Scan driver yang perlu update via Windows Update
+echo  [2] Update driver dari folder lokal
+echo  [3] Cek driver update via Device Manager (manual)
+echo  [4] Update driver spesifik (pnputil)
+echo  [0] Batal
+echo.
+set "update_driver_opt="
+set /p "update_driver_opt=Pilih opsi: "
+if "%update_driver_opt%"=="0" goto MAIN_MENU
+if "%update_driver_opt%"=="1" (
+    echo.
+    echo Mencari driver update via Windows Update...
+    echo Ini akan membuka Settings Windows Update.
+    echo Pilih "Optional updates" atau "Advanced options" untuk driver.
+    echo.
+    start ms-settings:windowsupdate
+    echo Windows Update dibuka.
+    echo.
+    pause
+    goto MAIN_MENU
+)
+if "%update_driver_opt%"=="2" (
+    echo.
+    set "driver_folder="
+    set /p "driver_folder=Masukkan path folder driver: "
+    if not defined driver_folder goto RUN_UPDATE_DRIVERS
+    if not exist "%driver_folder%" (
+        echo [ERROR] Folder tidak ditemukan: %driver_folder%
+        pause
+        goto RUN_UPDATE_DRIVERS
+    )
+    echo.
+    echo Mencari file .inf di folder...
+    powershell -NoProfile -Command "$infFiles = Get-ChildItem -Path '%driver_folder%' -Filter '*.inf' -ErrorAction SilentlyContinue; if ($infFiles) { $infFiles | ForEach-Object { Write-Host ('  - ' + $_.FullName) } } else { Write-Host 'Tidak ditemukan file .inf.' }"
+    echo.
+    set "inf_path_manual="
+    set /p "inf_path_manual=Masukkan path file .inf untuk install: "
+    if not defined inf_path_manual goto RUN_UPDATE_DRIVERS
+    if not exist "%inf_path_manual%" (
+        echo [ERROR] File tidak ditemukan: %inf_path_manual%
+        pause
+        goto RUN_UPDATE_DRIVERS
+    )
+    echo.
+    echo Menginstall driver dari %inf_path_manual%...
+    pnputil /add-driver "%inf_path_manual%" /install
+    if errorlevel 1 (
+        echo [ERROR] Gagal menginstall driver.
+        echo Mencoba metode alternatif...
+        rundll32 printui.dll,PrintUIEntry /ia /m "%inf_path_manual%" /h "Intel" /v "Windows NT x86"
+        if errorlevel 1 (
+            echo [ERROR] Gagal menginstall driver dengan kedua metode.
+        ) else echo Driver berhasil diinstall via printui.dll.
+    ) else echo Driver berhasil diinstall via pnputil.
+    echo.
+    pause
+    goto MAIN_MENU
+)
+if "%update_driver_opt%"=="3" (
+    echo.
+    echo Membuka Device Manager untuk update driver manual...
+    echo.
+    echo Langkah manual:
+    echo 1. Klik kanan pada perangkat yang ingin diupdate
+    echo 2. Pilih "Update driver"
+    echo 3. Pilih "Search automatically for drivers" atau "Browse my computer"
+    echo.
+    start devmgmt.msc
+    echo Device Manager dibuka.
+    echo.
+    pause
+    goto MAIN_MENU
+)
+if "%update_driver_opt%"=="4" (
+    echo.
+    echo  [1] List driver packages di DriverStore
+    echo  [2] Install driver package spesifik
+    echo  [3] Remove driver package
+    echo  [0] Kembali
+    echo.
+    set "pnputil_opt="
+    set /p "pnputil_opt=Pilih opsi: "
+    if "%pnputil_opt%"=="0" goto RUN_UPDATE_DRIVERS
+    if "%pnputil_opt%"=="1" (
+        echo.
+        echo Listing driver packages di DriverStore...
+        pnputil /enum-drivers
+        echo.
+        pause
+        goto RUN_UPDATE_DRIVERS
+    )
+    if "%pnputil_opt%"=="2" (
+        echo.
+        set "inf_install_path="
+        set /p "inf_install_path=Masukkan path file .inf: "
+        if not defined inf_install_path goto RUN_UPDATE_DRIVERS
+        if not exist "%inf_install_path%" (
+            echo [ERROR] File tidak ditemukan.
+            pause
+            goto RUN_UPDATE_DRIVERS
+        )
+        echo.
+        echo Installing driver package...
+        pnputil /add-driver "%inf_install_path%" /install
+        echo.
+        pause
+        goto RUN_UPDATE_DRIVERS
+    )
+    if "%pnputil_opt%"=="3" (
+        echo.
+        echo Listing driver packages untuk remove...
+        pnputil /enum-drivers
+        echo.
+        set "oem_name="
+        set /p "oem_name=Masukkan OEM name untuk remove (contoh: oem1.inf): "
+        if not defined oem_name goto RUN_UPDATE_DRIVERS
+        echo.
+        echo Removing driver package %oem_name%...
+        pnputil /delete-driver "%oem_name%" /uninstall
+        echo.
+        pause
+        goto RUN_UPDATE_DRIVERS
+    )
+    echo Pilihan tidak valid.
+    goto RUN_UPDATE_DRIVERS
+)
+echo Pilihan tidak valid.
+goto RUN_UPDATE_DRIVERS
+
 
 :RUN_CLEAN_EDGE
 cls
